@@ -1,0 +1,42 @@
+# repomix UrbanVerse configuration
+# Customisations specifiques au fork gerivdb/repomix
+
+version: "5.0.0"
+intent_hash: 0xREPOMIX_INTENT_20260530
+
+ecosystem:
+  name: UrbanVerse
+  hub_ref: gerivdb/LLM-REPO
+
+  # Metadonnees injectees dans l'en-tete XML de chaque bundle
+  xml_header:
+    - strate
+    - layer
+    - phi_cps
+    - intent_hash
+    - vague_deployee
+    - connectivite
+    - zone
+
+  # Mode ecosystem : bundle multi-repo
+  multi_repo:
+    enabled: true
+    registry: gerivdb/VERSUS/urban_ontology_verse/RELAYS/relay_wave_manifest.yaml
+    pack_format: xml
+    include_dormant: false
+    max_repos_per_pack: 10
+
+  # Integration avec les outils ecosysteme
+  integrations:
+    argus:
+      enabled: true
+      mode: repomix
+    recall_coherence:
+      enabled: true
+      mode: repomix
+    codedb:
+      enabled: true
+      output_format: fluence_matrix
+    llm_training:
+      enabled: true
+      pack_type: recall_relay
