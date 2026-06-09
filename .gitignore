@@ -1,3 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
 
-# RSS-v1 — Artefacts de run (auto-ajoute)
+# Coverage
 .coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# Databases — runtime only, never commit
+*.db
+*.sqlite
+*.sqlite3
+
+# Test caches
+.test_cache/
+.test_blo_cache/
+.test_cache_hit/
+.test_dep_cache/
+tests/__pycache__/
+tests/test-report.json
+tests/cross_engines_test_report.txt
+
+# Environments
+.env
+.venv
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Artifacts
+*.log
+*.tmp
