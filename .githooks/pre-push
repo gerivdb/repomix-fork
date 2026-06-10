@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 .githooks/pre-push — Guards STRATUM_RELAY (R1, R2, R3).
 
@@ -53,7 +54,7 @@ if bad_files:
 if errors:
     print("GUARDS STRATUM_RELAY — ECHEC:")
     for e in errors:
-        print(f"  ❌ {e}")
+        print("  [FAIL] {}".format(e))
     sys.exit(1)
 else:
     print("GUARDS STRATUM_RELAY — OK (R1, R2, R3)")
