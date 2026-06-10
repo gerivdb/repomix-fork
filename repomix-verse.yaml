@@ -21,7 +21,7 @@ ecosystem:
   # Mode ecosystem : bundle multi-repo
   multi_repo:
     enabled: true
-    registry: gerivdb/VERSUS/urban_ontology_verse/RELAYS/relay_wave_manifest.yaml
+    registry: gerivdb/VERSES/urban_ontology_verse/RELAYS/relay_wave_manifest.yaml
     pack_format: xml
     include_dormant: false
     max_repos_per_pack: 10
