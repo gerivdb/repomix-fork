@@ -2,7 +2,8 @@
 id: PRD-001
 title: "repomix-fork — Nettoyage, activation verse_detector et pipeline d'inventaire"
 repo: gerivdb/repomix-fork
-status: draft
+status: accepted
+closed: 2026-06-11
 created: 2026-06-10
 author: gerivdb
 intent_hash: 0xREPOMIXFORK_CLEANUP_PIPELINE_V1_20260610
@@ -221,3 +222,9 @@ DevTools/scripts/inventory_repos.py
 - **Remote** : 27 fichiers, 68K tokens — mode `--remote gerivdb/repomix-fork` fonctionnel
 - **Config** : `repomix.config.json` créé (schema v1.0 repomix)
 - **Registry** : corrigé de `gerivdb/VERSUS/...` vers `gerivdb/VERSES/...`
+
+## Cloture (2026-06-11)
+
+Toutes les phases P0->P4 complétées lors des Vagues 5+6. Score d'émergence passé de 48% à 85% (MATEURE).
+10 apports A1->A10 câblés. PRD-001 fermé — passé à `accepted`.
+Suite dans PRD-004 (Vague 7).
