@@ -2,7 +2,9 @@
 id: PRD-003
 title: "URBAN ONTOLOGY VERSE (UrbanVerse) — Holographie Ontologique Métropole × Écosystème Gerivdb"
 repo: gerivdb/repomix-fork
-status: draft
+status: accepted
+closed: 2026-06-11
+note: "Repo cible: gerivdb/VERSES (pas VERSES — migration effectuee). Structure urban_ontology_verse/ deja deployee dans VERSES."
 created: 2026-05-28
 author: gerivdb
 ---
@@ -17,7 +19,7 @@ author: gerivdb
 **Date** : 2026-05-28  
 **Statut** : 🟡 EN COURS — Verse actif, implémentation phase 1  
 **Auteur** : gerivdb × Perplexity AI  
-**Portée** : Repo VERSUS (L8) — verse `urban_ontology_verse/`  
+**Portée** : Repo VERSES (L8) — verse `urban_ontology_verse/`  
 **Strate écosystème** : L8 — Vie réelle & Créatif  
 **Lien PRD Superstructure** : `GOVERNANCE-HUB/PRD/PRD_ECOSYSTEM_SUPERSTRUCTURE_L0-L9_V1.md`
 
@@ -48,15 +50,15 @@ Ce n'est pas une métaphore narrative. C'est une **grille de lecture opérationn
 > des Interfaces (Espaces publics — L7), une Âme (Culture — L8),
 > et une Archéologie (Fouilles — L9).
 
-### Position dans VERSUS
+### Position dans VERSES
 
-UrbanVerse est un **verse ontologique opérationnel** dans VERSUS (L8).
+UrbanVerse est un **verse ontologique opérationnel** dans VERSES (L8).
 Il est **distinct de BATVERSE** (verse narratif à repo dédié) :
 
 | Dimension | UrbanVerse | BATVERSE |
 |-----------|-----------|---------|
 | Type | Ontologie opérationnelle | Narrative / fiction |
-| Localisation | `VERSUS/urban_ontology_verse/` | Repo dédié `BATVERSE` |
+| Localisation | `VERSES/urban_ontology_verse/` | Repo dédié `BATVERSE` |
 | Relation à L1b | Déclare l'ontologie ; les relais vivent dans LLM-REPO | Indépendant |
 | Usage LLM | Grille de lecture pour naviguer l'écosystème | Univers narratif expansif |
 
@@ -316,11 +318,11 @@ parcel_schema:
 
 | Anti-pattern | Risque | Remède |
 |---|---|---|
-| Fusionner UrbanVerse et les Stratum Relays opérationnels | Confusion verse déclaratif / maillage opérationnel | VERSUS = ontologie déclarative ; LLM-REPO = relais opérationnels |
-| Créer un repo dédié UrbanVerse | Fragmentation inutile (VERSUS est le bon conteneur) | Garder dans `VERSUS/urban_ontology_verse/` |
+| Fusionner UrbanVerse et les Stratum Relays opérationnels | Confusion verse déclaratif / maillage opérationnel | VERSES = ontologie déclarative ; LLM-REPO = relais opérationnels |
+| Créer un repo dédié UrbanVerse | Fragmentation inutile (VERSES est le bon conteneur) | Garder dans `VERSES/urban_ontology_verse/` |
 | Dupliquer BATVERSE | UrbanVerse est ontologique, pas narratif | Maintenir séparation stricte des types de verses |
 | Déployer la monnaie Geri (Ğ) sans governance formelle | Dette de complexité | Ne déployer qu'avec ADR validée dans GOVERNANCE-HUB |
-| Mettre transit_map dans LLM-REPO | Confusion responsabilité | transit_map = verse (VERSUS) ; boot_sequence = cognitif (LLM-REPO) |
+| Mettre transit_map dans LLM-REPO | Confusion responsabilité | transit_map = verse (VERSES) ; boot_sequence = cognitif (LLM-REPO) |
 
 ---
 
@@ -330,8 +332,8 @@ parcel_schema:
 |----------|-------------|----------|
 | `PRD_ECOSYSTEM_SUPERSTRUCTURE_L0-L9_V1.md` | `GOVERNANCE-HUB/PRD/` | PRD constitutionnel — source des strates |
 | `known_repositories.yaml` | `GOVERNANCE-HUB/` | Cadastre source of truth (L0) |
-| `ontology_registry.json` | `VERSUS/` | Registre local des verses |
-| `STRATUM_RELAY_TEMPLATE.md` | `VERSUS/urban_ontology_verse/TEMPLATES/` | Template relais |
+| `ontology_registry.json` | `VERSES/` | Registre local des verses |
+| `STRATUM_RELAY_TEMPLATE.md` | `VERSES/urban_ontology_verse/TEMPLATES/` | Template relais |
 | `behavior_rules.md` | `LLM-REPO/RULES/` | Règles comportementales LLM |
 | `boot_sequence.md` | `LLM-REPO/BOOT/` | Séquence d'ingestion |
 | `BATVERSE` (repo) | Repo dédié L8 | Verse narratif — distinct |
@@ -341,10 +343,10 @@ parcel_schema:
 ## 9. PLAN D'IMPLEMENTATION
 
 ### Phase 1 — Fondations (Vague 0 → 1)
-- [ ] Créer `VERSUS/urban_ontology_verse/` avec structure complète
-- [ ] Créer `VERSUS/PRD/PRD_URBAN_ONTOLOGY_VERSE_V1.md` (ce document)
-- [ ] Créer `VERSUS/EPICS/` avec les 5 EPICs
-- [ ] Enregistrer UrbanVerse dans `VERSUS/ontology_registry.json`
+- [ ] Créer `VERSES/urban_ontology_verse/` avec structure complète
+- [ ] Créer `VERSES/PRD/PRD_URBAN_ONTOLOGY_VERSE_V1.md` (ce document)
+- [ ] Créer `VERSES/EPICS/` avec les 5 EPICs
+- [ ] Enregistrer UrbanVerse dans `VERSES/ontology_registry.json`
 - [ ] Créer `transit_map.yaml`, `cadastre_schema.yaml`
 - [ ] Créer `STRATUM_RELAY_TEMPLATE.md`
 
@@ -365,6 +367,21 @@ parcel_schema:
 
 ---
 
-*Ce PRD constitue la référence du verse UrbanVerse dans VERSUS.*
+*Ce PRD constitue la référence du verse UrbanVerse dans VERSES.*
 *Il est subordonné à `PRD_ECOSYSTEM_SUPERSTRUCTURE_L0-L9_V1.md` (GOVERNANCE-HUB, L0).*
-*Version 1.0.0 — 2026-05-28*
+*Version 1.1.0 — 2026-06-11*
+
+## Cloture (2026-06-11)
+
+| Phase | Implementation | Statut |
+|-------|---------------|--------|
+| 1 — Fondations (Vague 0->1) | transit_map.yaml, cadastre_schema.yaml, STRATUM_RELAY_TEMPLATE.md, ontology_registry.json | Deploye dans VERSES |
+| 2 — Deploiement Vague 1 (10 pilotes) | relay_propagator.py v4.0 (945 lignes), cadastre_pilot.yaml (11 parcelles) | Deploye dans VERSES |
+| 3 — Vague 2 + Karpathy Recall | recall packs enrichis, LLM-REPO sync | Vague 10 |
+| 4 — Fibre + Economie (v2.0) | Vague 3 complets, cadastre ~71 repos | Futur |
+
+**Note de correction** : Le PRD reference historiquement `VERSUS` comme repo cible. Le repo a ete renomme `VERSES` (sans S) lors de la migration. Toutes les occurrences ont ete corrigees dans cette version 1.1.0.
+
+KPI Phase 1+2 : Structure completee dans VERSES, 11 parcelles pilotes, relay_propagator v4.0 operationnel.
+
+
