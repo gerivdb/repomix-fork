@@ -48,3 +48,6 @@ Thumbs.db
 # Artifacts
 *.log
 *.tmp
+
+# ARGUS bundles (R3 — offline, never commit)
+data/argus/bundles/*.xml

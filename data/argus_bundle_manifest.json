@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-06-10T23:19:04.235546",
+  "generator": "repomix-fork/scripts/bundle_for_argus.py",
+  "bundles": [
+    {
+      "repo": "gerivdb/repomix-fork",
+      "file": "data\\argus\\bundles\\gerivdb__repomix-fork__20260610_2318.xml",
+      "timestamp": "20260610_2318",
+      "size_kb": 311
+    },
+    {
+      "repo": "gerivdb/repomix-fork",
+      "file": "data\\argus\\bundles\\gerivdb__repomix-fork__20260610_2318.xml",
+      "timestamp": "20260610_2318",
+      "size_kb": 311
+    }
+  ]
+}
