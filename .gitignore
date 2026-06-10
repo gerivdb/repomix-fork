@@ -51,3 +51,8 @@ Thumbs.db
 
 # ARGUS bundles (R3 — offline, never commit)
 data/argus/bundles/*.xml
+
+# Corpus bundles (A3 — offline, never commit)
+corpus/*.xml
+corpus/*.md
+corpus/*.txt
