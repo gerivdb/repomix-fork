@@ -53,7 +53,10 @@ def _is_active(repo: dict) -> bool:
 
 def _get_layer(repo: dict) -> str:
     """Extrait la layer d'un repo, fallback L3_EMERGENCE."""
-    return repo.get("layer", "L3_EMERGENCE")
+    layer = repo.get("layer", "L3_EMERGENCE")
+    if layer is None:
+        return "L3_EMERGENCE"
+    return layer
 
 
 def load_known_repos_graph(yaml_path: Path) -> nx.Graph:
