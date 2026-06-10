@@ -35,6 +35,10 @@ dev = [
     "build>=1.0.0",
     "twine>=5.0.0",
 ]
+marketplace = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.29.0",
+]
 
 [project.scripts]
 repomix-scan     = "repomix.__main__:cli_main"
