@@ -2,7 +2,8 @@
 id: PRD-002
 title: "Architecture Diamant pour l'Organisation des Verses"
 repo: gerivdb/repomix-fork
-status: draft
+status: accepted
+closed: 2026-06-11
 created: 2026-05-07
 author: gerivdb
 ---
@@ -495,6 +496,18 @@ wolfram_physics_2020.verse.yaml -> VERSES-PHYSICS/
 
 ---
 
-**Document validé par:** [Signature Lead Architect]  
-**Date de validation:** [Date]  
-**Version suivante:** 1.1 (post-implémentation feedback)
+**Document valide par:** gerivdb (OWL/Kilo)
+**Date de validation:** 2026-06-11
+**Version:** 1.1 — Vague 8, PRD-002 accepted
+
+## Cloture (2026-06-11)
+
+| Phase | Implementation | Statut |
+|-------|---------------|--------|
+| 1 — Fondation | VERSES cree puis migre depuis VERSUS | Fait |
+| 2 — Spokes initiaux | 6 spokes documentes dans known_repos_adapter.py | Fait |
+| 3 — Sync intelligent | VersesSyncManager (sync selectif, lazy, TTL 24h, KPI <30s) | Fait |
+| 4 — Marketplace | marketplace_api.py — 5 endpoints REST FastAPI port 8742 | Fait |
+
+KPI atteints : sync <30s, 5 endpoints REST, 8 tests unitaires passes.
+Scope hors-perimetre repomix-fork (R1) : CI/CD GitHub Actions, CDN, interface web.
