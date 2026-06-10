@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-06-10T23:57:12.513842",
+  "tiers": [
+    "P0"
+  ],
+  "format": "xml",
+  "bundles": [
+    {
+      "repo": "gerivdb/NEXUS",
+      "tier": "P0",
+      "file": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\corpus\\gerivdb__NEXUS__20260610.xml",
+      "status": "dry_run"
+    },
+    {
+      "repo": "gerivdb/KIVA",
+      "tier": "P0",
+      "file": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\corpus\\gerivdb__KIVA__20260610.xml",
+      "status": "dry_run"
+    },
+    {
+      "repo": "gerivdb/GATEWAY-MANAGER",
+      "tier": "P0",
+      "file": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\corpus\\gerivdb__GATEWAY-MANAGER__20260610.xml",
+      "status": "dry_run"
+    },
+    {
+      "repo": "gerivdb/BRAIN",
+      "tier": "P0",
+      "file": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\corpus\\gerivdb__BRAIN__20260610.xml",
+      "status": "dry_run"
+    },
+    {
+      "repo": "gerivdb/ECOS-CLI",
+      "tier": "P0",
+      "file": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\corpus\\gerivdb__ECOS-CLI__20260610.xml",
+      "status": "dry_run"
+    },
+    {
+      "repo": "gerivdb/ONTOLOGY",
+      "tier": "P0",
+      "file": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\corpus\\gerivdb__ONTOLOGY__20260610.xml",
+      "status": "dry_run"
+    },
+    {
+      "repo": "gerivdb/GOVERNANCE-HUB",
+      "tier": "P0",
+      "file": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\corpus\\gerivdb__GOVERNANCE-HUB__20260610.xml",
+      "status": "dry_run"
+    }
+  ]
+}
