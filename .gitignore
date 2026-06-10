@@ -63,3 +63,6 @@ tests/fixtures/**/*.xml
 
 # Packs recall LLM-REPO (A4 — generated, never commit here)
 D:/DO/WEB/TOOLS/L1-INFRA/LLM-REPO/TRAINING/packs/
+
+# Upstream test files with secrets
+tests/core/security/
