@@ -78,6 +78,28 @@ def run_bundle_dry_run() -> bool:
     return result.returncode == 0
 
 
+# ── 4. Scan secrets sur le dernier bundle ARGUS ──────────────────────────────
+def run_secrets_scan() -> bool:
+    import glob
+    bundle_dir = REPO_ROOT / "data" / "argus" / "bundles"
+    if not bundle_dir.exists():
+        report["secrets"] = {"status": "no_bundle_dir"}
+        return True
+    bundles = sorted(bundle_dir.glob("*.xml"), reverse=True)
+    if not bundles:
+        report["secrets"] = {"status": "no_bundles"}
+        return True
+    latest = bundles[0]
+    result = subprocess.run(
+        [sys.executable, str(REPO_ROOT / "scripts" / "scan_secrets.py"),
+         "--bundle", str(latest), "--output-json",
+         str(REPO_ROOT / "data" / "secrets_report.json")],
+        capture_output=True, text=True, timeout=30, cwd=str(REPO_ROOT)
+    )
+    report["secrets"] = {"status": "scanned", "bundle": str(latest)}
+    return result.returncode == 0
+
+
 # ── Main ────────────────────────────────────────────────────────────────────
 def main():
     import argparse
@@ -88,8 +110,9 @@ def main():
     guards_ok = run_guards()
     scan_ok = run_scan()
     bundle_ok = run_bundle_dry_run()
+    secrets_ok = run_secrets_scan()
 
-    report["overall_ok"] = guards_ok and scan_ok and bundle_ok
+    report["overall_ok"] = guards_ok and scan_ok and bundle_ok and secrets_ok
 
     # Ecriture rapport
     out = REPO_ROOT / "data" / "validation_report.json"
@@ -110,6 +133,7 @@ def main():
         else:
             print()
         print(f"  Bundle dry-run  : {'OK' if bundle_ok else 'ECHEC'}")
+        print(f"  Scan secrets    : {'OK' if secrets_ok else 'ECHEC'}")
         print(f"{'='*60}")
         print(f"  RESULTAT: {'OK' if report['overall_ok'] else 'ECHEC'}")
         print(f"  Rapport: data/validation_report.json")
