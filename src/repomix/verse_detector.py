@@ -73,11 +73,12 @@ class UniversalVerseDetector:
             degre_moyen = sum(degres) / nb_noeuds
             connectivite = min(1.0, degre_moyen / 6)
 
-            # 2. ✅ AUTO-RÉFÉRENCE (30%)
-            noeuds_sans_propriete = sum(
-                1 for n, attr in graph.nodes(data=True) if len(attr) <= 1
+            # 2. AUTO-REFERENCE (30%)
+            # Mesure la richesse d'annotation: nœuds avec >= 3 attributs
+            noeuds_riches = sum(
+                1 for n, attr in graph.nodes(data=True) if len(attr) >= 3
             )
-            autoreference = noeuds_sans_propriete / nb_noeuds
+            autoreference = noeuds_riches / nb_noeuds if nb_noeuds else 0
 
             # 3. ✅ FERMETURE SYSTÉMIQUE (20%)
             composantes = nx.number_connected_components(graph)
