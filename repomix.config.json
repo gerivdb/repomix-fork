@@ -1,0 +1,36 @@
+{
+  "$schema": "https://repomix.ai/config-schema.json",
+  "version": "1.0",
+  "output": {
+    "filePath": "bundle.xml",
+    "style": "xml",
+    "header": "<!-- STRATUM_RELAY bundle gerivdb/repomix-fork -->\n<!-- strate: L4-TOOLS | layer: L4-TOOLS | phi_cps: 3.697 | intent_hash: 0xREPOMIX_INTENT_20260530 -->\n",
+    "instructionFilePath": "",
+    "fileSummary": true,
+    "directoryStructure": true,
+    "removeComments": false,
+    "removeEmptyLines": false,
+    "compress": false,
+    "topFilesLength": 10
+  },
+  "include": [
+    "src/repomix/**/*.py",
+    "src/repomix/**/*.js",
+    "scripts/**/*.py",
+    "adapters/**/*.py"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      "**/__pycache__/**",
+      "**/*.pyc",
+      "**/.test_*/**",
+      "**/tests/**",
+      "test_bundle*.xml"
+    ]
+  },
+  "security": {
+    "enableSecurityCheck": true
+  }
+}

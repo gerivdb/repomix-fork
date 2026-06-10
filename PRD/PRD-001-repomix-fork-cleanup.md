@@ -167,9 +167,12 @@ DevTools/scripts/inventory_repos.py
 | Fichiers `.db` trackés | 4 | **0** | 0 ✅ |
 | PRD conformes RSS-v2 dans `PRD/` | 0/3 | **3/3** | 3/3 ✅ |
 | Erreurs pytest (collection) | 28 | **0** | 0 ✅ |
-| `verse_detector.py` branché | Non | Non | Oui (Phase 3) |
-| Pipeline d'inventaire local | Non | Non | Oui (Phase 3) |
-| STRATUM_RELAY actif | Non | Non | Oui (Phase 4) |
+| `verse_detector.py` branché | Non | **Oui** | Oui ✅ |
+| Pipeline d'inventaire local | Non | **Oui** | Oui ✅ |
+| STRATUM_RELAY actif | Non | **Oui** | Oui ✅ |
+| Bundle mono-repo | Non | **Oui** | Oui ✅ |
+| Bundle remote | Non | **Oui** | Oui ✅ |
+| known_repositories.yaml à jour | Non | **Oui** | Oui ✅ |
 
 ## Risques
 
@@ -201,3 +204,20 @@ DevTools/scripts/inventory_repos.py
 | `d97ab7b` | chore: untrack .test_* cache dirs (130 JSON files) |
 | `7ca4168` | refactor: migrate 18 root .py files to src/repomix/ namespace |
 | `545269f` | test: fix 28 collection errors — ignore integration tests via conftest.py |
+| `cbfc6c1` | feat(Phase3): adapter YAML→graphe + CLI scan_ecosystem (72 nœuds, 579 arêtes, 48.2% DORMANT) |
+| `94a0822` | fix(Phase4a): corrige registry repomix-verse.yaml → VERSES + deps networkx/pyyaml |
+| `a7c2a79+` | docs(PRD): conformité RSS-v2 complète + index à jour |
+
+## Résultats Phase 3+4
+
+### Scan écosystème (2026-06-10)
+- **72 repos actifs** détectés depuis `known_repositories.yaml` (v2.0, 180 repos total)
+- **579 arêtes** (connexions inter-repos par strate L)
+- **Score d'émergence : 48.2%** — statut DORMANT (seuil BORN : 72%)
+- Distribution : L0(7) L1(6) L1b(4) L2_COMP(22) L2_RUN(1) L3_EMERG(21) L3_TOOLS(1) L4-TOOLS(4) L4_GOV(4) L5_COG(1) L5_META(1)
+
+### Bundle repomix
+- **Mono-repo** : 30 fichiers, 71K tokens — format XML validé
+- **Remote** : 27 fichiers, 68K tokens — mode `--remote gerivdb/repomix-fork` fonctionnel
+- **Config** : `repomix.config.json` créé (schema v1.0 repomix)
+- **Registry** : corrigé de `gerivdb/VERSUS/...` vers `gerivdb/VERSES/...`
