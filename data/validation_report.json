@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-11T00:05:32.965880",
+  "timestamp": "2026-06-11T01:41:15.652997",
   "guards": {
     "stdout": "GUARDS STRATUM_RELAY — OK (R1, R2, R3)",
     "returncode": 0
   },
   "scan": {
     "name": "gerivdb_ecosystem",
-    "score": 0.4821,
-    "status": "DORMANT",
+    "score": 0.8501,
+    "status": "MATURE",
     "nodes": 72,
-    "edges": 579,
+    "edges": 614,
     "eta_days": null,
     "seuil_magique": 0.72
   },
   "bundle": {
     "dry_run_ok": true,
-    "stdout": "Bundle: gerivdb/repomix-fork -> gerivdb__repomix-fork__20260611_0005.xml\n[DRY RUN] npx repomix --remote gerivdb/repomix-fork --output D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\data\\argus\\bundles\\gerivdb__repomix-fork__20260611_0005.xml --style xml --config D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\repomix.config.json"
+    "stdout": "Bundle: gerivdb/repomix-fork -> gerivdb__repomix-fork__20260611_0141.xml\n[DRY RUN] npx repomix --remote gerivdb/repomix-fork --output D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\data\\argus\\bundles\\gerivdb__repomix-fork__20260611_0141.xml --style xml --config D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\repomix.config.json"
   },
   "overall_ok": true,
   "secrets": {

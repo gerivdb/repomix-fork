@@ -1,0 +1,118 @@
+{
+  "version": "1.0",
+  "vague": 1,
+  "date": "2026-06-11",
+  "count": 10,
+  "parcelles": [
+    {
+      "repo_name": "GOVERNANCE-HUB",
+      "strate": "L0",
+      "arrondissement": "Hotel de Ville \u2014 Constitution",
+      "role_canonique": "Constitution, cadastre, registres",
+      "adresse": "GOVERNANCE-HUB/STRATUM_RELAY.md",
+      "connectivite": "DSL",
+      "zone": "zone_1",
+      "vague_courante": 1,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ECOYSTEM",
+      "strate": "L1",
+      "arrondissement": "Mairie centrale \u2014 SOT operationnel",
+      "role_canonique": "Source of truth operationnel ecosysteme",
+      "adresse": "ECOYSTEM/STRATUM_RELAY.md",
+      "connectivite": "DSL",
+      "zone": "zone_1",
+      "vague_courante": 1,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "BRAIN",
+      "strate": "L2",
+      "arrondissement": "Grandes Ecoles \u2014 Cognition",
+      "role_canonique": "Logique ternaire, cognition distribuee",
+      "adresse": "BRAIN/STRATUM_RELAY.md",
+      "connectivite": "DSL",
+      "zone": "zone_1",
+      "vague_courante": 1,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ECOS-CLI",
+      "strate": "L3",
+      "arrondissement": "Voiries \u2014 CLI executable",
+      "role_canonique": "Interface CLI ecosysteme",
+      "adresse": "ECOS-CLI/STRATUM_RELAY.md",
+      "connectivite": "DSL",
+      "zone": "zone_1",
+      "vague_courante": 1,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "repomix-fork",
+      "strate": "L3",
+      "arrondissement": "Voiries \u2014 Bundler souverain",
+      "role_canonique": "Bundler repomix fork, scan + verses + marketplace",
+      "adresse": "repomix-fork/STRATUM_RELAY.md",
+      "connectivite": "DSL",
+      "zone": "zone_1",
+      "vague_courante": 1,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "LLM-REPO",
+      "strate": "L1b",
+      "arrondissement": "Substrat cognitif LLM",
+      "role_canonique": "LLM_BOOT_PROTOCOL, regles comportement",
+      "adresse": "LLM-REPO/STRATUM_RELAY.md",
+      "connectivite": "DSL",
+      "zone": "zone_1",
+      "vague_courante": 1,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "NEXUS",
+      "strate": "L1",
+      "arrondissement": "Archives centrales \u2014 Aggregation data",
+      "role_canonique": "Aggregation cross-repo",
+      "adresse": "NEXUS/STRATUM_RELAY.md",
+      "connectivite": "DSL",
+      "zone": "zone_1",
+      "vague_courante": 1,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "FLUENCE",
+      "strate": "L2",
+      "arrondissement": "Grandes Ecoles \u2014 Logique",
+      "role_canonique": "Logique FLUENCE, calcul emergence",
+      "adresse": "FLUENCE/STRATUM_RELAY.md",
+      "connectivite": "DSL",
+      "zone": "zone_1",
+      "vague_courante": 1,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "VERSES",
+      "strate": "L8",
+      "arrondissement": "Culture \u2014 Verses ontologiques",
+      "role_canonique": "Registry des verses, UrbanVerse",
+      "adresse": "VERSES/STRATUM_RELAY.md",
+      "connectivite": "DSL",
+      "zone": "zone_1",
+      "vague_courante": 1,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "political_compass_verse",
+      "strate": "L5",
+      "arrondissement": "Meta \u2014 Gouvernance",
+      "role_canonique": "Boussole politique, scenarios",
+      "adresse": "political_compass_verse/STRATUM_RELAY.md",
+      "connectivite": "DSL",
+      "zone": "zone_1",
+      "vague_courante": 1,
+      "derniere_synchro": "2026-06-11"
+    }
+  ]
+}
