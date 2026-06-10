@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-06-11T01:16:31.783428",
+  "timestamp": "2026-06-11T01:41:15.652997",
   "guards": {
-    "stdout": "GUARDS STRATUM_RELAY — ECHEC:\n  [FAIL] R3: Artefacts detectes dans le staging: ['tests/integration-tests/fixtures/packager/outputs/simple-project-output.xml']",
-    "returncode": 1
+    "stdout": "GUARDS STRATUM_RELAY — OK (R1, R2, R3)",
+    "returncode": 0
   },
   "scan": {
     "name": "gerivdb_ecosystem",
@@ -15,9 +15,9 @@
   },
   "bundle": {
     "dry_run_ok": true,
-    "stdout": "Bundle: gerivdb/repomix-fork -> gerivdb__repomix-fork__20260611_0116.xml\n[DRY RUN] npx repomix --remote gerivdb/repomix-fork --output D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\data\\argus\\bundles\\gerivdb__repomix-fork__20260611_0116.xml --style xml --config D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\repomix.config.json"
+    "stdout": "Bundle: gerivdb/repomix-fork -> gerivdb__repomix-fork__20260611_0141.xml\n[DRY RUN] npx repomix --remote gerivdb/repomix-fork --output D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\data\\argus\\bundles\\gerivdb__repomix-fork__20260611_0141.xml --style xml --config D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\repomix.config.json"
   },
-  "overall_ok": false,
+  "overall_ok": true,
   "secrets": {
     "status": "scanned",
     "bundle": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\data\\argus\\bundles\\gerivdb__repomix-fork__20260610_2318.xml"
