@@ -1,3 +1,12 @@
+---
+id: PRD-003
+title: "URBAN ONTOLOGY VERSE (UrbanVerse) — Holographie Ontologique Métropole × Écosystème Gerivdb"
+repo: gerivdb/repomix-fork
+status: draft
+created: 2026-05-28
+author: gerivdb
+---
+
 # PRD — URBAN ONTOLOGY VERSE (UrbanVerse)
 ## Holographie Ontologique Métropole × Écosystème Gerivdb
 

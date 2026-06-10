@@ -1,3 +1,12 @@
+---
+id: PRD-002
+title: "Architecture Diamant pour l'Organisation des Verses"
+repo: gerivdb/repomix-fork
+status: draft
+created: 2026-05-07
+author: gerivdb
+---
+
 # PRD - Architecture Diamant pour l'Organisation des Verses
 
 **Version:** 1.1  

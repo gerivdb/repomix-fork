@@ -1,371 +1,435 @@
+#!/usr/bin/env python3
 """
-Verses Library - NEXUS Advanced Ecosystem
-Management system for quantum verses and creative content
+Verses Library Engine
+Programmatic access to ECOS Verses for automated governance
+
+IntentHash: 0xVERSES_LIBRARY_ENGINE_20260423
 """
 
 import json
 import os
-from typing import Dict, List, Any, Optional, Type
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+from dataclasses import dataclass
 from datetime import datetime
-from verses_creative_foundation import (
-    BaseQuantumVerse,
-    QuantumPoetryVerse,
-    AnticipatoryNarrativeVerse,
-    ArchitectureVerse,
-    DebugVerse,
-    TeamHarmonyVerse,
-    CodeEleganceVerse,
-    AlgorithmicSonnetVerse,
-    DatabaseSymphonyVerse,
-    APISerenadeVerse,
-    QuantumFractalVerse,
-    BlockchainBalladVerse,
-    MachineLearningOdeVerse,
-    CybersecuritySonataVerse,
-    DevOpsRhapsodyVerse,
-    QuantumEntanglementVerse,
-    DataVisualizationWaltzVerse,
-    CloudComputingConcertoVerse,
-    IoTIntermezzoVerse,
-    AugmentedRealityAriaVerse,
-    NaturalLanguageOperaVerse,
-    RoboticSymphonyVerse,
-    QuantumCryptographyCantataVerse,
-    SwarmIntelligenceChorusVerse,
-    VirtualRealityFantasiaVerse,
-    EdgeComputingEtudeVerse,
-    GeneticAlgorithmRondoVerse,
-    BlockchainConsensusCapriceVerse,
-    NeuralNetworkNocturneVerse,
-    ContainerOrchestrationOvertureVerse,
-    QuantumSupremacySonataVerse,
-    HumanComputerInteractionMinuetVerse,
-    BioinformaticsBalletVerse,
-    AutonomousSystemsSymphonyVerse,
-    DigitalTwinConcertoVerse,
-    EthicalAICantataVerse,
-    MetaverseOperaVerse,
-    SustainableTechSerenadeVerse,
-    CognitiveComputingChorusVerse,
-    VerseResult,
-    CreationContext,
-)
+
+
+@dataclass
+class Verse:
+    """Représentation programmatique d'un VERSE"""
+
+    id: str
+    name: str
+    domain: str
+    priority: str
+    status: str
+    core_principle: str
+    invariants: List[str]
+    forbidden_patterns: List[str]
+    required_patterns: List[str]
+    examples_compliant: List[str]
+    examples_violations: List[str]
+    enforcement_rules: Dict[str, Any]
+    created_at: datetime
+    updated_at: datetime
+
+    def is_active(self) -> bool:
+        """Vérifie si le VERSE est actif"""
+        return self.status == "ACTIVE"
+
+    def get_forbidden_patterns(self) -> List[str]:
+        """Retourne les patterns interdits"""
+        return self.forbidden_patterns
+
+    def get_required_patterns(self) -> List[str]:
+        """Retourne les patterns requis"""
+        return self.required_patterns
+
+    def validate_text(self, text: str) -> Dict[str, Any]:
+        """Valide un texte contre ce VERSE"""
+        violations = []
+        compliances = []
+
+        # Check forbidden patterns
+        for pattern in self.forbidden_patterns:
+            if pattern.lower() in text.lower():
+                violations.append({
+                    "type": "forbidden_pattern",
+                    "pattern": pattern,
+                    "message": f"Found forbidden pattern: {pattern}"
+                })
+
+        # Check required patterns
+        for pattern in self.required_patterns:
+            if pattern.lower() not in text.lower():
+                violations.append({
+                    "type": "missing_required",
+                    "pattern": pattern,
+                    "message": f"Missing required pattern: {pattern}"
+                })
+            else:
+                compliances.append(pattern)
+
+        return {
+            "verse_id": self.id,
+            "compliant": len(violations) == 0,
+            "violations": violations,
+            "compliances": compliances,
+            "score": len(compliances) / (len(self.required_patterns) + len(self.forbidden_patterns)) if (len(self.required_patterns) + len(self.forbidden_patterns)) > 0 else 0
+        }
 
 
 class VersesLibrary:
-    """Comprehensive library for managing quantum verses and creative content."""
+    """Bibliothèque centralisée des VERSES ECOS"""
 
-    def __init__(self, library_path: str = "verses_library.json"):
-        self.library_path = library_path
-        self.verses: Dict[
-            str, Dict[str, VerseResult]
-        ] = {}  # verse_type -> verse_id -> verse_result
-        self.verse_classes: Dict[str, Type[BaseQuantumVerse]] = {
-            "quantum_poetry": QuantumPoetryVerse,
-            "anticipatory_narrative": AnticipatoryNarrativeVerse,
-            "architecture_verse": ArchitectureVerse,
-            "debug_verse": DebugVerse,
-            "team_harmony": TeamHarmonyVerse,
-            "code_elegance": CodeEleganceVerse,
-            "algorithmic_sonnet": AlgorithmicSonnetVerse,
-            "database_symphony": DatabaseSymphonyVerse,
-            "api_serenade": APISerenadeVerse,
-            "quantum_fractal": QuantumFractalVerse,
-            "blockchain_ballad": BlockchainBalladVerse,
-            "ml_ode": MachineLearningOdeVerse,
-            "cybersecurity_sonata": CybersecuritySonataVerse,
-            "devops_rhapsody": DevOpsRhapsodyVerse,
-            "quantum_entanglement": QuantumEntanglementVerse,
-            "data_viz_waltz": DataVisualizationWaltzVerse,
-            "cloud_concerto": CloudComputingConcertoVerse,
-            "iot_intermezzo": IoTIntermezzoVerse,
-            "ar_aria": AugmentedRealityAriaVerse,
-            "nlp_opera": NaturalLanguageOperaVerse,
-            "robotic_symphony": RoboticSymphonyVerse,
-            "quantum_crypto_cantata": QuantumCryptographyCantataVerse,
-            "swarm_chorus": SwarmIntelligenceChorusVerse,
-            "vr_fantasia": VirtualRealityFantasiaVerse,
-            "edge_etude": EdgeComputingEtudeVerse,
-            "ga_rondo": GeneticAlgorithmRondoVerse,
-            "blockchain_caprice": BlockchainConsensusCapriceVerse,
-            "neural_nocturne": NeuralNetworkNocturneVerse,
-            "container_overture": ContainerOrchestrationOvertureVerse,
-            "quantum_supremacy_sonata": QuantumSupremacySonataVerse,
-            "hci_minuet": HumanComputerInteractionMinuetVerse,
-            "bioinformatics_ballet": BioinformaticsBalletVerse,
-            "autonomous_symphony": AutonomousSystemsSymphonyVerse,
-            "digital_twin_concerto": DigitalTwinConcertoVerse,
-            "ethical_ai_cantata": EthicalAICantataVerse,
-            "metaverse_opera": MetaverseOperaVerse,
-            "sustainable_tech_serenade": SustainableTechSerenadeVerse,
-            "cognitive_chorus": CognitiveComputingChorusVerse,
-        }
-        self._load_library()
+    def __init__(self, library_path: str = "verses"):
+        self.library_path = Path(library_path)
+        self.verses: Dict[str, Verse] = {}
+        self.load_verses()
 
-    def _load_library(self):
-        """Load verses library from persistent storage."""
-        if os.path.exists(self.library_path):
-            try:
-                with open(self.library_path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    for verse_type, verses in data.items():
-                        self.verses[verse_type] = {}
-                        for verse_id, verse_dict in verses.items():
-                            # Convert back to VerseResult
-                            self.verses[verse_type][verse_id] = VerseResult(
-                                **verse_dict
-                            )
-            except (json.JSONDecodeError, KeyError) as e:
-                print(
-                    f"Warning: Failed to load verses library: {e}. Starting with empty library."
-                )
-                self.verses = {}
+    def load_verses(self):
+        """Charge tous les VERSES depuis les fichiers"""
 
-    def _save_library(self):
-        """Save verses library to persistent storage."""
-        data = {}
-        for verse_type, verses in self.verses.items():
-            data[verse_type] = {}
-            for verse_id, verse_result in verses.items():
-                # Convert VerseResult to dict
-                data[verse_type][verse_id] = {
-                    "verse_content": verse_result.verse_content,
-                    "verse_type": verse_result.verse_type,
-                    "resonance_score": verse_result.resonance_score,
-                    "harmony_metrics": verse_result.harmony_metrics,
-                    "metadata": verse_result.metadata,
-                    "created_at": verse_result.created_at,
-                }
+        # Load from markdown files
+        if self.library_path.exists():
+            for md_file in self.library_path.glob("VERSE.*.md"):
+                verse = self._parse_verse_from_md(md_file)
+                if verse:
+                    self.verses[verse.id] = verse
 
-        with open(self.library_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
+        # Load from programmatic definitions
+        self._load_programmatic_verses()
 
-    def register_verse_type(self, verse_type: str, verse_class: Type[BaseQuantumVerse]):
-        """Register a new verse type."""
-        self.verse_classes[verse_type] = verse_class
-
-    async def create_verse(
-        self, verse_type: str, context: CreationContext, verse_id: Optional[str] = None
-    ) -> Optional[VerseResult]:
-        """Create a new verse and add it to the library."""
-        if verse_type not in self.verse_classes:
-            print(f"Unknown verse type: {verse_type}")
-            return None
-
-        if verse_id is None:
-            verse_id = f"{verse_type}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    def _parse_verse_from_md(self, file_path: Path) -> Optional[Verse]:
+        """Parse un VERSE depuis un fichier Markdown"""
 
         try:
-            verse_class = self.verse_classes[verse_type]
-            verse_instance = verse_class(f"test_{verse_type}")
+            content = file_path.read_text(encoding='utf-8')
+            lines = content.split('\n')
 
-            result = await verse_instance.compose_quantum_verse(context)
+            # Extract metadata from header
+            metadata = {}
+            in_header = False
+            for line in lines[:20]:  # Check first 20 lines
+                if line.startswith('**IntentHash:**'):
+                    metadata['intent_hash'] = line.split('`')[1] if '`' in line else line.split(':')[1].strip()
+                elif line.startswith('**Status:**'):
+                    status_line = line.split(':')[1].strip()
+                    metadata['status'] = status_line.split('|')[0].strip()
+                    metadata['priority'] = status_line.split('|')[1].split(':')[1].strip() if '|' in line else 'MEDIUM'
+                elif line.startswith('**Domain:**'):
+                    metadata['domain'] = line.split(':')[1].strip().split('|')[0].strip()
+                elif '**"' in line and '"' in line:
+                    metadata['core_principle'] = line.split('"')[1]
 
-            # Store in library
-            if verse_type not in self.verses:
-                self.verses[verse_type] = {}
+            # Extract verse ID from filename
+            verse_id = file_path.stem.replace('VERSE.', '')
 
-            self.verses[verse_type][verse_id] = result
-            self._save_library()
+            # Extract invariants and patterns
+            invariants = []
+            forbidden = []
+            required = []
+            examples_compliant = []
+            examples_violations = []
 
-            print(f"Created verse: {verse_id} ({verse_type})")
-            return result
+            current_section = None
+            for line in lines:
+                line = line.strip()
+                if line.startswith('### ') and 'Invariant' in line:
+                    current_section = 'invariants'
+                elif line.startswith('### ✅ ACCEPTABLE'):
+                    current_section = 'compliant'
+                elif line.startswith('### ❌ UNACCEPTABLE'):
+                    current_section = 'violations'
+                elif line.startswith('### Absolute Requirements') or line.startswith('### Invariants'):
+                    current_section = 'invariants'
+                elif line.startswith('- **') and current_section == 'invariants':
+                    invariants.append(line.replace('- **', '').replace('**', ''))
+                elif line.startswith('```') and current_section in ['compliant', 'violations']:
+                    # Extract code blocks
+                    pass  # Simplified parsing
+
+            # Create verse object
+            return Verse(
+                id=verse_id,
+                name=verse_id.replace('-', ' ').title(),
+                domain=metadata.get('domain', 'General'),
+                priority=metadata.get('priority', 'MEDIUM'),
+                status=metadata.get('status', 'ACTIVE'),
+                core_principle=metadata.get('core_principle', ''),
+                invariants=invariants,
+                forbidden_patterns=forbidden,
+                required_patterns=required,
+                examples_compliant=examples_compliant,
+                examples_violations=examples_violations,
+                enforcement_rules={},
+                created_at=datetime.now(),
+                updated_at=datetime.now()
+            )
 
         except Exception as e:
-            print(f"Failed to create verse: {e}")
+            print(f"Error parsing verse {file_path}: {e}")
             return None
 
-    def get_verse(self, verse_type: str, verse_id: str) -> Optional[VerseResult]:
-        """Retrieve a specific verse."""
-        if verse_type in self.verses and verse_id in self.verses[verse_type]:
-            return self.verses[verse_type][verse_id]
-        return None
+    def _load_programmatic_verses(self):
+        """Charge les VERSES définis programmatiquement"""
 
-    def search_verses(
-        self,
-        verse_type: Optional[str] = None,
-        min_resonance: float = 0.0,
-        tags: Optional[List[str]] = None,
-        content_query: Optional[str] = None,
-    ) -> List[VerseResult]:
-        """Search verses with various filters."""
-        results = []
+        # Sobriety-First Verse
+        if "sobriety-first" not in self.verses:
+            self.verses["sobriety-first"] = Verse(
+                id="sobriety-first",
+                name="Sobriety First",
+                domain="Documentation Ethics",
+                priority="CRITICAL",
+                status="ACTIVE",
+                core_principle="Ce qui n'est pas mesuré objectivement n'existe pas. Ce qui n'est pas démontré empiriquement n'est pas vrai.",
+                invariants=[
+                    "No Surpromising - Every claim must be backed by measurable evidence",
+                    "No Bullshit-Talk - Avoid hyperbolic language that cannot be verified",
+                    "Measurable Claims Only - All benefits must have quantitative metrics",
+                    "Source Citations - Every technical fact must reference official sources",
+                    "Limitation Disclosure - Explicitly state what is NOT implemented"
+                ],
+                forbidden_patterns=[
+                    "toujours", "jamais", "impossible", "parfait", "best", "worst", "ultimate", "supreme",
+                    "definitively", "absolutely", "certainly", "quantum supremacy", "infinite", "eternal",
+                    "zero hardware dependency", "transcending physical limitations"
+                ],
+                required_patterns=[
+                    "Établi", "Visé", "Limites", "sobriety-first, rigor-writing"
+                ],
+                examples_compliant=[
+                    "Hardware Detection: < 50ms (measured on Quadro 4000)",
+                    "GPUCache Corruption: Reduced by 90% (7-day stability test)"
+                ],
+                examples_violations=[
+                    "Quantum Supremacy Graphics Breakthrough",
+                    "6,250,000 FPS Performance",
+                    "Zero Hardware Dependency Rendering"
+                ],
+                enforcement_rules={
+                    "block_on_violation": True,
+                    "auto_correct": True,
+                    "require_review": True
+                },
+                created_at=datetime(2026, 4, 23),
+                updated_at=datetime(2026, 4, 23)
+            )
 
-        search_space = self.verses.items()
-        if verse_type:
-            if verse_type in self.verses:
-                search_space = [(verse_type, self.verses[verse_type])]
-            else:
-                return []
+        # Rigor-Writing Verse
+        if "rigor-writing" not in self.verses:
+            self.verses["rigor-writing"] = Verse(
+                id="rigor-writing",
+                name="Rigor Writing",
+                domain="Documentation Structure",
+                priority="HIGH",
+                status="ACTIVE",
+                core_principle="La structure rigoureuse révèle la pensée rigoureuse",
+                invariants=[
+                    "Établi/Visé/Limites structure obligatoire",
+                    "Une affirmation = une preuve",
+                    "Contexte obligatoire (Qui/Quoi/Quand/Où)",
+                    "Limites explicitement documentées"
+                ],
+                forbidden_patterns=[
+                    "sans précision", "approximativement", "environ", "probablement"
+                ],
+                required_patterns=[
+                    "## Établi", "## Visé", "## Limites", "T0", "T1", "T2"
+                ],
+                examples_compliant=[
+                    "## Établi\n- Fonction X implémentée (commit abc123)",
+                    "## Limites\n- Ne fonctionne pas sous Windows XP"
+                ],
+                examples_violations=[
+                    "Fonctionne bien",
+                    "Performant"
+                ],
+                enforcement_rules={
+                    "require_structure": True,
+                    "validate_evidence": True,
+                    "block_incomplete": True
+                },
+                created_at=datetime(2026, 4, 23),
+                updated_at=datetime(2026, 4, 23)
+            )
 
-        for v_type, verses in search_space:
-            for verse_id, verse_result in verses.items():
-                # Filter by resonance
-                if verse_result.resonance_score < min_resonance:
-                    continue
+    def get_verse(self, verse_id: str) -> Optional[Verse]:
+        """Récupère un VERSE par ID"""
+        return self.verses.get(verse_id)
 
-                # Filter by tags
-                if tags:
-                    verse_tags = verse_result.metadata.get("tags", [])
-                    if not any(tag in verse_tags for tag in tags):
-                        continue
+    def get_verses_by_domain(self, domain: str) -> List[Verse]:
+        """Récupère les VERSES par domaine"""
+        return [v for v in self.verses.values() if v.domain == domain]
 
-                # Filter by content
-                if content_query:
-                    if content_query.lower() not in verse_result.verse_content.lower():
-                        continue
+    def get_active_verses(self) -> List[Verse]:
+        """Récupère les VERSES actifs"""
+        return [v for v in self.verses.values() if v.is_active()]
 
-                results.append(verse_result)
+    def validate_text_against_verses(self, text: str, verse_ids: Optional[List[str]] = None) -> Dict[str, Any]:
+        """Valide un texte contre plusieurs VERSES"""
 
-        return results
+        if verse_ids is None:
+            verses_to_check = self.get_active_verses()
+        else:
+            verses_to_check = [self.get_verse(vid) for vid in verse_ids if self.get_verse(vid)]
+
+        results = {}
+        overall_score = 0
+        total_violations = 0
+
+        for verse in verses_to_check:
+            validation = verse.validate_text(text)
+            results[verse.id] = validation
+            overall_score += validation['score']
+            total_violations += len(validation['violations'])
+
+        overall_score = overall_score / len(verses_to_check) if verses_to_check else 0
+
+        return {
+            "overall_compliant": total_violations == 0,
+            "overall_score": overall_score,
+            "total_violations": total_violations,
+            "verse_results": results,
+            "recommendations": self._generate_recommendations(results)
+        }
+
+    def _generate_recommendations(self, results: Dict[str, Dict]) -> List[str]:
+        """Génère des recommandations basées sur les résultats"""
+
+        recommendations = []
+
+        for verse_id, result in results.items():
+            if not result['compliant']:
+                verse = self.get_verse(verse_id)
+                if verse:
+                    if result['violations']:
+                        recommendations.append(f"Fix {len(result['violations'])} violations in {verse.name}")
+                    if not result['compliances']:
+                        recommendations.append(f"Add required patterns for {verse.name}")
+
+        return recommendations
+
+    def get_applicable_verses(self, document_type: str, content: str = "") -> List[Verse]:
+        """Détermine les VERSES applicables selon le type de document"""
+
+        applicable = []
+
+        # Domain-based selection
+        if document_type in ["epic", "prd", "brain-doc"]:
+            applicable.extend(self.get_verses_by_domain("Documentation Ethics"))
+            applicable.extend(self.get_verses_by_domain("Documentation Structure"))
+
+        elif document_type in ["incident", "forensic", "crash"]:
+            applicable.extend(self.get_verses_by_domain("Hardware Analysis"))
+
+        elif document_type in ["performance", "benchmark"]:
+            applicable.extend(self.get_verses_by_domain("Documentation Ethics"))
+
+        # Content-based hints (simplified)
+        if content:
+            content_lower = content.lower()
+            if any(word in content_lower for word in ["gpu", "hardware", "driver", "crash"]):
+                applicable.extend([v for v in self.get_active_verses() if "hardware" in v.domain.lower()])
+
+        # Remove duplicates
+        seen_ids = set()
+        unique_applicable = []
+        for verse in applicable:
+            if verse.id not in seen_ids:
+                unique_applicable.append(verse)
+                seen_ids.add(verse.id)
+
+        return unique_applicable
+
+    def apply_verse_corrections(self, text: str, verse_ids: Optional[List[str]] = None) -> str:
+        """Applique des corrections automatiques basées sur les VERSES"""
+
+        if verse_ids is None:
+            verses_to_apply = self.get_active_verses()
+        else:
+            verses_to_apply = [self.get_verse(vid) for vid in verse_ids if self.get_verse(vid)]
+
+        corrected_text = text
+
+        for verse in verses_to_apply:
+            if verse.id == "sobriety-first":
+                # Add VERSES citation if missing
+                citation = "**VERSES:** sobriety-first, rigor-writing"
+                if citation not in corrected_text:
+                    # Add after frontmatter or at top
+                    lines = corrected_text.split('\n')
+                    insert_pos = 0
+
+                    # Skip frontmatter
+                    if lines and lines[0].startswith('---'):
+                        for i, line in enumerate(lines[1:], 1):
+                            if line.startswith('---'):
+                                insert_pos = i + 1
+                                break
+
+                    lines.insert(insert_pos, citation)
+                    lines.insert(insert_pos + 1, "")
+                    corrected_text = '\n'.join(lines)
+
+            elif verse.id == "rigor-writing":
+                # Add basic structure if missing
+                if "## Établi" not in corrected_text:
+                    corrected_text += "\n\n## Établi\nTODO: Add established facts\n"
+                if "## Visé" not in corrected_text:
+                    corrected_text += "\n## Visé\nTODO: Add objectives\n"
+                if "## Limites" not in corrected_text:
+                    corrected_text += "\n## Limites\nTODO: Add limitations\n"
+
+        return corrected_text
+
+    def export_verses_to_json(self, output_path: str):
+        """Exporte la bibliothèque vers JSON"""
+
+        verses_data = {
+            "exported_at": datetime.now().isoformat(),
+            "version": "1.0.0",
+            "verses": {}
+        }
+
+        for verse_id, verse in self.verses.items():
+            verses_data["verses"][verse_id] = {
+                "id": verse.id,
+                "name": verse.name,
+                "domain": verse.domain,
+                "priority": verse.priority,
+                "status": verse.status,
+                "core_principle": verse.core_principle,
+                "invariants": verse.invariants,
+                "forbidden_patterns": verse.forbidden_patterns,
+                "required_patterns": verse.required_patterns,
+                "examples_compliant": verse.examples_compliant,
+                "examples_violations": verse.examples_violations,
+                "enforcement_rules": verse.enforcement_rules,
+                "created_at": verse.created_at.isoformat(),
+                "updated_at": verse.updated_at.isoformat()
+            }
+
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(verses_data, f, indent=2, ensure_ascii=False)
 
     def get_verse_statistics(self) -> Dict[str, Any]:
-        """Get comprehensive statistics about the verses library."""
-        total_verses = sum(len(verses) for verses in self.verses.values())
-        verse_types = list(self.verses.keys())
+        """Retourne des statistiques sur les VERSES"""
 
-        type_distribution = {}
-        resonance_scores = []
-        creation_dates = []
+        total_verses = len(self.verses)
+        active_verses = len(self.get_active_verses())
+        domains = {}
+        priorities = {}
 
-        for verse_type, verses in self.verses.items():
-            type_distribution[verse_type] = len(verses)
-
-            for verse_result in verses.values():
-                resonance_scores.append(verse_result.resonance_score)
-                if verse_result.created_at:
-                    try:
-                        creation_dates.append(
-                            datetime.fromisoformat(verse_result.created_at)
-                        )
-                    except ValueError:
-                        pass
-
-        avg_resonance = (
-            sum(resonance_scores) / len(resonance_scores) if resonance_scores else 0
-        )
-
-        # Calculate creation frequency
-        if creation_dates:
-            creation_dates.sort()
-            if len(creation_dates) > 1:
-                time_span = (creation_dates[-1] - creation_dates[0]).total_seconds()
-                creation_frequency = (
-                    len(creation_dates) / (time_span / 86400) if time_span > 0 else 0
-                )
-            else:
-                creation_frequency = 0
-        else:
-            creation_frequency = 0
+        for verse in self.verses.values():
+            domains[verse.domain] = domains.get(verse.domain, 0) + 1
+            priorities[verse.priority] = priorities.get(verse.priority, 0) + 1
 
         return {
             "total_verses": total_verses,
-            "verse_types": verse_types,
-            "type_distribution": type_distribution,
-            "average_resonance": avg_resonance,
-            "creation_frequency_per_day": creation_frequency,
-            "library_health": self._assess_library_health(),
+            "active_verses": active_verses,
+            "inactive_verses": total_verses - active_verses,
+            "domains": domains,
+            "priorities": priorities,
+            "verses_list": list(self.verses.keys())
         }
-
-    def _assess_library_health(self) -> str:
-        """Assess the overall health of the verses library."""
-        if not self.verses:
-            return "empty"
-
-        total_verses = sum(len(verses) for verses in self.verses.values())
-
-        if total_verses < 5:
-            return "developing"
-        elif total_verses < 20:
-            return "growing"
-        else:
-            return "mature"
-
-    def export_verses(self, file_path: str, verse_type: Optional[str] = None):
-        """Export verses to a JSON file."""
-        export_data = {}
-
-        if verse_type:
-            if verse_type in self.verses:
-                export_data[verse_type] = {}
-                for verse_id, verse_result in self.verses[verse_type].items():
-                    export_data[verse_type][verse_id] = {
-                        "content": verse_result.verse_content,
-                        "resonance": verse_result.resonance_score,
-                        "metadata": verse_result.metadata,
-                    }
-        else:
-            # Export all
-            for v_type, verses in self.verses.items():
-                export_data[v_type] = {}
-                for verse_id, verse_result in verses.items():
-                    export_data[v_type][verse_id] = {
-                        "content": verse_result.verse_content,
-                        "resonance": verse_result.resonance_score,
-                        "metadata": verse_result.metadata,
-                    }
-
-        with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(export_data, f, indent=2, ensure_ascii=False)
-
-    def import_verses(self, file_path: str):
-        """Import verses from a JSON file."""
-        with open(file_path, "r", encoding="utf-8") as f:
-            import_data = json.load(f)
-
-        for verse_type, verses in import_data.items():
-            if verse_type not in self.verses:
-                self.verses[verse_type] = {}
-
-            for verse_id, verse_data in verses.items():
-                # Create VerseResult from imported data
-                verse_result = VerseResult(
-                    verse_content=verse_data["content"],
-                    verse_type=verse_type,
-                    resonance_score=verse_data["resonance"],
-                    harmony_metrics={},  # Not preserved in export
-                    metadata=verse_data["metadata"],
-                )
-
-                self.verses[verse_type][verse_id] = verse_result
-
-        self._save_library()
-
-    def cleanup_old_verses(self, days_old: int = 30, min_resonance: float = 0.3):
-        """Clean up old or low-resonance verses."""
-        cutoff_date = datetime.now().timestamp() - (days_old * 24 * 60 * 60)
-
-        removed_count = 0
-
-        for verse_type in list(self.verses.keys()):
-            for verse_id in list(self.verses[verse_type].keys()):
-                verse_result = self.verses[verse_type][verse_id]
-
-                # Remove if too old and low resonance
-                should_remove = False
-
-                if verse_result.created_at:
-                    try:
-                        created_timestamp = datetime.fromisoformat(
-                            verse_result.created_at
-                        ).timestamp()
-                        if (
-                            created_timestamp < cutoff_date
-                            and verse_result.resonance_score < min_resonance
-                        ):
-                            should_remove = True
-                    except ValueError:
-                        pass
-
-                if should_remove:
-                    del self.verses[verse_type][verse_id]
-                    removed_count += 1
-
-        if removed_count > 0:
-            self._save_library()
-
-        return removed_count
-
-
-# Global verses library instance
-verses_library = VersesLibrary()
