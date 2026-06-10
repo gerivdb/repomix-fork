@@ -1,15 +1,12 @@
-"""repomix — neuro-symbolic verse engine."""
+"""repomix — neuro-symbolic verse engine (UrbanVerse fork)."""
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 
 from repomix.verse_detector import UniversalVerseDetector, VERSE_DETECTOR, VerseStatus, VerseObservation
-from repomix.verses_library import VersesLibrary, verses_library
 
 __all__ = [
     "UniversalVerseDetector",
     "VERSE_DETECTOR",
     "VerseStatus",
     "VerseObservation",
-    "VersesLibrary",
-    "verses_library",
 ]

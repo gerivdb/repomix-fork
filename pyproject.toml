@@ -3,14 +3,19 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.backends.legacy:build"
 
 [project]
-name = "repomix"
-version = "0.1.0"
-description = "Neuro-symbolic verse engine — repomix-fork"
+name = "gerivdb-repomix"
+version = "1.0.0"
+description = "Repomix fork UrbanVerse — bundler souverain + verse_detector + corpus pipeline"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-authors = [
-  { name = "gerivdb" }
+authors = [{ name = "gerivdb" }]
+keywords = ["repomix", "urbanverse", "llm", "bundler", "verse-detector"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Libraries",
 ]
 dependencies = [
     "numpy>=1.24.0",
@@ -27,7 +32,26 @@ dev = [
     "pytest-cov>=4.1.0",
     "coverage>=7.3.0",
     "ruff>=0.1.0",
+    "build>=1.0.0",
+    "twine>=5.0.0",
 ]
+
+[project.scripts]
+repomix-scan     = "repomix.__main__:cli_main"
+repomix-bundle   = "repomix.__main__:bundle_main"
+repomix-corpus   = "repomix.__main__:corpus_main"
+repomix-recall   = "repomix.__main__:recall_main"
+repomix-validate = "repomix.__main__:validate_main"
+repomix-secrets  = "repomix.__main__:secrets_main"
+repomix-graph    = "repomix.__main__:graph_main"
+
+[project.urls]
+Homepage     = "https://github.com/gerivdb/repomix-fork"
+Repository   = "https://github.com/gerivdb/repomix-fork"
+"Upstream fork" = "https://github.com/yamadashy/repomix"
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -42,7 +66,7 @@ relative_files = true
 omit = ["tests/*", "*/__pycache__/*"]
 
 [tool.coverage.report]
-fail_under = 0
+fail_under = 60
 show_missing = true
 
 [tool.ruff]
