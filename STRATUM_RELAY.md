@@ -1,22 +1,23 @@
 # STRATUM RELAY — REPOMIX (L4-TOOLS)
 
-**VAGUE**: 4 | **Synchro**: 2026-05-30 | **Hub**: gerivdb/LLM-REPO
+**VAGUE**: 6 | **Synchro**: 2026-06-11 | **Hub**: gerivdb/LLM-REPO
 
 ---
 
 ## Identite stratique
 
 - **Strate** : `L4` — Outils transverses
-- **Role canonique** : Bundler souverain de codebase → format LLM-optimisé (XML/MD/texte). Fork de yamadashy/repomix v1.14.1 avec customisations UrbanVerse.
+- **Role canonique** : Bundler souverain de codebase → format LLM-optimise (XML/MD/texte). Fork de yamadashy/repomix v1.14.1 avec customisations UrbanVerse.
 - **Parent** : L3 (ECOS-CLI)
 - **Fork source** : yamadashy/repomix (upstream)
 
 ## Navigation rapide
 
 - Substrat cognitif : `gerivdb/LLM-REPO` (L1b)
-- UrbanVerse : `gerivdb/VERSUS` (L8 — cadastre + manifest)
-- Outil compagnon : `gerivdb/VERSUS/urban_ontology_verse/TOOLS/recall_coherence_check.py` v3.0
-- Config UrbanVerse : `repomix-verse.yaml`
+- UrbanVerse : `gerivdb/VERSES` (L3 — SOT migre depuis VERSUS 2026-06-09)
+- Outil compagnon : `src/repomix/tools/recall_coherence_check.py` v3.1 (mode --repomix)
+- Config bundler : `repomix.config.json`
+- Config ecosysteme : `repomix-verse.yaml`
 
 ## Regles locales
 
@@ -28,7 +29,7 @@
 
 ## Dependances directes
 
-**Parents (amont)** : L3 ECOS-CLI, L8 VERSUS
+**Parents (amont)** : L3 ECOS-CLI, L3 VERSES
 **Enfants (aval)** : Aucun (feuille L4)
 
 ## Agents locaux (Vague 4)
@@ -42,7 +43,7 @@ rules: src/relay_pack_rules.md
 hub_ref: gerivdb/ECOS-CLI
 ```
 
-## Auto-conformite (Vague 4)
+## Auto-conformite
 
 - Guard 1 : Aucune logique metier dans REPOMIX
 - Guard 2 : Tout package Stratum Relay doit passer la validation YAML
@@ -50,35 +51,39 @@ hub_ref: gerivdb/ECOS-CLI
 - Guard 4 : Les metadonnees UrbanVerse sont injectees dans l'en-tete XML
 - Guard 5 : Le mode `--ecosystem` reference `relay_wave_manifest.yaml`
 
-## Apports ecosysteme (Intent)
+## Apports ecosysteme
 
-| ID | Beneficiaire | Apport |
-|----|-------------|--------|
-| A1 | ARGUS | Bundle unique par repo → scan 7 pathologies sans dependance reseau |
-| A2 | recall_coherence_check.py | Mode `--repomix` (exhaustivite) complement de `--opensrc` (vitesse) |
-| A3 | CodeDB-E5620 / LYCOS | Corpus d'indexation en 1 commande → ingestion directe FLUENCE |
-| A4 | LLM-REPO/TRAINING/ | Packs de recall auto-generes, reproductibles, versionnes |
-| A5 | ECOS-CLI | Commande `ecos bundle <repo>` wrappant repomix |
-| A6 | IRIS | Canal repomix en complement d'opensrc pour repos tiers upstream |
-| A7 | GeriCode/KiloCode | Metadonnees UrbanVerse dans XML → contexte ecosysteme natif |
-| A8 | ECOS-VISION | Bundle XML → parse structure → graphes dependances inter-repo |
-| A9 | DATA-MINER | Mining sur bundle complet sans git clone de 76 repos |
-| A10 | TOPOS/Riddler | Scan secrets/credentials sur fichier unique |
+| ID | Beneficiaire | Apport | Statut |
+|----|-------------|--------|--------|
+| A1 | ARGUS | Bundle unique par repo → scan 7 pathologies sans dependance reseau | Vague 5 |
+| A2 | recall_coherence_check.py | Mode `--repomix` (exhaustivite) complement de `--opensrc` (vitesse) | Vague 5 |
+| A3 | CodeDB-E5620 / LYCOS | Corpus d'indexation en 1 commande → ingestion directe FLUENCE | Vague 6 |
+| A4 | LLM-REPO/TRAINING/ | Packs de recall auto-generes, reproductibles, versionnes | Vague 6 |
+| A5 | ECOS-CLI | Commande `ecos bundle <repo>` wrappant repomix | Vague 6 (spec) |
+| A6 | IRIS | Canal repomix en complement d'opensrc pour repos tiers upstream | Vague 7 |
+| A7 | GeriCode/KiloCode | Metadonnees UrbanVerse dans XML → contexte ecosysteme natif | Passif |
+| A8 | ECOS-VISION | Bundle XML → parse structure → graphes dependances inter-repo | Vague 6 |
+| A9 | DATA-MINER | Mining sur bundle complet sans git clone de 76 repos | Vague 6 |
+| A10 | TOPOS/Riddler | Scan secrets/credentials sur fichier unique | Vague 6 |
 
 ## Customisations fork (vs upstream yamadashy/repomix v1.14.1)
 
 1. Metadonnees UrbanVerse en XML (strate, layer, phi_cps, intent_hash, vague_deployee)
 2. Mode `--ecosystem` : bundle multi-repo (79 repos → 1 XML structure)
-3. Integration register-repo.py : enregistrement automatique à la création
-4. Output path par défaut : `D:\DO\WEB\TOOLS\L4-TOOLS\repomix\`
+3. Integration register-repo.py : enregistrement automatique a la creation
+4. Output path par defaut : `D:\DO\WEB\TOOLS\L4-TOOLS\repomix\`
 5. 10 apports ecosysteme (A1→A10) documentes ci-dessus
+6. CI/CD local (pre-push hook Python, validate_all.py)
+7. Tests unitaires (28 tests, src/repomix/adapters + verse_detector)
 
 ## Vague de mise a jour
 
 | Vague | Contenu | Statut |
 |-------|---------|--------|
-| **4 (courante)** | Fork + metadonnees XML + mode ecosystem + agents + auto-conformite | Deploye |
-| 5 (suivante) | Packaging npm/pypi, CI/CD pipeline, tests UrbanVerse | Planifie |
+| 4 | Fork + metadonnees XML + mode ecosystem + agents + auto-conformite | Deploye |
+| 5 | CI/CD local + tests UrbanVerse + A1 ARGUS + A2 recall | Deploye |
+| 6 | A3→A10 cables, docs ECOS-CLI, scan secrets, STRATUM_RELAY v6 | Deploye |
+| 7 | Packaging pypi, upstream sync yamadashy/repomix, score emergence > 72% (BORN) | Planifie |
 
 ---
 
