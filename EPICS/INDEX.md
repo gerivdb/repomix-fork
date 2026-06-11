@@ -1,6 +1,6 @@
 # INDEX — EPICs repomix-fork
 
-**Dernière mise à jour** : 2026-06-11
+**Dernière mise à jour** : 2026-06-11 — Vague 15 : tous les EPICs 01→11 déployés
 
 | EPIC | Titre | PRD parent | Priorité | Statut | Dépendances |
 |------|-------|-----------|----------|--------|-------------|

@@ -7,7 +7,7 @@
 **PRD parent** : `PRD/PRD-011-marketplace-pypi.md`
 **Version** : 1.0.0
 **Date** : 2026-06-11
-**Statut** : 🔵 PLANIFIÉ
+**Statut** : DEPLOYE (Vague 13)
 **Priorité** : P2 — Dépend EPIC-07, EPIC-08
 
 ---

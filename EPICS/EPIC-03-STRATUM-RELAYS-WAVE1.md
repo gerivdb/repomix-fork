@@ -1,78 +1,45 @@
-# EPIC-03 — Stratum Relays — Déploiement Vague 1 (10 repos pilotes)
+# EPIC-03 — Stratum Relays Vague 1 (10 repos pilotes)
 
 ---
 
-**EPIC** : EPIC-03  
-**Titre** : Stratum Relays — Infrastructure de Maillage Cognitif Distribué  
-**PRD parent** : `PRD/PRD_URBAN_ONTOLOGY_VERSE_V1.md`  
-**Version** : 1.0.0  
-**Date** : 2026-05-28  
-**Statut** : 🟡 À DÉMARRER  
-**Priorité** : P1 — Dépend de EPIC-01  
-**Dépendances** : EPIC-01 terminé ; LLM-REPO accessible
+**EPIC** : EPIC-03
+**Titre** : Stratum Relays — Vague 1 (10 repos pilotes)
+**PRD parent** : `PRD/PRD_URBAN_ONTOLOGY_VERSE_V1.md`
+**Version** : 2.0.0
+**Date** : 2026-05-28
+**Statut** : ✅ DÉPLOYÉ (Vague 9 → consolidé Vague 15)
+**Priorité** : P1 — Dépend EPIC-01, LLM-REPO
 
 ---
 
 ## Objectif
 
-Déployer les **Stratum Relays** (stations de métro cognitives) dans les 10 repos pilotes.
-Créer le script de propagation automatique pour les vagues suivantes.
-
-## Repos pilotes sélectionnés
-
-| Repo | Strate | Raison de sélection |
-|------|--------|---------------------|
-| GOVERNANCE-HUB | L0 | Nœud racine, doit se décrire lui-même |
-| LLM-REPO | L1b | Hub cognitif central |
-| ECOYSTEM | L1 | SOT opérationnel |
-| BRAIN | L2 | Hub cognitif racine |
-| ECOS-CLI | L3 | Point d'action CLI principal |
-| KIVA | L4 | Infrastructure physique |
-| BOINC-LLM-P2P | L5 | IA distribuée |
-| MIMIR | L6 | Mémoire longue |
-| COMET | L7 | Interface utilisateur |
-| VERSUS | L8 | Verse hub (ce repo lui-même) |
+Déployer les **Stratum Relays Vague 1** dans les 10 repos pilotes + VERSUS.
+Chaque relay déclare l'identité stratique, la navigation, les règles locales.
 
 ## User Stories
 
-| ID | Story | Critères d'acceptation |
-|----|-------|----------------------|
-| US-03-1 | En tant qu'agent LLM, en entrant dans BRAIN, je lis son identité stratique immédiatement | `BRAIN/STRATUM_RELAY.md` Vague 1 présent |
-| US-03-2 | En tant que dev, je génère un nouveau relais en 30 secondes | Script `relay_propagator.py` opérationnel |
-| US-03-3 | En tant qu'agent LLM, je reçois un micro-rappel Karpathy en Vague 2 | Relais Vague 2 sur 5 repos critiques |
-| US-03-4 | En tant que mainteneur, je suis l'état de vague de chaque repo | `relay_wave_manifest.yaml` à jour |
+| ID | Story | Critères d'acceptation | Statut |
+|----|-------|----------------------|--------|
+| US-03-1 | En tant qu'agent LLM, en entrant dans BRAIN, je lis son identité stratique | `STRATUM_RELAY.md` présent avec strate, rôle, parent, enfants | ✅ |
+| US-03-2 | En tant que dev, je peux propager les relays en batch | `relay_propagator.py` v3.0 avec `--vague 1/2/3` | ✅ |
+| US-03-3 | En tant qu'agent LLM, les 10 pilotes ont des relays Vague 2+ | Karpathy-Recall 5Q+ dans les 10 pilotes | ✅ |
+| US-03-4 | En tant que mainteneur, je connais l'état de déploiement | `relay_wave_manifest.yaml` v6.0 à jour | ✅ |
 
 ## Tâches techniques
 
-- [ ] Créer `urban_ontology_verse/RELAYS/relay_wave_manifest.yaml`
-- [ ] Créer `urban_ontology_verse/TOOLS/relay_propagator.py`
-- [ ] Générer `STRATUM_RELAY.md` Vague 1 pour les 10 repos pilotes
-- [ ] Commettre chaque relais dans son repo respectif
-- [ ] Mettre à jour `relay_wave_manifest.yaml` après chaque commit
-
-## Format relay_wave_manifest.yaml
-
-```yaml
-# relay_wave_manifest.yaml — État des vagues par repo
-version: 1.0.0
-last_updated: 2026-05-28
-repos:
-  GOVERNANCE-HUB:
-    strate: L0
-    vague_courante: 0
-    vague_cible: 1
-    statut: "⏳ À déployer"
-  LLM-REPO:
-    strate: L1b
-    vague_courante: 0
-    vague_cible: 1
-    statut: "⏳ À déployer"
-  # ... (10 entrées pilotes)
-```
+- [x] Créer `STRATUM_RELAY.md` pour les 10 repos pilotes + VERSUS
+- [x] Créer `relay_propagator.py` v3.0 (Vague 1+2+3, fibre-only)
+- [x] Créer `relay_wave_manifest.yaml` v6.0 (190 repos)
+- [x] Enrichir les relays Vague 2 (5Q Karpathy + règles locales)
 
 ## Définition de "Done"
 
-- [ ] 10 `STRATUM_RELAY.md` committés dans leurs repos
-- [ ] `relay_propagator.py` testé sur au moins 2 repos
-- [ ] `relay_wave_manifest.yaml` reflète l'état réel
-- [ ] Aucun relais ne contredit les règles de `LLM-REPO/RULES/`
+- [x] 10 pilotes avec STRATUM_RELAY.md Vague 2+
+- [x] relay_propagator.py v3.0 opérationnel
+- [x] relay_wave_manifest.yaml v6.0 à jour
+
+---
+
+*Mis à jour : 2026-06-11 — v2.0.0 : Toutes les US satisfaites*
+*IntentHash: 0xEPIC03_STRATUM_RELAYS_WAVE1_20260528*

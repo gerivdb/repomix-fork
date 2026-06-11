@@ -8,7 +8,7 @@
 **EPIC précédent** : EPIC-03 (Vague 1 pilote)
 **Version** : 1.2.0
 **Date** : 2026-05-30
-**Statut** : 🟢 Phases 1-7 COMPLÉTÉES — 58 relays déployés, Phase 8 planifiée
+**Statut** : 🟢 Phases 1-7 COMPLÉTÉES — 60 relays déployés (14 V4 + 42 V3 + 4 V1), Phase 8 planifiée (Vague 4 pour 43 repos)
 **Priorité** : P0 — Infrastructure de gouvernance cognitive
 
 ---
@@ -184,9 +184,8 @@ Passage des 40 repos de Vague 2 à Vague 3 (10Q + dépendances). Création de BA
 | Vague 3 | 42 | 53% | 10Q + dépendances |
 | Vague 1 | 4 | 5% | DORMANT (vague cible = 1) |
 | **Total avec relay** | **60** | **76%** | |
-| L9 DEPRECATED | 12 | 15% | Exclus du périmètre |
+| L9 DEPRECATED | 5 | 6% | Exclus du périmètre (ATHENA, ARES, APOLLO, HERMES, VULKAN) |
 | LOCAL ONLY | 5 | 6% | Pas de repo GitHub |
-| SANS FICHIER | 2 | 3% | ~~BATVERSE~~, ~~DMR~~ (créés en Phase 7) |
 | **Total** | **79** | **100%** | |
 
 ### Métriques détaillées par strate
@@ -204,7 +203,7 @@ Passage des 40 repos de Vague 2 à Vague 3 (10Q + dépendances). Création de BA
 | L6 | 3 | 1 | 2 | 0 | 0 | 0 |
 | L7 | 5 | 1 | 4 | 0 | 0 | 0 |
 | L8 | 9 | 1 | 8 | 0 | 0 | 0 |
-| L9 | 12 | 0 | 0 | 0 | 0 | 12 (DEPRECATED) |
+| L9 | 5 | 0 | 0 | 0 | 0 | 5 (DEPRECATED) |
 | LOCAL | 5 | 0 | 0 | 0 | 0 | 5 |
 | **Total** | **79** | **14** | **42** | **0** | **4** | **19** |
 

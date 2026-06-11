@@ -7,7 +7,7 @@
 **PRD parent** : `PRD/PRD-010-urbanverse-vague-2-3.md`
 **Version** : 1.0.0
 **Date** : 2026-06-11
-**Statut** : 🟡 À DÉMARRER
+**Statut** : DEPLOYE (Vague 12)
 **Priorité** : P1 — Dépend EPIC-07 (cadastre 190 repos)
 
 ---
