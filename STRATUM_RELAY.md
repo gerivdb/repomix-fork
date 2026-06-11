@@ -90,6 +90,7 @@ hub_ref: gerivdb/ECOS-CLI
 | 11 | PRD-007+008 : Ecosystem 190 repos + cli_contract A5 + bundle_corpus v2 | Deploye |
 | 12 | PRD-009+010 : mine_bundle v2 + A7 tests + relay Vague 2+3 + cadastre 190 | Deploye |
 | 13 | PRD-011 : Marketplace sync bidirectionnelle + publication PyPI + CHANGELOG v1.0.0 | Deploye |
+| 14 | EPIC-04 : Karpathy Recall v4 + transit_map v2 (12 arrets M1) + recall_coherence_check v4 | Deploye |
 
 ---
 

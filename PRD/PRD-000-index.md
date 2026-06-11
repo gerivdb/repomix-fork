@@ -49,7 +49,7 @@ Phase 7 — Vague 7 : packaging v1.0.0, upstream sync, score 85% MATEURE.
 Phase 8 — Vague 8 : PRD-002 P3+P4, VersesSyncManager + Marketplace API.
 Phase 9 — Vague 9 : PRD-003 P1+P2, UrbanVerse structure + 10 pilotes + upstream sync.
 Phase 10 — Vague 10 : PRD-003 P3+P4, Karpathy Recall + Fibre/Economie.
-Phase 13 — Vague 13 : PRD-011, marketplace sync bidirectionnelle + publication PyPI + CHANGELOG v1.0.0.
+Phase 14 — Vague 14 : EPIC-04, Karpathy Recall v4 (transit_map v2, recall_coherence_check v4, 8 tests).
 
 ---
 

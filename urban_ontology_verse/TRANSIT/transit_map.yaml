@@ -1,18 +1,78 @@
 # transit_map.yaml — Réseau de Transport Cognitif Gerivdb Métropole
-# Version: 1.0.0 | Date: 2026-05-28
+# Version: 2.0.0 | Date: 2026-06-11
 #
 # Lignes de métro, RER, tram, bus et noctilien de l'écosystème gerivdb.
 # Chaque ligne = un chemin de transit cognitif entre strates.
-# Chaque arrêt = une strate (L0→L9) ou un repo spécifique (tram/bus).
+# Chaque arrêt = une strate (L0→L9) avec son pack Karpathy-Recall.
 
 lines:
   - id: M1
     name: "Ligne Cognitive Principale"
     type: metro
-    stops: [L0, L1b, L1a, L2, L2b, L3, L4, L5, L6, L7, L8, L9]
     frequency: "à chaque session LLM"
     description: "Boot sequence canonique complète — toutes les strates en ordre"
     recall_pack: true
+    stops:
+      - id: L0
+        name: "Gouvernance — Constitution"
+        repo: "GOVERNANCE-HUB"
+        recall_pack: "L0_governance_recall"
+        recall_questions: 5
+      - id: L1b
+        name: "Substrat Cognitif LLM"
+        repo: "LLM-REPO"
+        recall_pack: "L1b_llm_substrate_recall"
+        recall_questions: 5
+      - id: L1a
+        name: "SOT Canonique"
+        repo: "ONTOLOGY"
+        recall_pack: "L1a_ontology_recall"
+        recall_questions: 5
+      - id: L2
+        name: "Cognition Distribuée"
+        repo: "BRAIN"
+        recall_pack: "L2_cognition_recall"
+        recall_questions: 5
+      - id: L2b
+        name: "Runtime Composition"
+        repo: "KIVA"
+        recall_pack: "L2b_runtime_recall"
+        recall_questions: 5
+      - id: L3
+        name: "Émergence — Voiries"
+        repo: "ECOS-CLI"
+        recall_pack: "L3_emergence_recall"
+        recall_questions: 5
+      - id: L4
+        name: "DevTools — Bundler"
+        repo: "repomix-fork"
+        recall_pack: "L4_devtools_recall"
+        recall_questions: 5
+      - id: L5
+        name: "Méta — Gouvernance"
+        repo: "political_compass_verse"
+        recall_pack: "L5_meta_recall"
+        recall_questions: 5
+      - id: L6
+        name: "Plateforme"
+        repo: "PLATFORM-CORE"
+        recall_pack: "L6_platform_recall"
+        recall_questions: 5
+      - id: L7
+        name: "Wiki — Documentation"
+        repo: "WIKI-MIMIR"
+        recall_pack: "L7_wiki_recall"
+        recall_questions: 5
+      - id: L8
+        name: "Créatif — Verses"
+        repo: "VERSES"
+        recall_pack: "L8_creative_recall"
+        recall_questions: 5
+      - id: L9
+        name: "Expérimental — Legacy"
+        repo: "EXPERIMENTAL-1"
+        recall_pack: "L9_experimental_recall"
+        recall_questions: 5
 
   - id: RER-A
     name: "Transversale Gouvernance ↔ Archéologie"
@@ -97,7 +157,7 @@ zones:
     trust: "EXTERNAL"
     description: "Services externes — périmètre de sécurité obligatoire"
 
-  # Périphérique (anneau de contrôle L3→L9)
+# Périphérique (anneau de contrôle L3→L9)
 peripherique:
   description: "Anneau de contrôle de périphérie — aucune connexion directe Zone 3→Zone 1"
   portes:
@@ -111,3 +171,66 @@ peripherique:
     - "repo_passerelle_github"
     - "repo_passerelle_anthropic"
   regle: "Aucune connexion directe Zone 3→Zone 1 sans échangeur validé"
+
+# ── Karpathy-Recall : référence des packs par strate ──
+karpathy_recall_packs:
+  L0_governance_recall:
+    strate: L0
+    repo: GOVERNANCE-HUB
+    questions: 5
+    description: "Rappel gouvernance — constitution, ADR, registres"
+  L1b_llm_substrate_recall:
+    strate: L1b
+    repo: LLM-REPO
+    questions: 5
+    description: "Rappel substrat cognitif — LLM_BOOT_PROTOCOL, GATE-0->4"
+  L1a_ontology_recall:
+    strate: L1a
+    repo: ONTOLOGY
+    questions: 5
+    description: "Rappel ontologie — termes, définitions, N/N+1/N+2"
+  L2_cognition_recall:
+    strate: L2
+    repo: BRAIN
+    questions: 5
+    description: "Rappel cognition — logique ternaire, agents, FLUENCE"
+  L2b_runtime_recall:
+    strate: L2b
+    repo: KIVA
+    questions: 5
+    description: "Rappel runtime — exécution, composition, skills"
+  L3_emergence_recall:
+    strate: L3
+    repo: ECOS-CLI
+    questions: 5
+    description: "Rappel émergence — CLI, bundler, automation"
+  L4_devtools_recall:
+    strate: L4
+    repo: repomix-fork
+    questions: 5
+    description: "Rappel DevTools — bundling, mining, marketplace"
+  L5_meta_recall:
+    strate: L5
+    repo: political_compass_verse
+    questions: 5
+    description: "Rappel méta — boussole politique, gouvernance"
+  L6_platform_recall:
+    strate: L6
+    repo: PLATFORM-CORE
+    questions: 5
+    description: "Rappel plateforme — services centraux, API, SDK"
+  L7_wiki_recall:
+    strate: L7
+    repo: WIKI-MIMIR
+    questions: 5
+    description: "Rappel wiki — documentation, guides, référence"
+  L8_creative_recall:
+    strate: L8
+    repo: VERSES
+    questions: 5
+    description: "Rappel créatif — verses, ontologie, Base-243"
+  L9_experimental_recall:
+    strate: L9
+    repo: EXPERIMENTAL-1
+    questions: 5
+    description: "Rappel expérimental — prototypes, legacy, recherche"

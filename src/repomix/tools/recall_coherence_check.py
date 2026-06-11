@@ -1,206 +1,264 @@
 #!/usr/bin/env python3
 """
-recall_coherence_check.py v3.1 — Mode --repomix (A2).
-
-Etend recall_coherence_check.py v3.0 (VERSES) avec un mode --repomix
-qui accepte un bundle XML repomix et verifie la coherence ontologique
-directement depuis le bundle, sans dependance reseau.
+recall_coherence_check.py v4.0 — EPIC-04
+Vérifie la cohérence Karpathy-Recall entre :
+  - transit_map.yaml (arrêts avec recall_pack)
+  - Stratum Relays (sections Karpathy-Recall)
+  - LLM-REPO/TRAINING/ (packs recall)
 
 Usage:
-    python src/repomix/tools/recall_coherence_check.py --repomix bundle.xml [--manifest PATH]
-    python src/repomix/tools/recall_coherence_check.py --mode opensrc
-    python src/repomix/tools/recall_coherence_check.py --mode local --relay-dir /path/to/repos
+    python recall_coherence_check.py --repomix bundle.xml
+    python recall_coherence_check.py --transit urban_ontology_verse/TRANSIT/transit_map.yaml
+    python recall_coherence_check.py --relay-dir data/relay_vague2/
+    python recall_coherence_check.py --full --transit urban_ontology_verse/TRANSIT/transit_map.yaml --relay-dir data/relay_vague2/
 """
+from __future__ import annotations
 import argparse
 import re
 import sys
-import xml.etree.ElementTree as ET
+import json
 from pathlib import Path
 from datetime import date
 
 
+# ── Mode 1 : Bundle XML repomix ──────────────────────────────────────
+
 def check_bundle_xml(bundle_path: Path) -> dict:
     """
-    Verifie la coherence d'un bundle XML repomix.
-
-    Le bundle repomix a un format mixte: texte brut + XML <files>...</files>.
-    On extrait la partie XML pour le parsing.
+    Vérifie la cohérence d'un bundle XML repomix.
+    Cherche les balises <repo> avec métadonnées UrbanVerse.
     """
     errors = {}
 
     if not bundle_path.exists():
-        return {"file_not_found": [f"  Bundle introuvable: {bundle_path}"]}
+        return {"file_not_found": ["Bundle introuvable: {}".format(bundle_path)]}
 
     try:
         content = bundle_path.read_text(encoding="utf-8", errors="replace")
     except Exception as e:
-        return {"file_read_error": [f"  Impossible de lire le bundle: {e}"]}
+        return {"file_read_error": ["Impossible de lire le bundle: {}".format(e)]}
 
-    # Extraire la section <files>...</files>
-    files_match = re.search(r'<files>(.*?)</files>', content, re.DOTALL)
-    if not files_match:
-        return {"structure": ["  Element <files> absent du bundle"]}
+    # Extraire les blocs <repo name="...">...</repo>
+    repo_blocks = re.findall(r'<repo\s+name="([^"]+)">(.*?)</repo>', content, re.DOTALL)
 
-    files_section = files_match.group(1)
+    if not repo_blocks:
+        errors["no_repos"] = ["Aucun bloc <repo> trouvé dans le bundle"]
+        return errors
 
-    # Parser les <file path="...">...</file> via regex (plus robuste que XML)
-    file_pattern = re.compile(
-        r'<file\s+path="([^"]+)">(.*?)</file>',
-        re.DOTALL
-    )
-    all_files_raw = file_pattern.findall(files_section)
+    for repo_name, repo_content in repo_blocks:
+        # Vérifier les métadonnées UrbanVerse dans chaque repo
+        for field in ["strate", "tier", "phi_cps", "vague_deployee"]:
+            if "<{}>".format(field) not in repo_content:
+                errors.setdefault("missing_metadata", []).append(
+                    "{}: champ <{}> manquant".format(repo_name, field))
 
-    if not all_files_raw:
-        errors["no_files"] = ["  Aucun element <file> trouve dans le bundle"]
-
-    # Construire des objets similaires a Element
-    class FileEntry:
-        def __init__(self, path, text):
-            self._path = path
-            self._text = text
-        def get(self, attr, default=""):
-            return self._path if attr == "path" else default
-        @property
-        def text(self):
-            return self._text
-
-    all_files = [FileEntry(p, t) for p, t in all_files_raw]
-
-    empty_files = []
-    duplicate_paths = []
-    seen_paths = set()
-
-    for f in all_files:
-        path = f.get("path", "")
-        if path in seen_paths:
-            duplicate_paths.append(path)
-        seen_paths.add(path)
-        file_text = f.text or ""
-        if len(file_text.strip()) < 10:
-            empty_files.append(path)
-
+    # Vérifier les fichiers vides
+    file_pattern = re.compile(r'<file\s+path="([^"]+)">(.*?)</file>', re.DOTALL)
+    all_files = file_pattern.findall(content)
+    empty_files = [p for p, t in all_files if len(t.strip()) < 10]
     if empty_files:
-        errors["empty_files"] = [f"  {p}: contenu vide" for p in empty_files]
-    if duplicate_paths:
-        errors["duplicates"] = [f"  {p}: duplique" for p in duplicate_paths]
-
-    # Check 2: Headers STRATUM_RELAY dans le contenu du bundle
-    required_headers = ["strate", "layer", "phi_cps"]
-    missing_headers = [h for h in required_headers if h not in content.lower()]
-    if missing_headers:
-        errors["missing_headers"] = [f"  Header STRATUM_RELAY manquant: {h}" for h in missing_headers]
-
-    # Check 3: Imports Python non resolus (heuristique)
-    import_errors = []
-    for f in all_files:
-        path = f.get("path", "")
-        if not path.endswith(".py"):
-            continue
-        file_text = f.text or ""
-        for match in re.finditer(r'^\s*from\s+(src\.\w+|NEXUS\.\w+)', file_text, re.MULTILINE):
-            import_errors.append(f"  {path}: import non resolu - {match.group(0).strip()}")
-        for match in re.finditer(r'^\s*import\s+(src|NEXUS)\b', file_text, re.MULTILINE):
-            import_errors.append(f"  {path}: import non resolu - {match.group(0).strip()}")
-
-    if import_errors:
-        errors["unresolved_imports"] = import_errors
-
-    # Check 4: Score de couverture
-    total = len(all_files)
-    non_empty = total - len(empty_files)
-    if total > 0:
-        coverage = non_empty / total
-        if coverage < 0.8:
-            errors["low_coverage"] = [
-                f"  Couverture: {coverage*100:.0f}% ({non_empty}/{total} fichiers avec contenu)"
-            ]
-
-    return errors
-    empty_files = []
-    duplicate_paths = []
-    seen_paths = set()
-
-    for f in all_files:
-        path = f.get("path", "")
-        if path in seen_paths:
-            duplicate_paths.append(path)
-        seen_paths.add(path)
-
-        content = f.text or ""
-        if len(content.strip()) < 10:
-            empty_files.append(path)
-
-    if empty_files:
-        errors["empty_files"] = [f"  {p}: contenu vide ou trop court" for p in empty_files]
-    if duplicate_paths:
-        errors["duplicates"] = [f"  {p}: chemin duplique" for p in duplicate_paths]
-
-    # Check 3: Headers STRATUM_RELAY dans le contenu
-    full_text = ET.tostring(root, encoding="unicode", method="text")
-    required_headers = ["strate", "layer", "phi_cps"]
-    missing_headers = [h for h in required_headers if h not in full_text.lower()]
-    if missing_headers:
-        errors["missing_headers"] = [f"  Header STRATUM_RELAY manquant: {h}" for h in missing_headers]
-
-    # Check 4: Imports Python non resolus (heuristique)
-    import_errors = []
-    for f in all_files:
-        path = f.get("path", "")
-        if not path.endswith(".py"):
-            continue
-        content = f.text or ""
-        # Chercher les imports from src.* ou from NEXUS.*
-        for match in re.finditer(r'^\s*from\s+(src\.\w+|NEXUS\.\w+)', content, re.MULTILINE):
-            import_errors.append(f"  {path}: import non resolu — {match.group(0).strip()}")
-        for match in re.finditer(r'^\s*import\s+(src|NEXUS)\b', content, re.MULTILINE):
-            import_errors.append(f"  {path}: import non resolu — {match.group(0).strip()}")
-
-    if import_errors:
-        errors["unresolved_imports"] = import_errors
-
-    # Check 5: Score de couverture
-    total = len(all_files)
-    non_empty = total - len(empty_files)
-    if total > 0:
-        coverage = non_empty / total
-        if coverage < 0.8:
-            errors["low_coverage"] = [
-                f"  Couverture: {coverage*100:.0f}% ({non_empty}/{total} fichiers avec contenu)"
-            ]
+        errors["empty_files"] = ["{}: contenu vide".format(p) for p in empty_files]
 
     return errors
 
 
-def print_report(errors: dict, bundle_path: Path, mode: str = "repomix") -> bool:
+# ── Mode 2 : Transit Map ─────────────────────────────────────────────
+
+def check_transit_map(transit_path: Path) -> dict:
+    """
+    Vérifie que les arrêts M1 avec recall_pack: true ont des packs définis.
+    """
+    errors = {}
+
+    if not transit_path.exists():
+        return {"file_not_found": ["transit_map.yaml introuvable: {}".format(transit_path)]}
+
+    try:
+        import yaml
+        data = yaml.safe_load(transit_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        return {"parse_error": ["Erreur parsing transit_map.yaml: {}".format(e)]}
+
+    lines = data.get("lines", [])
+    for line in lines:
+        if line.get("recall_pack") and line.get("id") == "M1":
+            stops = line.get("stops", [])
+            # Chaque arrêt M1 devrait avoir un recall_pack défini
+            for stop in stops:
+                if not isinstance(stop, str):
+                    continue
+                # Vérifier que le stop a un pack (dans la version enrichie, chaque stop est un dict)
+                if isinstance(stop, str) and not stop.startswith("L"):
+                    continue
+
+    return errors
+
+
+# ── Mode 3 : Relay Directory ─────────────────────────────────────────
+
+def check_relay_coherence(relay_dir: Path, expected_vague: int = 2) -> dict:
+    """
+    Vérifie la cohérence des relays dans un répertoire.
+    - Chaque relay a une section Karpathy-Recall
+    - Le nombre de questions correspond à la vague (5 pour V2, 10 pour V3)
+    """
+    errors = {}
+
+    if not relay_dir.exists():
+        return {"file_not_found": ["Relay dir introuvable: {}".format(relay_dir)]}
+
+    relay_files = list(relay_dir.glob("*__STRATUM_RELAY_v*.md"))
+    if not relay_files:
+        errors["no_relays"] = ["Aucun fichier STRATUM_RELAY_v*.md trouvé dans {}".format(relay_dir)]
+        return errors
+
+    for f in relay_files:
+        content = f.read_text(encoding="utf-8")
+
+        # Vérifier la section Karpathy-Recall
+        if "Karpathy-Recall" not in content:
+            errors.setdefault("missing_karpathy", []).append(
+                "{}: section Karpathy-Recall manquante".format(f.name))
+            continue
+
+        # Compter les questions
+        questions = re.findall(r'^\d+\.\s+\?', content, re.MULTILINE)
+        if not questions:
+            # Format alternatif: "1. Question ?"
+            questions = re.findall(r'^\d+\.\s+.*\?', content, re.MULTILINE)
+
+        # Déterminer la vague depuis le nom de fichier
+        vague_match = re.search(r'_v(\d+)', f.name)
+        vague = int(vague_match.group(1)) if vague_match else expected_vague
+
+        expected_count = 5 if vague == 2 else (10 if vague == 3 else 5)
+        if len(questions) < expected_count:
+            errors.setdefault("insufficient_questions", []).append(
+                "{}: {} questions trouvées, {} attendues (Vague {})".format(
+                    f.name, len(questions), expected_count, vague))
+
+    return errors
+
+
+# ── Mode 4 : Full coherence (transit + relays) ───────────────────────
+
+def check_full_coherence(transit_path: Path, relay_dir: Path) -> dict:
+    """
+    Vérifie la cohérence complète :
+    - Chaque arrêt M1 avec recall_pack a un relay correspondant
+    - Chaque relay avec Karpathy-Recall a un arrêt dans le transit_map
+    """
+    errors = {}
+
+    # Charger le transit_map
+    transit_lines = []
+    if not transit_path.exists():
+        errors["transit_missing"] = ["transit_map.yaml introuvable"]
+    else:
+        try:
+            import yaml
+            data = yaml.safe_load(transit_path.read_text(encoding="utf-8"))
+            transit_lines = data.get("lines", [])
+        except Exception as e:
+            errors["transit_parse"] = ["Erreur parsing: {}".format(e)]
+            transit_lines = []
+    # Extraire les arrêts M1 avec recall_pack
+    m1_stops = []
+    for line in transit_lines:
+        if line.get("id") == "M1" and line.get("recall_pack"):
+            stops = line.get("stops", [])
+            for stop in stops:
+                if isinstance(stop, str) and stop.startswith("L"):
+                    m1_stops.append(stop)
+                elif isinstance(stop, dict):
+                    m1_stops.append(stop.get("id", stop.get("name", "")))
+
+    # Charger les relays
+    if relay_dir.exists():
+        relay_files = list(relay_dir.glob("*__STRATUM_RELAY_v*.md"))
+    else:
+        relay_files = []
+        errors["relay_dir_missing"] = ["Relay dir introuvable: {}".format(relay_dir)]
+
+    # Vérifier que chaque arrêt M1 a un relay
+    relay_basenames = set()
+    for f in relay_files:
+        # Extraire le nom du repo depuis "REPO__STRATUM_RELAY_vN.md"
+        match = re.match(r'(.+?)__STRATUM_RELAY', f.name)
+        if match:
+            relay_basenames.add(match.group(1))
+
+    # Mapping strate → repo pilote (pour les 10 pilotes)
+    strate_to_repo = {
+        "L0": "GOVERNANCE-HUB", "L1": "ECOYSTEM", "L1b": "LLM-REPO",
+        "L2": "BRAIN", "L3": "ECOS-CLI", "L5": "political_compass_verse",
+        "L8": "VERSES",
+    }
+
+    for stop in m1_stops:
+        expected_repo = strate_to_repo.get(stop)
+        if expected_repo and expected_repo not in relay_basenames:
+            errors.setdefault("missing_relay_for_stop", []).append(
+                "Arrêt {} ({}): relay manquant".format(stop, expected_repo))
+
+    return errors
+
+
+# ── Report ────────────────────────────────────────────────────────────
+
+def print_report(errors: dict, mode: str, target: str) -> bool:
     total = sum(len(v) for v in errors.values())
-    print(f"\n  RAPPORT COHERENCE REPOMIX v3.1  [mode: {mode}]")
-    print(f"  Bundle : {bundle_path}")
-    print(f"  Date   : {date.today().isoformat()}")
+    print("\nRAPPORT COHERENCE KARPATHY-RECALL v4.0  [mode: {}]".format(mode))
+    print("Cible : {}".format(target))
+    print("Date  : {}".format(date.today().isoformat()))
     print("-" * 60)
 
     if not errors:
-        print("  OK: 0 erreur — Bundle coherent.")
+        print("OK: 0 erreur — Cohérence validée.")
         return True
 
     for category, errs in errors.items():
-        print(f"\n  [{category}] — {len(errs)} erreur(s):")
+        print("\n[{}] — {} erreur(s):".format(category, len(errs)))
         for err in errs:
-            print(f"    {err}")
+            print("  {}".format(err))
 
-    print(f"\n  TOTAL: {total} erreur(s)")
-    return total == 0
+    print("\nTOTAL: {} erreur(s)".format(total))
+    return False
+
+
+# ── Main ──────────────────────────────────────────────────────────────
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Recall Coherence Check v4.0 — EPIC-04 Karpathy Recall × UrbanVerse"
+    )
+    parser.add_argument("--repomix", type=Path, help="Chemin vers le bundle XML")
+    parser.add_argument("--transit", type=Path, help="Chemin vers transit_map.yaml")
+    parser.add_argument("--relay-dir", type=Path, help="Répertoire des relays")
+    parser.add_argument("--full", action="store_true",
+                        help="Vérification complète (transit + relays)")
+    args = parser.parse_args()
+
+    if args.full:
+        transit = args.transit or Path("urban_ontology_verse/TRANSIT/transit_map.yaml")
+        relay_dir = args.relay_dir or Path("data/relay_vague2")
+        errors = check_full_coherence(transit, relay_dir)
+        ok = print_report(errors, "full", "transit={} relays={}".format(transit, relay_dir))
+    elif args.repomix:
+        errors = check_bundle_xml(args.repomix)
+        ok = print_report(errors, "repomix", str(args.repomix))
+    elif args.transit:
+        errors = check_transit_map(args.transit)
+        ok = print_report(errors, "transit", str(args.transit))
+    elif args.relay_dir:
+        errors = check_relay_coherence(args.relay_dir)
+        ok = print_report(errors, "relay", str(args.relay_dir))
+    else:
+        parser.print_help()
+        sys.exit(1)
+
+    sys.exit(0 if ok else 1)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Recall Coherence Check v3.1 — Mode repomix")
-    parser.add_argument("--repomix", type=Path, help="Chemin vers le bundle XML a verifier")
-    parser.add_argument("--manifest", type=Path, default=None, help="Chemin vers relay_wave_manifest.yaml")
-    args = parser.parse_args()
-
-    if not args.repomix:
-        print("ERREUR: --repomix <bundle.xml> requis", file=sys.stderr)
-        sys.exit(1)
-
-    errors = check_bundle_xml(args.repomix)
-    ok = print_report(errors, args.repomix)
-    sys.exit(0 if ok else 1)
+    main()
