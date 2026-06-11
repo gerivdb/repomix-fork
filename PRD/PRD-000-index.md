@@ -18,8 +18,15 @@ author: gerivdb
 |----|------|-------|--------|------|
 | PRD-001 | repomix-fork-cleanup | repomix-fork — Nettoyage, activation verse_detector et pipeline d'inventaire | accepted | 2026-06-10 |
 | PRD-002 | architecture-diamant-verses | Architecture Diamant pour l'Organisation des Verses | accepted | 2026-05-07 |
-| PRD-003 | urban-ontology-verse | URBAN ONTOLOGY VERSE (UrbanVerse) | draft | 2026-05-28 |
+| PRD-003 | urban-ontology-verse | URBAN ONTOLOGY VERSE (UrbanVerse) | accepted | 2026-05-28 |
 | PRD-004 | vague7 | Vague 7 — packaging, upstream sync, score emergence | accepted | 2026-06-11 |
+| PRD-005 | engines-citizens | Activation moteurs internes | draft (annule) | 2026-06-11 |
+| PRD-006 | nexus-bridge | Bridge NEXUS | draft (annule) | 2026-06-11 |
+| PRD-007 | ecosystem-190 | Mode ecosystem 190 repos | draft | 2026-06-11 |
+| PRD-008 | ecos-cli-bundle | ECOS-CLI A5 implementation | draft | 2026-06-11 |
+| PRD-009 | a9-a7 | A9 DATA-MINER + A7 GeriCode | draft | 2026-06-11 |
+| PRD-010 | urbanverse-vague2-3 | UrbanVerse Vague 2+3 | draft | 2026-06-11 |
+| PRD-011 | marketplace-pypi | VERSES marketplace + PyPI publish | draft | 2026-06-11 |
 
 ## PRD archives / superseded
 
@@ -40,7 +47,9 @@ Phase 5 — Vague 5 : A1 ARGUS + A2 recall + CI/CD + tests unitaires.
 Phase 6 — Vague 6 : A3→A10 cables (8/10), STRATUM_RELAY v6.
 Phase 7 — Vague 7 : packaging v1.0.0, upstream sync, score 85% MATEURE.
 Phase 8 — Vague 8 : PRD-002 P3+P4, VersesSyncManager + Marketplace API.
+Phase 9 — Vague 9 : PRD-003 P1+P2, UrbanVerse structure + 10 pilotes + upstream sync.
+Phase 10 — Vague 10 : PRD-007 ecosystem 190 repos (en cours).
 
 ---
 
-*Derniere mise a jour : 2026-06-11 — 4 PRD references (3 accepted, 1 draft).*
+*Derniere mise a jour : 2026-06-11 — 10 PRD references (4 accepted, 6 draft).*

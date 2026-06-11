@@ -1,0 +1,1339 @@
+metadata:
+  version: '2.0'
+  total_repos: 180
+  source_primary: gerivdb/GOVERNANCE-HUB@main/known_repositories.yaml
+  source_secondary: GitHub API scan 2026-06-03 (org:gerivdb, sort:updated)
+  last_updated: '2026-06-11'
+  do_not_create: true
+  intent_hash: 0xKNOWN_REPOS_V2_SYNC_20260603
+  notes: 'Sync complet du 2026-06-03. Tous les repos gerivdb/* listes par l''API GitHub
+    sont presents. Les repos geri-cms-* et gericms-* (historique CMS) sont regroupes
+    en ARCHIVE_GERI_CMS. Les repos nommes significatifs sont listes individuellement
+    avec do_not_create: true. TQL ajoute 2026-06-05 (repo cree, status:active apres
+    migration Phase 1-3). Fix 2026-06-06: indentation diffscope-fork corrigee (debloque
+    EPIC-D/E). TRIX ajoute 2026-06-09 (L2_RUNTIME, active, sandbox Zig). AUTO-DEV
+    ajoute 2026-06-09 (L2_COMPOSITION, design, intent v0.4, HITL).
+
+    '
+P0_CONSTITUTIONAL:
+- name: NEXUS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/NEXUS
+  layer: L1_CAUSALITY
+  url: https://github.com/gerivdb/NEXUS
+  local_path: D:\DO\WEB\TOOLS\L0-CANON\NEXUS
+  role: Mega-SOT -- registre des registres, gouvernance
+  phi_cps: 3.697
+  do_not_create: true
+- name: KIVA
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/KIVA
+  layer: L1_CAUSALITY
+  url: https://github.com/gerivdb/KIVA
+  local_path: D:\DO\WEB\TOOLS\L1-INFRA\KIVA
+  role: Infrastructure runtime, agents, scheduler, WAL
+  phi_cps: 3.697
+  do_not_create: true
+- name: GATEWAY-MANAGER
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/GATEWAY-MANAGER
+  layer: L1_CAUSALITY
+  url: https://github.com/gerivdb/GATEWAY-MANAGER
+  local_path: D:\DO\WEB\TOOLS\L1-INFRA\GATEWAY-MANAGER
+  role: Proxy/reverse proxy, BDCP, Clapet
+  phi_cps: 3.697
+  do_not_create: true
+- name: BRAIN
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/BRAIN
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/BRAIN
+  local_path: D:\DO\WEB\TOOLS\L0-CANON\BRAIN
+  role: Couche IA, agents cognitifs
+  phi_cps: 3.697
+  do_not_create: true
+- name: ECOS-CLI
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ECOS-CLI
+  layer: L1_CAUSALITY
+  url: https://github.com/gerivdb/ECOS-CLI
+  local_path: D:\DO\WEB\TOOLS\L1-INFRA\ECOS-CLI
+  role: Orchestrateur local CLI, workflows EECS
+  phi_cps: 3.697
+  do_not_create: true
+- name: ONTOLOGY
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ONTOLOGY
+  layer: L1_CAUSALITY
+  url: https://github.com/gerivdb/ONTOLOGY
+  local_path: D:\DO\WEB\TOOLS\L0-CANON\ONTOLOGY
+  role: SOT semantique, dictionnaire canonique, ontologies
+  phi_cps: 4.092
+  do_not_create: true
+- name: GOVERNANCE-HUB
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/GOVERNANCE-HUB
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/GOVERNANCE-HUB
+  local_path: D:\DO\WEB\TOOLS\L0-CANON\GOVERNANCE-HUB
+  role: SOT execution, regles de gouvernance executables, Trit*, registres
+  phi_cps: 3.697
+  do_not_create: true
+P1_STRATEGIC:
+- name: KIVA-CLI
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/KIVA-CLI
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/KIVA-CLI
+  local_path: D:\DO\WEB\TOOLS\L1-INFRA\KIVA-CLI
+  role: CLI orchestrateur projets/apps, scaffolding
+  phi_cps: 3.697
+  do_not_create: true
+- name: FLUENCE
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/FLUENCE
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/FLUENCE
+  local_path: D:\DO\WEB\TOOLS\L1-INFRA\FLUENCE
+  role: Composant transverse, orchestration cognitive
+  phi_cps: 3.697
+  do_not_create: true
+- name: CANDIDATOR
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/CANDIDATOR
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/CANDIDATOR
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\CANDIDATOR
+  role: Gestion candidatures, CV, lettres
+  phi_cps: 3.697
+  do_not_create: true
+- name: GeriCode
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/GeriCode
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/GeriCode
+  local_path: D:\DO\WEB\TOOLS\L2-PLATFORM\GeriCode
+  role: Code generation, automation
+  phi_cps: 3.697
+  do_not_create: true
+- name: LLM-REPO
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/LLM-REPO
+  layer: L1b
+  url: https://github.com/gerivdb/LLM-REPO
+  local_path: D:\DO\WEB\TOOLS\L1-INFRA\LLM-REPO
+  role: Hub cognitif LLM -- navigation, comportement, profils agents (L1b)
+  status: active
+  do_not_create: true
+- name: TOPOS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/TOPOS
+  layer: L1b
+  url: https://github.com/gerivdb/TOPOS
+  local_path: D:\DO\WEB\TOOLS\L1-INFRA\TOPOS
+  role: Registre canonique des lieux d'execution (ENV0-5+) -- territoire, souverainete,
+    stack, capacites
+  status: active
+  intent_hash: 0xTOPOS_INTENT_20260529
+  do_not_create: true
+- name: TQL
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/TQL
+  layer: L1b
+  url: https://github.com/gerivdb/TQL
+  local_path: D:\DO\WEB\TOOLS\L2-PLATFORM\TQL
+  role: 'Ternary Query Language -- grammaire, spec, fixtures de test du langage de
+    requete ternaire. Source de verite pour la syntaxe TQL (operateurs, types, semantique).
+    Interpretation par BRAIN, donnees par NEXUS.
+
+    '
+  status: active
+  private: true
+  intent_hash: 0xTQL_REPO_INTENT_20260604
+  do_not_create: true
+- name: KEEL
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/KEEL
+  layer: L1b
+  url: https://github.com/gerivdb/KEEL
+  local_path: D:\DO\WEB\TOOLS\L2-PLATFORM\KEEL
+  role: 'Knowledge Encoding & Execution Language -- langue de representation de flux,
+    raisonnement versionne (Thought-Commits), substrat ternaire base-243, profondeur
+    PLIX x5 (T1->T5), requetes TQL (Ternary Query Language). DSL textuel -> IR executable
+    par BRAIN.
+
+    '
+  status: design
+  private: true
+  intent_hash: 0xKEEL_NAMING_20260602
+  do_not_create: true
+- name: IRIS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/IRIS
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/IRIS
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\IRIS
+  role: 'Capteur externe Triade Cognitive IRIS/KRONOS/FLUX -- poll repos tiers publics
+    (bun, claude-code, PowerShell...), extrait signaux bruts, emet vers KRONOS. Cron
+    6h. 100% HITL (D4 inviolable).
+
+    '
+  phi_cps: 3.697
+  status: active
+  triade: IRIS/KRONOS/FLUX
+  intent_hash: 0xIRIS_P1_STRATEGIC_20260530
+  do_not_create: true
+- name: KRONOS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/KRONOS
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/KRONOS
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\KRONOS
+  role: 'Qualificateur Triade Cognitive -- consomme signaux bruts IRIS, applique heuristiques
+    de qualification, produit fiches validees/archivees. 0 auto-promotion vers NEXUS
+    sans review humaine via FLUX (D4).
+
+    '
+  phi_cps: 3.697
+  status: active
+  triade: IRIS/KRONOS/FLUX
+  intent_hash: 0xKRONOS_P1_STRATEGIC_20260530
+  do_not_create: true
+- name: UAE
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/UAE
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/UAE
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\UAE
+  role: 'Moteur d''attention universelle 1/sqrt(d) -- fondation cognitive transverse.
+    Contexte infini O(1), drop-in HuggingFace, CUDA natif. Base mathematique de tous
+    les moteurs cognitifs de l''ecosysteme. Quantification Base 243 (3^5) native --
+    LADYBIRD-243 ATTENTION CORE.
+
+    '
+  phi_cps: 3.697
+  status: active
+  private: true
+  intent_hash: 0xUAE_REPO_CREATION_INTENT_20260601
+  do_not_create: true
+- name: MIMIR
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/MIMIR
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/MIMIR
+  role: 'Wiki Atomique Diamond v3 -- Mission Control fractal, CRM-wiki, meta-roadmap
+    visuelle de l''ecosysteme gerivdb. Gardien du puits de connaissance.
+
+    '
+  status: active
+  do_not_create: true
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\MIMIR
+- name: GERIBOOKING
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/GERIBOOKING
+  layer: L4_GOVERNANCE
+  url: https://github.com/gerivdb/GERIBOOKING
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\GERIBOOKING
+  role: Reservation, booking
+  phi_cps: 3.697
+  do_not_create: true
+- name: BANK-BUSTER
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/BANK-BUSTER
+  layer: L4_GOVERNANCE
+  url: https://github.com/gerivdb/BANK-BUSTER
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\BANK-BUSTER
+  role: Audit financier, contestation frais bancaires
+  phi_cps: 3.697
+  do_not_create: true
+- name: racines
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/racines
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/racines
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\racines
+  role: Racines, fondation
+  phi_cps: 3.697
+  do_not_create: true
+- name: strix
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/strix
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/strix
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\strix
+  role: Strix
+  do_not_create: true
+- name: TRIX
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/TRIX
+  layer: L2_RUNTIME
+  url: https://github.com/gerivdb/TRIX
+  local_path: D:\DO\WEB\TOOLS\L2-PLATFORM\TRIX
+  role: TRInary eXecution Runtime -- sandbox syscall souverain HP Z600/ENV2. Namespace
+    isole par run (pid+mnt+net+user). Dispatch table 243 entrees (3^5). Zig 0.15,
+    zero dep, binaire unique.
+  status: active
+  private: true
+  intent_hash: 0xTRIX_REPO_INTENT_20260609
+  do_not_create: true
+- name: AUTO-DEV
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/AUTO-DEV
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/AUTO-DEV
+  local_path: D:\DO\WEB\TOOLS\L2-PLATFORM\AUTO-DEV
+  role: Moteur d'auto-developpement autonome inspire d'AutoScientists (Harvard MIMS
+    2026-05-27). Cycle scientifique ferme applique au code. Agents LLM decentralises,
+    auto-organisation, isolation TRIX, double-seed FORGE, gate HITL FLUX D4 inviolable.
+  status: design
+  private: true
+  intent_hash: 0xAUTO_DEV_INTENT_20260609_V4
+  do_not_create: true
+P2_SUPPORT:
+- name: DevTools
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/DevTools
+  layer: L3_TOOLS
+  url: https://github.com/gerivdb/DevTools
+  local_path: C:\DevTools
+  role: Hub d'execution L3 -- outillage, automation, scripts, portable git, CI/CD
+    local
+  phi_cps: 4.132
+  status: active
+  do_not_create: true
+- name: Gitnote
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/Gitnote
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/Gitnote
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\Gitnote
+  role: Sync Android, DevTools/FLUENCE/ECOYSTEM
+  phi_cps: 3.697
+  do_not_create: true
+- name: BRAIN-DOCS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/BRAIN-DOCS
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/BRAIN-DOCS
+  local_path: D:\DO\WEB\TOOLS\L2-PLATFORM\BRAIN-DOCS
+  role: Documentation BRAIN, 66 issues
+  phi_cps: 3.697
+  do_not_create: true
+- name: SKILLS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/SKILLS
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/SKILLS
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\SKILLS
+  role: SOT capacites, registre des skills Perplexity (59 actifs -- perplexity/skills/)
+  phi_cps: 3.697
+  status: active
+  do_not_create: true
+- name: GERI-VON-DER-BITSH
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/GERI-VON-DER-BITSH
+  layer: L4_GOVERNANCE
+  url: https://github.com/gerivdb/GERI-VON-DER-BITSH
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\GERI-VON-DER-BITSH
+  role: Gouvernance, politique
+  phi_cps: 3.697
+  do_not_create: true
+- name: vsix-ai-orchestrator
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/vsix-ai-orchestrator
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/vsix-ai-orchestrator
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\vsix-ai-orchestrator
+  role: Multi-agent VS Code, Cline, Kilocode, Copilot
+  phi_cps: 3.697
+  do_not_create: true
+- name: vscode-lm-proxy
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/vscode-lm-proxy
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/vscode-lm-proxy
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\vscode-lm-proxy
+  role: Proxy LM pour VS Code
+  phi_cps: 3.697
+  do_not_create: true
+- name: FLUENCE-CLI
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/FLUENCE-CLI
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/FLUENCE-CLI
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\FLUENCE-CLI
+  role: CLI orchestration cognitive FLUENCE
+  phi_cps: 3.697
+  do_not_create: true
+- name: repomix-fork
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/repomix-fork
+  layer: L4-TOOLS
+  url: https://github.com/gerivdb/repomix-fork
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\REPOMIX-FORK
+  role: REPOMIX -- UrbanVerse repository mashup, cross-repo coherence checking, Stratum
+    Relay packing
+  phi_cps: 3.697
+  status: active
+  intent_hash: 0xREPOMIX_INTENT_20260530
+  do_not_create: true
+  phase_current: 3
+  verse_detector: active
+  stratum_relay: active
+- name: diff0-fork
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/diff0-fork
+  layer: L4-TOOLS
+  url: https://github.com/gerivdb/diff0-fork
+  role: 'Agent IA de code review automatise pour PRs GitHub gerivdb/*. Detection bugs,
+    securite, performance -- inline comments natifs GitHub. Fork souverain de eersnington/diff0
+    (OSS MIT) -- sans dependances cloud tierces. LLM route via GATEWAY-MANAGER (BDCP).
+    Backend local Express+SQLite. Sandbox Docker local (remplace Daytona). Integre
+    KIVA+BRAIN+ARGUS+ECOYSTEM.
+
+    '
+  phi_cps: 3.697
+  status: active
+  do_not_create: true
+- name: diffscope-fork
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/diffscope-fork
+  layer: L4-TOOLS
+  url: https://github.com/gerivdb/diffscope-fork
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\diffscope-fork
+  role: Analyseur statique de diffs souverain -- fingerprints ternaires JSON (PLIX).
+    Binaire Rust musl statique, 0 appel reseau, 0 LLM, < 1s. Alimente VDB ternaire,
+    ARGUS DRIFT, FLUENCE patterns, diff0-fork input. Fork de evalops/diffscope. Complementaire
+    a diff0-fork (structure vs semantique).
+  phi_cps: 3.697
+  status: active
+  phase: D
+  profile: ENV2-Z600
+  intent_hash: 0xDIFFSCOPE_FORK_INTENT_20260605
+  do_not_create: true
+- name: REPO-STANDARDS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/REPO-STANDARDS
+  layer: L4-TOOLS
+  url: https://github.com/gerivdb/REPO-STANDARDS
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\REPO-STANDARDS
+  role: SOT standards -- conventions, templates, gouvernance gerivdb
+  phi_cps: 3.697
+  status: active
+  do_not_create: true
+- name: VERSUS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/VERSUS
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/VERSUS
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\VERSUS
+  role: SOT cognitif, architecture Diamant verses
+  phi_cps: 3.697
+  status: archived
+  archived_at: '2026-06-09'
+  migrated_to: VERSES
+  do_not_create: true
+- name: VERSES
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/VERSES
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/VERSES
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\VERSES
+  role: Moteur de verses holographiques, clusters semantiques, Base-243, Lycos MC-RNN
+  phi_cps: 3.697
+  status: active
+  visibility: private
+  strate: L2
+  private: true
+  created: '2026-06-09'
+  migrated_from: VERSUS
+  do_not_create: true
+- name: DevTools-CLI
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/DevTools-CLI
+  layer: L0_INFRASTRUCTURE
+  url: https://github.com/gerivdb/DevTools-CLI
+  role: DevOps automation CLI, templates CI/CD
+  do_not_create: true
+- name: FORGE
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/FORGE
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/FORGE
+  role: CI/CD automation, build orchestration, pipelines
+  do_not_create: true
+- name: PULSE
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/PULSE
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/PULSE
+  role: Monitoring temps reel, alerting, health metrics
+  do_not_create: true
+- name: ECOS-VISION
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ECOS-VISION
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/ECOS-VISION
+  role: Visualisation et intelligence diagrammatique, 16+ repos
+  do_not_create: true
+- name: VDB
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/VDB
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/VDB
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\VDB
+  role: Vector database, 29 issues
+  do_not_create: true
+- name: DATA-MINER
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/DATA-MINER
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/DATA-MINER
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\DATA-MINER
+  role: Mining Software Repositories, anti-patterns
+  do_not_create: true
+- name: BATVERSE
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/BATVERSE
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/BATVERSE
+  role: Cluster narratif-dramatique, projection holographique
+  do_not_create: true
+- name: OPENCLAW-CLI
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/OPENCLAW-CLI
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/OPENCLAW-CLI
+  role: Intent Normalization Gateway
+  do_not_create: true
+- name: BRAIN-CLI
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/BRAIN-CLI
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/BRAIN-CLI
+  role: CLI extraction BRAIN, phi-CPS 4.267
+  do_not_create: true
+- name: DOC-UNIV-DEV
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/DOC-UNIV-DEV
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/DOC-UNIV-DEV
+  role: Base de connaissances R&D, 18 issues
+  do_not_create: true
+- name: GOST
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/GOST
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/GOST
+  role: Ghost Operations, acces furtif ressources numeriques
+  do_not_create: true
+- name: TINA
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/TINA
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/TINA
+  role: Trusted Intelligent Neurosymbolic Architecture
+  do_not_create: true
+- name: TRANSCENDANCE
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/TRANSCENDANCE
+  layer: L5_META
+  url: https://github.com/gerivdb/TRANSCENDANCE
+  role: Evolution emergente et patterns transcendantaux de NEXUS
+  do_not_create: true
+- name: PLIX
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/PLIX
+  layer: L0_INFRASTRUCTURE
+  url: https://github.com/gerivdb/PLIX
+  role: Langage video ternaire pour LLM graphes, substrat IA locale
+  do_not_create: true
+- name: CodeDB-E5620
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/CodeDB-E5620
+  layer: L0_INFRASTRUCTURE
+  url: https://github.com/gerivdb/CodeDB-E5620
+  role: Fork CodeDB pour Xeon E5620 (sans AVX), Zig
+  do_not_create: true
+- name: LYCOS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/LYCOS
+  layer: L0_INFRASTRUCTURE
+  url: https://github.com/gerivdb/LYCOS
+  role: Fork CodeDB avec FLUENCE matrix encoding + Janus compression, Zig
+  do_not_create: true
+- name: FERMI-EVER
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/FERMI-EVER
+  layer: L0_INFRASTRUCTURE
+  url: https://github.com/gerivdb/FERMI-EVER
+  role: Orchestrateur IA pour GPUs NVIDIA Fermi abandonnes
+  do_not_create: true
+- name: CONTAINER-ORCHESTRATOR
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/CONTAINER-ORCHESTRATOR
+  layer: L0_INFRASTRUCTURE
+  url: https://github.com/gerivdb/CONTAINER-ORCHESTRATOR
+  role: Orchestration LXC/LXD native HP Z600
+  do_not_create: true
+- name: ATLAS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ATLAS
+  layer: L0_INFRASTRUCTURE
+  url: https://github.com/gerivdb/ATLAS
+  role: Infrastructure as Code, Terraform/K8s/Docker
+  do_not_create: true
+- name: WAZAA
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/WAZAA
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/WAZAA
+  role: Orchestrateur multi-depots, bots, agentique, LangChain/CrewAI, n8n
+  do_not_create: true
+- name: ecos-plugin-perplexity
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ecos-plugin-perplexity
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/ecos-plugin-perplexity
+  role: Plugin Perplexity/SuperMemory pour ECOS-CLI, Intent Hash, Notion sync
+  do_not_create: true
+- name: LUKAS-PRESTATIONS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/LUKAS-PRESTATIONS
+  layer: L4_GOVERNANCE
+  url: https://github.com/gerivdb/LUKAS-PRESTATIONS
+  role: Prestations Lukas
+  do_not_create: true
+- name: JOURNALISTE
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/JOURNALISTE
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/JOURNALISTE
+  role: Journalisme, investigation
+  do_not_create: true
+- name: COMET-BOT
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/COMET
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/COMET
+  role: Bot COMET -- Browser Automation Framework
+  do_not_create: true
+- name: BatMCP
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/BatMCP
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/BatMCP
+  role: MCP PowerShell
+  do_not_create: true
+- name: ECIT-CLI
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ECIT-CLI
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/ECIT-CLI
+  role: CLI ECIT
+  do_not_create: true
+- name: ECO-CLI
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ECO-CLI
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/ECO-CLI
+  role: CLI ECO
+  do_not_create: true
+- name: ecos-diff
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ecos-diff
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/ecos-diff
+  role: Diff ECOS
+  do_not_create: true
+- name: ONTOLOGY_MC
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ONTOLOGY_MC
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/ONTOLOGY_MC
+  role: ONTOLOGY MC
+  do_not_create: true
+- name: PITCH-1
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/PITCH-1
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/PITCH-1
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\PITCH-1
+  role: Pitch, 4 issues
+  do_not_create: true
+- name: DMR
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/DMR
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/DMR
+  local_path: D:\DO\WEB\TOOLS\L5-ARCHIVE\2025-0909-DMR
+  role: Python
+  do_not_create: true
+- name: political_compass_verse
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/VERSUS
+  layer: L5_COGNITION
+  parent: VERSUS
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\VERSUS\political_compass_verse
+  url: https://github.com/gerivdb/VERSUS
+  role: 'Couche causale politique de l''ecosysteme Diamond. Encode les orientations
+    politiques en coordonnees ternaires (S, M, E, I) et les projette sur UrbanVerse
+    (causalite), socioverse (effets sociaux) et BatVerse (scenarioisation narrative).
+
+    '
+  diamond_position:
+  - 2
+  - 0
+  - 2
+  - 1
+  strate: L5
+  status: active
+  intent_hash: 0xPOLITICAL_COMPASS_20260529
+  do_not_create: true
+- name: ECOYSTEM
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ECOYSTEM
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/ECOYSTEM
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\ECOYSTEM
+  role: BLO orchestrator, PLAN/, WAL, phi-CPS governance
+  phi_cps: 3.697
+  do_not_create: true
+- name: ARGUS
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ARGUS
+  layer: L1_CAUSALITY
+  url: https://github.com/gerivdb/ARGUS
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\ARGUS
+  role: 'Correlateur gouvernance automatise -- detection GAP/GHOST/DRIFT/COLLISION/ORPHAN/SHADOW/VOID
+    sur tous les repos gerivdb/*. Lit NEXUS+ONTOLOGY, ecrit WAL+Issues+PRs. Cron 6h
+    + trigger git push.
+
+    '
+  phi_cps: 3.697
+  status: active
+  intent_hash: 0xARGUS_P0_CONSTITUTIONAL_20260530
+  do_not_create: true
+- name: FLUX
+  layer: L1
+  role: Flow engine
+  full_name: gerivdb/FLUX
+  status: active
+- name: 2025-0303-BRAIN
+  layer: L1
+  role: BRAIN archive
+  full_name: gerivdb/2025-0303-BRAIN
+  status: active
+- name: 2025-0312-BRAIN2
+  layer: L1
+  role: BRAIN2 archive
+  full_name: gerivdb/2025-0312-BRAIN2
+  status: active
+- name: 2025-0402-DEEPSITE
+  layer: L1
+  role: DeepSite archive
+  full_name: gerivdb/2025-0402-DEEPSITE
+  status: active
+- name: 2025-0909-DMR
+  layer: L1
+  role: DMR archive
+  full_name: gerivdb/2025-0909-DMR
+  status: active
+- name: 2025-0920-BOOKING
+  layer: L1
+  role: Booking archive
+  full_name: gerivdb/2025-0920-BOOKING
+  status: active
+- name: 2025-1003-GERIBOOKING
+  layer: L1
+  role: GeriBooking archive
+  full_name: gerivdb/2025-1003-GERIBOOKING
+  status: active
+- name: 2025-0902-optimiser-Perplexity
+  layer: L1
+  role: Perplexity plugin
+  full_name: gerivdb/2025-0902-optimiser-Perplexity
+  status: active
+- name: 2025-0903-comparateur-IA-code
+  layer: L1
+  role: IA code comparator
+  full_name: gerivdb/2025-0903-comparateur-IA-code
+  status: active
+- name: 2025-0905-FRUSTRATION
+  layer: L1
+  role: Frustration plugin
+  full_name: gerivdb/2025-0905-FRUSTRATION
+  status: active
+- name: 2025-0906-JP-PETIT
+  layer: L1
+  role: JP Petit plugin
+  full_name: gerivdb/2025-0906-JP-PETIT
+  status: active
+- name: 2025-1103-DOC-UNIV-DEV
+  layer: L1
+  role: Doc univ dev
+  full_name: gerivdb/2025-1103-DOC-UNIV-DEV
+  status: active
+- name: CLINE
+  layer: L1
+  role: Cline CLI
+  full_name: gerivdb/CLINE
+  status: active
+- name: RACINES
+  layer: L1
+  role: Racines
+  full_name: gerivdb/RACINES
+  status: active
+- name: BRIDGES
+  layer: L0
+  role: Ponts inter-strates
+  full_name: gerivdb/BRIDGES
+  status: active
+- name: world_verse
+  layer: L8
+  role: World verse
+  full_name: gerivdb/world_verse
+  status: active
+- name: verse-template-generator
+  layer: L4
+  role: Verse template generator
+  full_name: gerivdb/verse-template-generator
+  status: active
+- name: verses_creative_foundation
+  layer: L8
+  role: Creative foundation
+  full_name: gerivdb/verses_creative_foundation
+  status: active
+- name: neuro_symbolic_verse_engine
+  layer: L2
+  role: Neuro symbolic engine
+  full_name: gerivdb/neuro_symbolic_verse_engine
+  status: active
+- name: physic_verse
+  layer: L3
+  role: Physics verse
+  full_name: gerivdb/physic_verse
+  status: active
+- name: brain_bypass_verse
+  layer: L2
+  role: Brain bypass
+  full_name: gerivdb/brain_bypass_verse
+  status: active
+- name: fluence_bypass_verse
+  layer: L2
+  role: Fluence bypass
+  full_name: gerivdb/fluence_bypass_verse
+  status: active
+- name: wazaa_bypass_verse
+  layer: L3
+  role: Wazaa bypass
+  full_name: gerivdb/wazaa_bypass_verse
+  status: active
+- name: verse_auto_projection
+  layer: L3
+  role: Verse auto projection
+  full_name: gerivdb/verse_auto_projection
+  status: active
+- name: verse_spiral_implementations
+  layer: L8
+  role: Verse spiral
+  full_name: gerivdb/verse_spiral_implementations
+  status: active
+- name: verse_detector
+  layer: L4
+  role: Verse detector
+  full_name: gerivdb/verse_detector
+  status: active
+- name: verses_library
+  layer: L4
+  role: Verses library
+  full_name: gerivdb/verses_library
+  status: active
+- name: freebox_gateway_manager_verse
+  layer: L4
+  role: Freebox gateway
+  full_name: gerivdb/freebox_gateway_manager_verse
+  status: active
+- name: bon_sens_python_verse
+  layer: L5
+  role: Bon sens Python
+  full_name: gerivdb/bon_sens_python_verse
+  status: active
+- name: mcccloud_invisible_art_verse
+  layer: L8
+  role: McCcloud art
+  full_name: gerivdb/mcccloud_invisible_art_verse
+  status: active
+- name: qwen_playground_verse
+  layer: L5
+  role: Qwen playground
+  full_name: gerivdb/qwen_playground_verse
+  status: active
+- name: atlas_gpu_optimization_verse
+  layer: L4
+  role: GPU optimization
+  full_name: gerivdb/atlas_gpu_optimization_verse
+  status: active
+- name: bellard_invariant_verse
+  layer: L3
+  role: Bellard invariant
+  full_name: gerivdb/bellard_invariant_verse
+  status: active
+- name: blo_debug_tools_verse
+  layer: L3
+  role: Debug tools
+  full_name: gerivdb/blo_debug_tools_verse
+  status: active
+- name: lecun_autosupervision_verse
+  layer: L5
+  role: LeCun autosupervision
+  full_name: gerivdb/lecun_autosupervision_verse
+  status: active
+- name: poincare_topology_verse
+  layer: L5
+  role: Poincare topology
+  full_name: gerivdb/poincare_topology_verse
+  status: active
+- name: AdapterVerse
+  layer: L3
+  role: Adapter verse
+  full_name: gerivdb/AdapterVerse
+  status: active
+- name: WikiVerse
+  layer: L7
+  role: Wiki verse
+  full_name: gerivdb/WikiVerse
+  status: active
+- name: WorkflowVerse
+  layer: L3
+  role: Workflow verse
+  full_name: gerivdb/WorkflowVerse
+  status: active
+- name: socioverse
+  layer: L8
+  role: Socioverse
+  full_name: gerivdb/socioverse
+  status: active
+- name: DEEPSITE
+  layer: L3
+  role: DeepSite
+  full_name: gerivdb/DEEPSITE
+  status: active
+P3_DORMANT:
+- name: TOOL-FACTORY-1
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/TOOL-FACTORY-1
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/TOOL-FACTORY-1
+  local_path: D:\DO\WEB\TOOLS\L4-TOOLS\TOOL-FACTORY-1
+  role: Factory outils
+  lifecycle: DORMANT
+  do_not_create: true
+- name: email-sender-1
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/email-sender-1
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/email-sender-1
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\email-sender-1
+  role: Envoi emails
+  lifecycle: DORMANT
+  do_not_create: true
+- name: email-sender-2
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/email-sender-2
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/email-sender-2
+  local_path: D:\DO\WEB\TOOLS\L3-CITIZENS\email-sender-2
+  role: Envoi emails
+  lifecycle: DORMANT
+  do_not_create: true
+- name: ATHENA
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ATHENA
+  layer: L1_CAUSALITY
+  url: https://github.com/gerivdb/ATHENA
+  role: Hub central Diamond v16 (coquille vide)
+  lifecycle: DEPRECATED
+  do_not_create: true
+- name: ARES
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/ARES
+  layer: L1_CAUSALITY
+  url: https://github.com/gerivdb/ARES
+  role: Moteur decision Diamond v16 (coquille vide)
+  lifecycle: DEPRECATED
+  do_not_create: true
+- name: APOLLO
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/APOLLO
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/APOLLO
+  role: Moteur creatif Diamond v16 (coquille vide)
+  lifecycle: DEPRECATED
+  do_not_create: true
+- name: HERMES
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/HERMES
+  layer: L3_EMERGENCE
+  url: https://github.com/gerivdb/HERMES
+  role: Moteur communication Diamond v16 (coquille vide)
+  lifecycle: DEPRECATED
+  do_not_create: true
+- name: VULKAN
+  coord: (L,D,E,S,T)
+  full_name: gerivdb/VULKAN
+  layer: L2_COMPOSITION
+  url: https://github.com/gerivdb/VULKAN
+  role: Moteur outils Diamond v16 (coquille vide)
+  lifecycle: DEPRECATED
+  do_not_create: true
+ARCHIVE_GERI_CMS:
+  description: 'Snapshots historiques du CMS GeriCMS v2. Repos crees entre 2025-01-01
+    et 2025-02-04. Tous prives, tous dormants. Aucune activite depuis la creation.
+    Regroupes ici pour eviter de polluer les sections actives.
+
+    '
+  count: 104
+  pattern: geri-cms-* / gericms-*
+  status: archived
+  do_not_create: true
+  repos:
+  - name: geri-cms-2-09-18-81-78bb3af7
+    full_name: gerivdb/geri-cms-2-09-18-81-78bb3af7
+    created: 2025-02-04
+  - name: geri-cms-2-09-18-81-b96fdfb0
+    full_name: gerivdb/geri-cms-2-09-18-81-b96fdfb0
+    created: 2025-02-04
+  - name: geri-cms-2-09-18-81-cbe1d349
+    full_name: gerivdb/geri-cms-2-09-18-81-cbe1d349
+    created: 2025-02-04
+  - name: geri-cms-2-09-18-81
+    full_name: gerivdb/geri-cms-2-09-18-81
+    created: 2025-02-04
+  - name: geri-cms-2-09-18-81-c4d82718
+    full_name: gerivdb/geri-cms-2-09-18-81-c4d82718
+    created: 2025-02-04
+  - name: geri-cms-2-09-18-16-11063d43
+    full_name: gerivdb/geri-cms-2-09-18-16-11063d43
+    created: 2025-02-04
+  - name: geri-cms-2-09-18-16
+    full_name: gerivdb/geri-cms-2-09-18-16
+    created: 2025-02-04
+  - name: geri-cms-2-07-36-44-6e430086
+    full_name: gerivdb/geri-cms-2-07-36-44-6e430086
+    created: 2025-02-04
+  - name: geri-cms-2-07-36-44
+    full_name: gerivdb/geri-cms-2-07-36-44
+    created: 2025-02-04
+  - name: geri-cms-2-07-36-68-f4cc096f
+    full_name: gerivdb/geri-cms-2-07-36-68-f4cc096f
+    created: 2025-02-03
+  - name: geri-cms-2-07-36-68-7e7f9891
+    full_name: gerivdb/geri-cms-2-07-36-68-7e7f9891
+    created: 2025-02-03
+  - name: geri-cms-2-07-36-68-37ca8215
+    full_name: gerivdb/geri-cms-2-07-36-68-37ca8215
+    created: 2025-02-03
+  - name: geri-cms-2-07-36-68-fa2ae71e
+    full_name: gerivdb/geri-cms-2-07-36-68-fa2ae71e
+    created: 2025-02-03
+  - name: geri-cms-2-07-36-68-2382051c
+    full_name: gerivdb/geri-cms-2-07-36-68-2382051c
+    created: 2025-02-03
+  - name: geri-cms-2-07-36-68-2b026d6f
+    full_name: gerivdb/geri-cms-2-07-36-68-2b026d6f
+    created: 2025-02-03
+  - name: geri-cms-2-07-36-68-1040b548
+    full_name: gerivdb/geri-cms-2-07-36-68-1040b548
+    created: 2025-02-03
+  - name: geri-cms-2-07-36-68-d2b899fa
+    full_name: gerivdb/geri-cms-2-07-36-68-d2b899fa
+    created: 2025-02-03
+  - name: geri-cms-2-07-36-68-efc178b0
+    full_name: gerivdb/geri-cms-2-07-36-68-efc178b0
+    created: 2025-02-03
+  - name: geri-cms-2-07-36-68
+    full_name: gerivdb/geri-cms-2-07-36-68
+    created: 2025-02-03
+  - name: geri-cms-2-07-36-93
+    full_name: gerivdb/geri-cms-2-07-36-93
+    created: 2025-01-30
+  - name: geri-cms-2-07-36-06
+    full_name: gerivdb/geri-cms-2-07-36-06
+    created: 2025-01-13
+  - name: geri-cms-2-07-36-04
+    full_name: gerivdb/geri-cms-2-07-36-04
+    created: 2025-01-13
+  - name: geri-cms-2-07-36-07
+    full_name: gerivdb/geri-cms-2-07-36-07
+    created: 2025-01-13
+  - name: gericms-v2-100-27
+    full_name: gerivdb/gericms-v2-100-27
+    created: 2025-01-02
+  - name: gericms-v2-99-26
+    full_name: gerivdb/gericms-v2-99-26
+    created: 2025-01-02
+  - name: gericms-v2-98-25
+    full_name: gerivdb/gericms-v2-98-25
+    created: 2025-01-02
+  - name: gericms-v2-97-7a335ab9
+    full_name: gerivdb/gericms-v2-97-7a335ab9
+    created: 2025-01-02
+  - name: gericms-v2-97-200ac1b7
+    full_name: gerivdb/gericms-v2-97-200ac1b7
+    created: 2025-01-02
+  - name: gericms-v2-97
+    full_name: gerivdb/gericms-v2-97
+    created: 2025-01-02
+  - name: gericms-v2-93-3ab93a40
+    full_name: gerivdb/gericms-v2-93-3ab93a40
+    created: 2025-01-02
+  - name: gericms-v2-93-2360c28b
+    full_name: gerivdb/gericms-v2-93-2360c28b
+    created: 2025-01-02
+  - name: gericms-v2-93
+    full_name: gerivdb/gericms-v2-93
+    created: 2025-01-02
+  - name: gericms-v2-88-40d908ce
+    full_name: gerivdb/gericms-v2-88-40d908ce
+    created: 2025-01-01
+  - name: gericms-v2-88-8e4ddf9f
+    full_name: gerivdb/gericms-v2-88-8e4ddf9f
+    created: 2025-01-01
+  - name: gericms-v2-88-fd509af9
+    full_name: gerivdb/gericms-v2-88-fd509af9
+    created: 2025-01-01
+  - name: gericms-v2-88-ec0eae47
+    full_name: gerivdb/gericms-v2-88-ec0eae47
+    created: 2025-01-01
+  - name: gericms-v2-88
+    full_name: gerivdb/gericms-v2-88
+    created: 2025-01-01
+  - name: gericms-v2-75
+    full_name: gerivdb/gericms-v2-75
+    created: 2025-01-01
+  - name: gericmsv73-70
+    full_name: gerivdb/gericmsv73-70
+    created: 2025-01-01
+  - name: gericmsv73
+    full_name: gerivdb/gericmsv73
+    created: 2025-01-01
+  - name: gericmsv70
+    full_name: gerivdb/gericmsv70
+    created: 2025-01-01
+  - name: gericmsv69-61
+    full_name: gerivdb/gericmsv69-61
+    created: 2025-01-01
+  - name: gericmsv68-4f1458bf
+    full_name: gerivdb/gericmsv68-4f1458bf
+    created: 2025-01-01
+  - name: gericmsv68
+    full_name: gerivdb/gericmsv68
+    created: 2025-01-01
+  - name: gericmsv67
+    full_name: gerivdb/gericmsv67
+    created: 2025-01-01
+  - name: gericmsv66-5ed0ac10
+    full_name: gerivdb/gericmsv66-5ed0ac10
+    created: 2025-01-01
+  - name: gericmsv66
+    full_name: gerivdb/gericmsv66
+    created: 2025-01-01
+  - name: gericmsv65-89
+    full_name: gerivdb/gericmsv65-89
+    created: 2025-01-01
+  - name: gericmsv65
+    full_name: gerivdb/gericmsv65
+    created: 2025-01-01
+  - name: gericmsv64
+    full_name: gerivdb/gericmsv64
+    created: 2025-01-01
+  - name: gericmsv63
+    full_name: gerivdb/gericmsv63
+    created: 2025-01-01
+  - name: gericmsv62
+    full_name: gerivdb/gericmsv62
+    created: 2025-01-01
+  - name: gericmsv61
+    full_name: gerivdb/gericmsv61
+    created: 2025-01-01
+  - name: gericmsv60
+    full_name: gerivdb/gericmsv60
+    created: 2025-01-01
+  - name: gericmsv59
+    full_name: gerivdb/gericmsv59
+    created: 2025-01-01
+  - name: gericmsv58
+    full_name: gerivdb/gericmsv58
+    created: 2025-01-01
+  - name: gericmsv57
+    full_name: gerivdb/gericmsv57
+    created: 2025-01-01
+  - name: gericmsv56
+    full_name: gerivdb/gericmsv56
+    created: 2025-01-01
+  - name: gericmsv55
+    full_name: gerivdb/gericmsv55
+    created: 2025-01-01
+  - name: gericmsv54
+    full_name: gerivdb/gericmsv54
+    created: 2025-01-01
+  - name: gericmsv53
+    full_name: gerivdb/gericmsv53
+    created: 2025-01-01
+  - name: gericmsv52
+    full_name: gerivdb/gericmsv52
+    created: 2025-01-01
+  - name: gericmsv51
+    full_name: gerivdb/gericmsv51
+    created: 2025-01-01
+  - name: gericmsv50
+    full_name: gerivdb/gericmsv50
+    created: 2025-01-01
+  - name: gericmsv49
+    full_name: gerivdb/gericmsv49
+    created: 2025-01-01
+  - name: gericmsv48
+    full_name: gerivdb/gericmsv48
+    created: 2025-01-01
+  - name: gericmsv47
+    full_name: gerivdb/gericmsv47
+    created: 2025-01-01
+  - name: gericmsv46
+    full_name: gerivdb/gericmsv46
+    created: 2025-01-01
+  - name: gericmsv45
+    full_name: gerivdb/gericmsv45
+    created: 2025-01-01
+  - name: gericmsv44
+    full_name: gerivdb/gericmsv44
+    created: 2025-01-01
+  - name: gericmsv43
+    full_name: gerivdb/gericmsv43
+    created: 2025-01-01
+  - name: gericmsv42
+    full_name: gerivdb/gericmsv42
+    created: 2025-01-01
+  - name: gericmsv41
+    full_name: gerivdb/gericmsv41
+    created: 2025-01-01
+  - name: gericmsv40
+    full_name: gerivdb/gericmsv40
+    created: 2025-01-01
+  - name: gericmsv39
+    full_name: gerivdb/gericmsv39
+    created: 2025-01-01
+  - name: gericmsv38
+    full_name: gerivdb/gericmsv38
+    created: 2025-01-01
+  - name: gericmsv37
+    full_name: gerivdb/gericmsv37
+    created: 2025-01-01
+  - name: gericmsv36
+    full_name: gerivdb/gericmsv36
+    created: 2025-01-01
+  - name: gericmsv35
+    full_name: gerivdb/gericmsv35
+    created: 2025-01-01
+  - name: gericmsv34
+    full_name: gerivdb/gericmsv34
+    created: 2025-01-01
+  - name: gericmsv33
+    full_name: gerivdb/gericmsv33
+    created: 2025-01-01
+  - name: gericmsv32
+    full_name: gerivdb/gericmsv33
+    created: 2025-01-01
+  - name: gericmsv31
+    full_name: gerivdb/gericmsv31
+    created: 2025-01-01
+  - name: gericmsv30
+    full_name: gerivdb/gericmsv30
+    created: 2025-01-01
+  - name: gericmsv29
+    full_name: gerivdb/gericmsv29
+    created: 2025-01-01
+  - name: gericmsv28
+    full_name: gerivdb/gericmsv28
+    created: 2025-01-01
+  - name: gericmsv27
+    full_name: gerivdb/gericmsv27
+    created: 2025-01-01
+  - name: gericmsv26
+    full_name: gerivdb/gericmsv26
+    created: 2025-01-01
+  - name: gericmsv25
+    full_name: gerivdb/gericmsv25
+    created: 2025-01-01
+  - name: gericmsv24
+    full_name: gerivdb/gericmsv24
+    created: 2025-01-01
+  - name: gericmsv23
+    full_name: gerivdb/gericmsv23
+    created: 2025-01-01
+  - name: gericmsv22
+    full_name: gerivdb/gericmsv22
+    created: 2025-01-01
+  - name: gericmsv21
+    full_name: gerivdb/gericmsv21
+    created: 2025-01-01
+  - name: gericmsv20
+    full_name: gerivdb/gericmsv20
+    created: 2025-01-01
+  - name: gericmsv19
+    full_name: gerivdb/gericmsv19
+    created: 2025-01-01
+  - name: gericmsv18
+    full_name: gerivdb/gericmsv18
+    created: 2025-01-01
+  - name: gericmsv17
+    full_name: gerivdb/gericmsv17
+    created: 2025-01-01
+  - name: gericmsv16
+    full_name: gerivdb/gericmsv16
+    created: 2025-01-01
+  - name: gericmsv15
+    full_name: gerivdb/gericmsv15
+    created: 2025-01-01
+  - name: gericmsv14
+    full_name: gerivdb/gericmsv14
+    created: 2025-01-01
+  - name: gericmsv13
+    full_name: gerivdb/gericmsv13
+    created: 2025-01-01
+  - name: gericmsv12
+    full_name: gerivdb/gericmsv12
+    created: 2025-01-01
+  - name: gericmsv11
+    full_name: gerivdb/gericmsv11
+    created: 2025-01-01
+  - name: gericmsv10
+    full_name: gerivdb/gericmsv10
+    created: 2025-01-01
+  - name: gericmsv9
+    full_name: gerivdb/gericmsv9
+    created: 2025-01-01
+  - name: gericmsv8
+    full_name: gerivdb/gericmsv8
+    created: 2025-01-01
+  - name: gericmsv7
+    full_name: gerivdb/gericmsv7
+    created: 2025-01-01
+  - name: gericmsv6
+    full_name: gerivdb/gericmsv6
+    created: 2025-01-01
+  - name: gericmsv5
+    full_name: gerivdb/gericmsv5
+    created: 2025-01-01
+  - name: gericmsv4
+    full_name: gerivdb/gericmsv4
+    created: 2025-01-01
+  - name: gericmsv3
+    full_name: gerivdb/gericmsv3
+    created: 2025-01-01
+  - name: gericmsv2
+    full_name: gerivdb/gericmsv2
+    created: 2025-01-01
+  - name: gericmsv1
+    full_name: gerivdb/gericmsv1
+    created: 2025-01-01
