@@ -80,7 +80,11 @@ Première release stable de `gerivdb-repomix`, fork souverain de yamadashy/repom
 | A9 | DATA-MINER | Mining sur bundle complet sans git clone |
 | A10 | TOPOS/Riddler | Scan secrets sur fichier unique |
 
+| 17 | EPICs 01→11 statuts synchronisés, consolidations | Déployé |
+| 18 | Nettoyage artefacts, README v1.0.0, upstream check, PyPI-ready | Déployé |
+
 ---
 
-*Fork de yamadashy/repomix v1.14.1 — UrbanVerse v5.0.0*
+*Fork de yamadashy/repomix — UrbanVerse v5.0.0*
 *IntentHash: 0xREPOMIX_INTENT_20260530*
+*V1.0.0 — Cycle complet Vagues 1→18*
