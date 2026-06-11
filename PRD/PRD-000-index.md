@@ -52,7 +52,9 @@ Phase 10 — Vague 10 : PRD-003 P3+P4, Karpathy Recall + Fibre/Economie.
 Phase 11 — Vague 11 : PRD-007+008 accepted — 190 repos, cli_contract A5, bundle_corpus v2, 54 tests.
 Phase 12 — Vague 12 : PRD-009+010 accepted — mine_bundle v2, relay v2+v3, cadastre 190, 77 tests.
 Phase 13 — Vague 13 : PRD-011 accepted — marketplace sync v2, PyPI publish.yml, CHANGELOG v1.0.0, 84 tests.
-Phase 15 — Vague 15 : PyPI v1.0.0 publie, corrections residuelles STRATUM_RELAY, ADR GOVERNANCE-HUB proposé, cadastre_v2 VERSES.
+Phase 14 — Vague 14 : EPIC-04 deploye — Karpathy Recall v4, transit_map v2, recall_coherence_check v4, 92 tests.
+Phase 15 — Vague 15 : PyPI v1.0.0 publie, corrections residuelles STRATUM_RELAY, ADR GOVERNANCE-HUB propose, cadastre_v2 VERSES.
+Phase 16 — Vague 16 : GOVERNANCE-HUB consolidation — known_repos v2.1, nettoyage NEXUS racine, ADR-042 accepted, LLM-BOOT GATE-4 synced.
 
 ---
 
