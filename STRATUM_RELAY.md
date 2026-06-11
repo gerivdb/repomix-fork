@@ -1,6 +1,6 @@
 # STRATUM RELAY — REPOMIX (L4-TOOLS)
 
-**VAGUE**: 14 | **Synchro**: 2026-06-11 | **Hub**: gerivdb/LLM-REPO
+**VAGUE**: 15 | **Synchro**: 2026-06-11 | **Hub**: gerivdb/LLM-REPO
 
 ---
 
@@ -25,7 +25,7 @@
 - R2 — Tout package Stratum Relay doit etre valide YAML avant push.
 - R3 — REPOMIX ne depend pas de donnees externes — fonctionnement offline.
 - R4 — Les customisations UrbanVerse (metadonnees strate/phi-CPS/intent_hash dans XML) sont preservees.
-- R5 — Le mode `--ecosystem` produit des bundles multi-repo (76 repos → 1 XML).
+- R5 — Le mode `--ecosystem` produit des bundles multi-repo (190 repos → chunks par tier P0/P1/P2/P3).
 
 ## Dependances directes
 
@@ -59,22 +59,22 @@ hub_ref: gerivdb/ECOS-CLI
 | A2 | recall_coherence_check.py | Mode `--repomix` (exhaustivite) complement de `--opensrc` (vitesse) | Vague 5 |
 | A3 | CodeDB-E5620 / LYCOS | Corpus d'indexation en 1 commande → ingestion directe FLUENCE | Vague 6 |
 | A4 | LLM-REPO/TRAINING/ | Packs de recall auto-generes, reproductibles, versionnes | Vague 6 |
-| A5 | ECOS-CLI | Commande `ecos bundle <repo>` wrappant repomix | Vague 6 (spec) |
+| A5 | ECOS-CLI | cli_contract.py v1.0.0 | Vague 11 |
 | A6 | IRIS | Canal repomix en complement d'opensrc pour repos tiers upstream | Vague 7 |
-| A7 | GeriCode/KiloCode | Metadonnees UrbanVerse dans XML → contexte ecosysteme natif | Passif |
+| A7 | GeriCode/KiloCode | Metadonnees UrbanVerse dans XML → contexte ecosysteme natif | Vague 12 |
 | A8 | ECOS-VISION | Bundle XML → parse structure → graphes dependances inter-repo | Vague 6 |
-| A9 | DATA-MINER | Mining sur bundle complet sans git clone de 76 repos | Vague 6 |
+| A9 | DATA-MINER | mine_bundle v2 | Vague 12 |
 | A10 | TOPOS/Riddler | Scan secrets/credentials sur fichier unique | Vague 6 |
 
 ## Customisations fork (vs upstream yamadashy/repomix v1.14.1)
 
 1. Metadonnees UrbanVerse en XML (strate, layer, phi_cps, intent_hash, vague_deployee)
-2. Mode `--ecosystem` : bundle multi-repo (79 repos → 1 XML structure)
+2. Mode `--ecosystem` : bundle multi-repo (190 repos → chunks 80 Mo/50 repos)
 3. Integration register-repo.py : enregistrement automatique a la creation
 4. Output path par defaut : `D:\DO\WEB\TOOLS\L4-TOOLS\repomix\`
 5. 10 apports ecosysteme (A1→A10) documentes ci-dessus
 6. CI/CD local (pre-push hook Python, validate_all.py)
-7. Tests unitaires (28 tests, src/repomix/adapters + verse_detector)
+7. Tests unitaires (92 tests, adapters + sync + marketplace + recall + ecosystem + cli_contract)
 
 ## Vague de mise a jour
 
@@ -86,11 +86,12 @@ hub_ref: gerivdb/ECOS-CLI
 | 7 | Packaging pypi, upstream sync yamadashy/repomix, score emergence > 72% (BORN) | Deploye |
 | 8 | PRD-002 P3+P4 : VersesSyncManager + Marketplace API | Deploye |
 | 9 | PRD-003 P1+P2 : UrbanVerse structure + 10 pilotes + upstream sync | Deploye |
-| 10 | PRD-003 P3+P4 : Karpathy Recall + Fibre/Economie | Deploye |
+| 10 | PRD-003 P3+P4 : Karpathy Recall packs + Fibre/Economie | Deploye |
 | 11 | PRD-007+008 : Ecosystem 190 repos + cli_contract A5 + bundle_corpus v2 | Deploye |
 | 12 | PRD-009+010 : mine_bundle v2 + A7 tests + relay Vague 2+3 + cadastre 190 | Deploye |
 | 13 | PRD-011 : Marketplace sync bidirectionnelle + publication PyPI + CHANGELOG v1.0.0 | Deploye |
 | 14 | EPIC-04 : Karpathy Recall v4 + transit_map v2 (12 arrets M1) + recall_coherence_check v4 | Deploye |
+| 15 | PyPI v1.0.0 publie + corrections residuelles STRATUM_RELAY + ADR GOVERNANCE-HUB | Planifie |
 
 ---
 
