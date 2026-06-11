@@ -2,7 +2,7 @@
 id: PRD-008
 title: "ECOS-CLI — Implementation commande `ecos bundle` (A5)"
 repo: gerivdb/ECOS-CLI
-status: draft
+status: accepted
 created: 2026-06-11
 author: gerivdb
 intent_hash: 0xECOS_CLI_BUNDLE_20260611

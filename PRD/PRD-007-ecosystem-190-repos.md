@@ -2,7 +2,7 @@
 id: PRD-007
 title: "repomix-fork — Mode ecosystem 190 repos"
 repo: gerivdb/repomix-fork
-status: draft
+status: accepted
 created: 2026-06-11
 author: gerivdb
 intent_hash: 0xREPOMIX_ECOSYSTEM_190_20260611

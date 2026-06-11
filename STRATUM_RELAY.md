@@ -1,6 +1,6 @@
 # STRATUM RELAY — REPOMIX (L4-TOOLS)
 
-**VAGUE**: 9 | **Synchro**: 2026-06-11 | **Hub**: gerivdb/LLM-REPO
+**VAGUE**: 11 | **Synchro**: 2026-06-11 | **Hub**: gerivdb/LLM-REPO
 
 ---
 
@@ -86,7 +86,8 @@ hub_ref: gerivdb/ECOS-CLI
 | 7 | Packaging pypi, upstream sync yamadashy/repomix, score emergence > 72% (BORN) | Deploye |
 | 8 | PRD-002 P3+P4 : VersesSyncManager + Marketplace API | Deploye |
 | 9 | PRD-003 P1+P2 : UrbanVerse structure + 10 pilotes + upstream sync | Deploye |
-| 10 | PRD-003 P3+P4 : Karpathy Recall + Fibre/Economie | Planifie |
+| 10 | PRD-003 P3+P4 : Karpathy Recall + Fibre/Economie | Deploye |
+| 11 | PRD-007+008 : Ecosystem 190 repos + cli_contract A5 + bundle_corpus v2 | Deploye |
 
 ---
 
