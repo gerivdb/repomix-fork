@@ -145,3 +145,73 @@ class VersesSyncManager:
         for f in targets:
             f.unlink()
         return len(targets)
+
+    # ── V2: push_to_marketplace ──────────────────────────────────────
+
+    def push_to_marketplace(self, verse_entry: VerseEntry,
+                            registry_path: Optional[Path] = None) -> dict:
+        """
+        Push a verse entry to VERSES/ontology_registry.json.
+        Creates the file if it doesn't exist. Updates if id already present.
+
+        Args:
+            verse_entry: VerseEntry to push
+            registry_path: Override path to ontology_registry.json
+
+        Returns:
+            {"status": "pushed"|"updated", "id": str, "registry": str, "count": int}
+        """
+        import json as _json
+        from pathlib import Path as _Path
+
+        reg_path = registry_path or _Path(
+            "D:/DO/WEB/TOOLS/L4-TOOLS/REPOMIX-FORK/verses-marketplace/ontology_registry.json"
+        )
+        reg_path.parent.mkdir(parents=True, exist_ok=True)
+
+        # Load existing
+        if reg_path.exists():
+            try:
+                data = _json.loads(reg_path.read_text(encoding="utf-8"))
+            except (_json.JSONDecodeError, IOError):
+                data = {"verses": [], "version": "1.0", "last_updated": ""}
+        else:
+            data = {"verses": [], "version": "1.0", "last_updated": ""}
+
+        # Update or append
+        verses_list = data.get("verses", [])
+        found = False
+        for i, v in enumerate(verses_list):
+            if v.get("id") == verse_entry.id:
+                verses_list[i] = {
+                    "id": verse_entry.id, "name": verse_entry.name,
+                    "domain": verse_entry.domain, "version": verse_entry.version,
+                    "dependencies": verse_entry.dependencies,
+                    "quality_score": verse_entry.quality_score,
+                }
+                found = True
+                break
+        if not found:
+            verses_list.append({
+                "id": verse_entry.id, "name": verse_entry.name,
+                "domain": verse_entry.domain, "version": verse_entry.version,
+                "dependencies": verse_entry.dependencies,
+                "quality_score": verse_entry.quality_score,
+            })
+
+        data["verses"] = verses_list
+        import time as _time
+        data["last_updated"] = _time.time()
+        data["count"] = len(verses_list)
+
+        reg_path.write_text(_json.dumps(data, indent=2), encoding="utf-8")
+
+        # Also update in-memory registry
+        self._registry[verse_entry.id] = verse_entry
+
+        return {
+            "status": "updated" if found else "pushed",
+            "id": verse_entry.id,
+            "registry": str(reg_path),
+            "count": len(verses_list),
+        }

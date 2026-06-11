@@ -124,6 +124,70 @@ if FASTAPI_AVAILABLE:
         return {"status": "ok", "registry_size": len(_manager._registry),
                 "timestamp": time.time()}
 
+    # ── V2: push_to_marketplace ──────────────────────────────────────
+
+    @app.post("/verses/push", status_code=201)
+    def push_to_marketplace(payload: PublishPayload):
+        """
+        V2: Push verse entry to VERSES/ontology_registry.json.
+        Bidirectional sync: marketplace -> VERSES registry.
+        """
+        entry = VerseEntry(**payload.model_dump())
+        _manager._registry[entry.id] = entry
+        # Persist to VERSES registry
+        _manager._save_to_verses_registry(entry)
+        return {"status": "pushed", "id": entry.id, "version": entry.version,
+                "registry": "VERSES/ontology_registry.json"}
+
+
+def _save_to_verses_registry(self, entry: VerseEntry) -> None:
+    """
+    Write/update a verse entry in VERSES/ontology_registry.json.
+    Creates the file if it doesn't exist.
+    """
+    verses_marketplace = Path("D:/DO/WEB/TOOLS/L4-TOOLS/REPOMIX-FORK/verses-marketplace")
+    registry_path = verses_marketplace / "ontology_registry.json"
+    registry_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Load existing
+    if registry_path.exists():
+        try:
+            data = json.loads(registry_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, IOError):
+            data = {"verses": [], "version": "1.0", "last_updated": ""}
+    else:
+        data = {"verses": [], "version": "1.0", "last_updated": ""}
+
+    # Update or append
+    verses_list = data.get("verses", [])
+    found = False
+    for i, v in enumerate(verses_list):
+        if v.get("id") == entry.id:
+            verses_list[i] = {
+                "id": entry.id, "name": entry.name, "domain": entry.domain,
+                "version": entry.version, "dependencies": entry.dependencies,
+                "quality_score": entry.quality_score,
+            }
+            found = True
+            break
+    if not found:
+        verses_list.append({
+            "id": entry.id, "name": entry.name, "domain": entry.domain,
+            "version": entry.version, "dependencies": entry.dependencies,
+            "quality_score": entry.quality_score,
+        })
+
+    data["verses"] = verses_list
+    data["last_updated"] = time.time()
+    data["count"] = len(verses_list)
+
+    registry_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+
+
+# Attach method to VersesSyncManager class
+from ..sync.verses_sync_manager import VersesSyncManager
+VersesSyncManager._save_to_verses_registry = _save_to_verses_registry
+
 
 def main():
     if not FASTAPI_AVAILABLE:

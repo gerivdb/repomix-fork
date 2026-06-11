@@ -2,7 +2,7 @@
 id: PRD-011
 title: "VERSES marketplace + PyPI publish"
 repo: gerivdb/repomix-fork
-status: draft
+status: accepted
 created: 2026-06-11
 author: gerivdb
 intent_hash: 0xREPOMIX_MARKETPLACE_PYPI_20260611

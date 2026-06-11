@@ -26,7 +26,7 @@ author: gerivdb
 | PRD-008 | ecos-cli-bundle | ECOS-CLI A5 implementation | accepted | 2026-06-11 |
 | PRD-009 | a9-a7 | A9 DATA-MINER + A7 GeriCode | accepted | 2026-06-11 |
 | PRD-010 | urbanverse-vague2-3 | UrbanVerse Vague 2+3 | accepted | 2026-06-11 |
-| PRD-011 | marketplace-pypi | VERSES marketplace + PyPI publish | draft | 2026-06-11 |
+| PRD-011 | marketplace-pypi | VERSES marketplace + PyPI publish | accepted | 2026-06-11 |
 
 ## PRD archives / superseded
 
@@ -49,8 +49,8 @@ Phase 7 — Vague 7 : packaging v1.0.0, upstream sync, score 85% MATEURE.
 Phase 8 — Vague 8 : PRD-002 P3+P4, VersesSyncManager + Marketplace API.
 Phase 9 — Vague 9 : PRD-003 P1+P2, UrbanVerse structure + 10 pilotes + upstream sync.
 Phase 10 — Vague 10 : PRD-003 P3+P4, Karpathy Recall + Fibre/Economie.
-Phase 12 — Vague 12 : PRD-009+010, mine_bundle v2 + A7 tests + relay Vague 2+3 + cadastre 190.
+Phase 13 — Vague 13 : PRD-011, marketplace sync bidirectionnelle + publication PyPI + CHANGELOG v1.0.0.
 
 ---
 
-*Derniere mise a jour : 2026-06-11 — 10 PRD references (8 accepted, 2 draft).*
+*Derniere mise a jour : 2026-06-11 — 10 PRD references (9 accepted, 1 draft).*
