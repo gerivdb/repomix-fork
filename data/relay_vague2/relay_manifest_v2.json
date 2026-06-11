@@ -1,0 +1,19 @@
+{
+  "vague": 2,
+  "date": "2026-06-11",
+  "repos": [
+    "GOVERNANCE-HUB",
+    "ECOYSTEM",
+    "BRAIN",
+    "ECOS-CLI",
+    "repomix-fork",
+    "LLM-REPO",
+    "NEXUS",
+    "FLUENCE",
+    "VERSES",
+    "political_compass_verse"
+  ],
+  "count": 10,
+  "connectivite": "DSL+",
+  "fibre_only": false
+}

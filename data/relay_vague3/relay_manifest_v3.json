@@ -1,0 +1,14 @@
+{
+  "vague": 3,
+  "date": "2026-06-11",
+  "repos": [
+    "GOVERNANCE-HUB",
+    "ECOYSTEM",
+    "repomix-fork",
+    "LLM-REPO",
+    "NEXUS"
+  ],
+  "count": 5,
+  "connectivite": "FIBRE",
+  "fibre_only": true
+}
