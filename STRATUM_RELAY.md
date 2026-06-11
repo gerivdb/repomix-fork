@@ -88,6 +88,7 @@ hub_ref: gerivdb/ECOS-CLI
 | 9 | PRD-003 P1+P2 : UrbanVerse structure + 10 pilotes + upstream sync | Deploye |
 | 10 | PRD-003 P3+P4 : Karpathy Recall + Fibre/Economie | Deploye |
 | 11 | PRD-007+008 : Ecosystem 190 repos + cli_contract A5 + bundle_corpus v2 | Deploye |
+| 12 | PRD-009+010 : mine_bundle v2 + A7 tests + relay Vague 2+3 + cadastre 190 | Deploye |
 
 ---
 

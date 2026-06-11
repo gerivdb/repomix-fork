@@ -2,7 +2,7 @@
 id: PRD-010
 title: "UrbanVerse — Vague 2+3 : Karpathy Recall + Fibre"
 repo: gerivdb/VERSES
-status: draft
+status: accepted
 created: 2026-06-11
 author: gerivdb
 intent_hash: 0xURBANVERSE_VAGUE2_3_20260611

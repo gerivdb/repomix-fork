@@ -1,0 +1,1909 @@
+{
+  "version": "2.0",
+  "vague": 2,
+  "date": "2026-06-11",
+  "count": 190,
+  "source": "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\REPOMIX-FORK\\data\\known_repositories_190.yaml",
+  "parcelles": [
+    {
+      "repo_name": "NEXUS",
+      "strate": "L1",
+      "layer_detail": "L1_CAUSALITY",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "KIVA",
+      "strate": "L1",
+      "layer_detail": "L1_CAUSALITY",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "GATEWAY-MANAGER",
+      "strate": "L1",
+      "layer_detail": "L1_CAUSALITY",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "BRAIN",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ECOS-CLI",
+      "strate": "L1",
+      "layer_detail": "L1_CAUSALITY",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ONTOLOGY",
+      "strate": "L1",
+      "layer_detail": "L1_CAUSALITY",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "GOVERNANCE-HUB",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "KIVA-CLI",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "FLUENCE",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CANDIDATOR",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "GeriCode",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "LLM-REPO",
+      "strate": "L1",
+      "layer_detail": "L1b",
+      "status": "active",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "TOPOS",
+      "strate": "L1",
+      "layer_detail": "L1b",
+      "status": "active",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "TQL",
+      "strate": "L1",
+      "layer_detail": "L1b",
+      "status": "active",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "KEEL",
+      "strate": "L1",
+      "layer_detail": "L1b",
+      "status": "design",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "IRIS",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "active",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "KRONOS",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "active",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "UAE",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "active",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "MIMIR",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "active",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "GERIBOOKING",
+      "strate": "L4",
+      "layer_detail": "L4_GOVERNANCE",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "BANK-BUSTER",
+      "strate": "L4",
+      "layer_detail": "L4_GOVERNANCE",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "racines",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "strix",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "TRIX",
+      "strate": "L2",
+      "layer_detail": "L2_RUNTIME",
+      "status": "active",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "AUTO-DEV",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "design",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DevTools",
+      "strate": "L3",
+      "layer_detail": "L3_TOOLS",
+      "status": "active",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "Gitnote",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "BRAIN-DOCS",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SKILLS",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "active",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "GERI-VON-DER-BITSH",
+      "strate": "L4",
+      "layer_detail": "L4_GOVERNANCE",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "vsix-ai-orchestrator",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "vscode-lm-proxy",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "FLUENCE-CLI",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "repomix-fork",
+      "strate": "L4",
+      "layer_detail": "L4-TOOLS",
+      "status": "active",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "diff0-fork",
+      "strate": "L4",
+      "layer_detail": "L4-TOOLS",
+      "status": "active",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "diffscope-fork",
+      "strate": "L4",
+      "layer_detail": "L4-TOOLS",
+      "status": "active",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "REPO-STANDARDS",
+      "strate": "L4",
+      "layer_detail": "L4-TOOLS",
+      "status": "active",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "VERSES",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "active",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DevTools-CLI",
+      "strate": "L0",
+      "layer_detail": "L0_INFRASTRUCTURE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "FORGE",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "PULSE",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ECOS-VISION",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "VDB",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DATA-MINER",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "BATVERSE",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "OPENCLAW-CLI",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "BRAIN-CLI",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DOC-UNIV-DEV",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "GOST",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "TINA",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "TRANSCENDANCE",
+      "strate": "L5",
+      "layer_detail": "L5_META",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "PLIX",
+      "strate": "L0",
+      "layer_detail": "L0_INFRASTRUCTURE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CodeDB-E5620",
+      "strate": "L0",
+      "layer_detail": "L0_INFRASTRUCTURE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "LYCOS",
+      "strate": "L0",
+      "layer_detail": "L0_INFRASTRUCTURE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "FERMI-EVER",
+      "strate": "L0",
+      "layer_detail": "L0_INFRASTRUCTURE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CONTAINER-ORCHESTRATOR",
+      "strate": "L0",
+      "layer_detail": "L0_INFRASTRUCTURE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ATLAS",
+      "strate": "L0",
+      "layer_detail": "L0_INFRASTRUCTURE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "WAZAA",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ecos-plugin-perplexity",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "LUKAS-PRESTATIONS",
+      "strate": "L4",
+      "layer_detail": "L4_GOVERNANCE",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "JOURNALISTE",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMET-BOT",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "BatMCP",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ECIT-CLI",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ECO-CLI",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ecos-diff",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ONTOLOGY_MC",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "PITCH-1",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DMR",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "political_compass_verse",
+      "strate": "L5",
+      "layer_detail": "L5_COGNITION",
+      "status": "active",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ECOYSTEM",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ARGUS",
+      "strate": "L1",
+      "layer_detail": "L1_CAUSALITY",
+      "status": "active",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "TOOL-FACTORY-1",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "email-sender-1",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "email-sender-2",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ATHENA",
+      "strate": "L1",
+      "layer_detail": "L1_CAUSALITY",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ARES",
+      "strate": "L1",
+      "layer_detail": "L1_CAUSALITY",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "APOLLO",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "HERMES",
+      "strate": "L3",
+      "layer_detail": "L3_EMERGENCE",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "VULKAN",
+      "strate": "L2",
+      "layer_detail": "L2_COMPOSITION",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "urban_ontology_verse",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "verses-hub",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "verses-marketplace",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "verses-migration",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "verses_sync",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "artifacts",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "spokes",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "browser",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "website",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ENV0-REGISTRY",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ENV1-REGISTRY",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ENV2-REGISTRY",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ENV3-REGISTRY",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ENV4-REGISTRY",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ENV5-REGISTRY",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "ZIG-RUNTIME",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "RUST-TOOLS",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-EXECUTION",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-SEMANTIC",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-GOVERNANCE",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-TERRITORY",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-COGNITION",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-FLOW",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-TIME",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-MEMORY",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-ATTENTION",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-BUILD",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-MONITOR",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-COMPLIANCE",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-STANDARDS",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-CLI",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-MCP",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-VSIX",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-SKILLS",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-DOCS",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-TEST",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-VISION",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-MINING",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-AGENTIC",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-PUBLISH",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-BROWSER",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-RUNTIME",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-COGNITIVE",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-CREATIVE",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-COMM",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-TOOLS",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-ARCHIVE",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-PLUGIN",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DEVTOOLS-HUB",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DEVTOOLS-CLI",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DEVTOOLS-REPOMIX",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DEVTOOLS-DIFF",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DEVTOOLS-VDB",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DEVTOOLS-SKILLS",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "META-TRANSCENDANCE",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "META-POLITICAL",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "META-PHILOSOPHY",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "META-PLAYGROUND",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "META-ADAPTER",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "WIKI-MIMIR",
+      "strate": "L7",
+      "layer_detail": "L7",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "WIKI-BRAIN",
+      "strate": "L7",
+      "layer_detail": "L7",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "WIKI-DOC",
+      "strate": "L7",
+      "layer_detail": "L7",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "WIKI-VERSE",
+      "strate": "L7",
+      "layer_detail": "L7",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-BAT",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-RACINES",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-SOCIO",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-ART",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-WORLD",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-SPIRAL",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-FOUNDATION",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "BOOTSTRAP-Z600",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "NETWORK-STACK",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "STORAGE-LAYER",
+      "strate": "L0",
+      "layer_detail": "L0",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-SECURITY",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-QUALITY",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SOT-DELIVERY",
+      "strate": "L1",
+      "layer_detail": "L1",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_1",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-SECURITY",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-PERF",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-RELIABILITY",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "COMP-SCALE",
+      "strate": "L2",
+      "layer_detail": "L2",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-ANALYTICS",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-ML",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-NLP",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-CV",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EMRG-ROBOTICS",
+      "strate": "L3",
+      "layer_detail": "L3",
+      "status": "ACTIVE",
+      "connectivite": "FIBRE",
+      "zone": "zone_2",
+      "vague_courante": 3,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DEVTOOLS-TEST",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DEVTOOLS-CI",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DEVTOOLS-CD",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "DEVTOOLS-REVIEW",
+      "strate": "L4",
+      "layer_detail": "L4",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_2",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "META-RESEARCH",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "META-EDUCATION",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "META-COMMUNITY",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "META-ECOSYSTEM",
+      "strate": "L5",
+      "layer_detail": "L5",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "PLATFORM-CORE",
+      "strate": "L6",
+      "layer_detail": "L6",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "PLATFORM-API",
+      "strate": "L6",
+      "layer_detail": "L6",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "PLATFORM-SDK",
+      "strate": "L6",
+      "layer_detail": "L6",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "WIKI-TECH",
+      "strate": "L7",
+      "layer_detail": "L7",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "WIKI-USER",
+      "strate": "L7",
+      "layer_detail": "L7",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "WIKI-API",
+      "strate": "L7",
+      "layer_detail": "L7",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_3",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-MUSIC",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-VIDEO",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-GAME",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "CREATIVE-STORY",
+      "strate": "L8",
+      "layer_detail": "L8",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "LEGACY-V1",
+      "strate": "L9",
+      "layer_detail": "L9",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "LEGACY-V2",
+      "strate": "L9",
+      "layer_detail": "L9",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EXPERIMENTAL-1",
+      "strate": "L9",
+      "layer_detail": "L9",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EXPERIMENTAL-2",
+      "strate": "L9",
+      "layer_detail": "L9",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "EXPERIMENTAL-3",
+      "strate": "L9",
+      "layer_detail": "L9",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SANDBOX-ALPHA",
+      "strate": "L9",
+      "layer_detail": "L9",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    },
+    {
+      "repo_name": "SANDBOX-BETA",
+      "strate": "L9",
+      "layer_detail": "L9",
+      "status": "ACTIVE",
+      "connectivite": "DSL",
+      "zone": "zone_4",
+      "vague_courante": 2,
+      "derniere_synchro": "2026-06-11"
+    }
+  ]
+}
