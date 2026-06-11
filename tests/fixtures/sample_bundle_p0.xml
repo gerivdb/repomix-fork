@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle chunk="1" repos="5">
+  <metadata>
+    <generated_by>gerivdb-repomix</generated_by>
+    <urbanverse_version>5.0.0</urbanverse_version>
+    <intent_hash>0xREPOMIX_INTENT_20260611</intent_hash>
+  </metadata>
+  <repo name="NEXUS">
+    <strate>L1</strate>
+    <tier>P0</tier>
+    <phi_cps>3.697</phi_cps>
+    <vague_deployee>12</vague_deployee>
+    <layer>L1_CAUSALITY</layer>
+    <file path="src/nexus/core.py">
+import os
+from pathlib import Path
+
+class NexusCore:
+    def __init__(self):
+        pass
+    def process(self, data):
+        # TODO: implement validation
+        return data
+def main():
+    core = NexusCore()
+    </file>
+    <file path="tests/test_core.py">
+import pytest
+from src.nexus.core import NexusCore
+class TestNexusCore:
+    def test_process(self):
+        core = NexusCore()
+        assert core.process({}) == {}
+    </file>
+  </repo>
+  <repo name="GOVERNANCE-HUB">
+    <strate>L0</strate>
+    <tier>P0</tier>
+    <phi_cps>3.697</phi_cps>
+    <vague_deployee>12</vague_deployee>
+    <layer>L2_COMPOSITION</layer>
+    <file path="README.md"># GOVERNANCE-HUB</file>
+  </repo>
+  <repo name="BRAIN">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.092</phi_cps>
+    <vague_deployee>12</vague_deployee>
+    <layer>L3_EMERGENCE</layer>
+    <file path="src/brain/agent.py">
+import json
+class BrainAgent:
+    def __init__(self, name):
+        self.name = name
+    def think(self, input_data):
+        # FIXME: add reasoning chain
+        return {"output": input_data}
+    </file>
+  </repo>
+  <repo name="ECOYSTEM">
+    <strate>L1</strate>
+    <tier>P0</tier>
+    <phi_cps>3.697</phi_cps>
+    <vague_deployee>12</vague_deployee>
+    <layer>L2_COMPOSITION</layer>
+    <file path="README.md"># ECOYSTEM</file>
+  </repo>
+  <repo name="LLM-REPO">
+    <strate>L1b</strate>
+    <tier>P0</tier>
+    <phi_cps>3.697</phi_cps>
+    <vague_deployee>12</vague_deployee>
+    <layer>L1b</layer>
+    <file path="LLM_BOOT_PROTOCOL.md"># LLM Boot Protocol</file>
+  </repo>
+</bundle>
