@@ -8,7 +8,7 @@
 | [EPIC-02](EPIC-02-TRANSIT-MAP.md) | Réseau de Transit Cognitif | PRD-003 | P1 | ✅ Déployé (Vague 9) | EPIC-01 |
 | [EPIC-03](EPIC-03-STRATUM-RELAYS-WAVE1.md) | Stratum Relays Vague 1 | PRD-003 | P1 | ✅ Déployé (Vague 9) | EPIC-01 |
 | [EPIC-04](EPIC-04-KARPATHY-RECALL-SYNC.md) | Karpathy Recall × UrbanVerse | PRD-003 | P2 | ✅ Déployé (Vague 14) | EPIC-07, 10 |
-| [EPIC-05](EPIC-05-ECONOMY-GOVERNANCE.md) | Économie & Gouvernance IDF | PRD-003 | P3 | 🔮 Futur | EPIC-01→04 + ADR |
+| [EPIC-05](EPIC-05-ECONOMY-GOVERNANCE.md) | Économie & Gouvernance IDF | PRD-003 | P3 | ✅ Déployé (Vague 15) | EPIC-01→04 + ADR |
 | [EPIC-06](EPIC-06-STRATUM-RELAY-DEPLOYMENT.md) | Stratum Relay Déploiement | PRD-003 | P1 | ✅ Déployé (Vague 9) | EPIC-01 |
 | [EPIC-07](EPIC-07-ECOSYSTEM-190-REPOS.md) | Ecosystem 190 Repos | PRD-007 | P0 | ✅ Déployé (Vague 11) | — |
 | [EPIC-08](EPIC-08-ECOS-CLI-A5.md) | ECOS-CLI A5 `ecos bundle` | PRD-008 | P1 | ✅ Déployé (Vague 11) | EPIC-07 |

@@ -1,0 +1,55 @@
+# peripherique.yaml — Périphérique UrbanVerse (Anneau de Contrôle L3→L9)
+# Version: 1.0.0 | Date: 2026-06-11
+# EPIC-05 : Économie Urbaine & Gouvernance Étendue
+
+peripherique:
+  nom: "Périphérique UrbanVerse"
+  description: "Anneau de contrôle de périphérie — aucune connexion directe Zone 3→Zone 1"
+  version: "1.0.0"
+
+  portes_entree:
+    - type: API_GATEWAY
+      repo: GATEWAY-MANAGER
+      role: "Point d'entrée API public, proxy BDCP, Clapet"
+      zone: zone_4
+      regle: "Tout trafic externe passe par GATEWAY-MANAGER"
+
+    - type: CLI_PUBLIQUE
+      repo: ECOS-CLI
+      role: "Interface CLI exposée, commandes automation"
+      zone: zone_3
+      regle: "Accès limité — authentification requise"
+
+    - type: WEBHOOK
+      repo: COMET
+      role: "Réception événements externes, browser automation"
+      zone: zone_3
+      regle: "Événements filtrés avant propagation Zone 1"
+
+  echangeurs:
+    - repo: GATEWAY-MANAGER
+      role: "Proxy/reverse proxy, BDCP, Clapet"
+      zone_traffic: "zone_4 → zone_1"
+      regle: "Seul point de passage autorisé Zone 4→Zone 1"
+
+    - repo: COMET
+      role: "Browser automation, interface humain-web"
+      zone_traffic: "zone_3 → zone_1"
+      regle: "Validation humaine requise pour les actions D4"
+
+    - repo: ECOS-CLI
+      role: "Interface CLI, commandes automation"
+      zone_traffic: "zone_3 → zone_2"
+      regle: "Push direct sur main interdit — PR obligatoire"
+
+  regles_peripherique:
+    - "Aucune connexion directe Zone 3→Zone 1 sans échangeur validé"
+    - "Tout repo externe (zone_4) doit passer par GATEWAY-MANAGER"
+    - "Les événements webhook sont filtrés avant propagation"
+    - "Les accès CLI sont journalisés et auditables"
+
+  zonage_reference:
+    zone_1: "Paris intra-muros — repos gerivdb actifs L0→L9 (FULL trust)"
+    zone_2: "Petite Couronne — partenaires de confiance (TRUSTED)"
+    zone_3: "Grande Couronne — intégrations publiques (LIMITED)"
+    zone_4: "Hors IDF — SaaS cloud tiers (EXTERNAL)"
