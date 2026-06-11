@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle chunk="3" repos="50">
+  <metadata>
+    <generated_by>gerivdb-repomix</generated_by>
+    <urbanverse_version>5.0.0</urbanverse_version>
+    <intent_hash>0xREPOMIX_INTENT_20260611</intent_hash>
+  </metadata>
+  <repo name="SOT-TERRITORY">
+    <strate>L1</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="SOT-COGNITION">
+    <strate>L1</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="SOT-FLOW">
+    <strate>L1</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="SOT-TIME">
+    <strate>L1</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="SOT-MEMORY">
+    <strate>L1</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="SOT-ATTENTION">
+    <strate>L1</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="COMP-BUILD">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="COMP-MONITOR">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="COMP-COMPLIANCE">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="COMP-STANDARDS">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="COMP-CLI">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="COMP-MCP">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="COMP-VSIX">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="COMP-SKILLS">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="COMP-DOCS">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="COMP-TEST">
+    <strate>L2</strate>
+    <tier>P0</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-VISION">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-MINING">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-AGENTIC">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-PUBLISH">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-BROWSER">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-RUNTIME">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-COGNITIVE">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-CREATIVE">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-COMM">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-TOOLS">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-ARCHIVE">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="EMRG-PLUGIN">
+    <strate>L3</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="DEVTOOLS-HUB">
+    <strate>L4</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="DEVTOOLS-CLI">
+    <strate>L4</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="DEVTOOLS-REPOMIX">
+    <strate>L4</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="DEVTOOLS-DIFF">
+    <strate>L4</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="DEVTOOLS-VDB">
+    <strate>L4</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="DEVTOOLS-SKILLS">
+    <strate>L4</strate>
+    <tier>P1</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="META-TRANSCENDANCE">
+    <strate>L5</strate>
+    <tier>P2</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="META-POLITICAL">
+    <strate>L5</strate>
+    <tier>P2</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="META-PHILOSOPHY">
+    <strate>L5</strate>
+    <tier>P2</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="META-PLAYGROUND">
+    <strate>L5</strate>
+    <tier>P2</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="META-ADAPTER">
+    <strate>L5</strate>
+    <tier>P2</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="WIKI-MIMIR">
+    <strate>L7</strate>
+    <tier>P2</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="WIKI-BRAIN">
+    <strate>L7</strate>
+    <tier>P2</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="WIKI-DOC">
+    <strate>L7</strate>
+    <tier>P2</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="WIKI-VERSE">
+    <strate>L7</strate>
+    <tier>P2</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="CREATIVE-BAT">
+    <strate>L8</strate>
+    <tier>P3</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="CREATIVE-RACINES">
+    <strate>L8</strate>
+    <tier>P3</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="CREATIVE-SOCIO">
+    <strate>L8</strate>
+    <tier>P3</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="CREATIVE-ART">
+    <strate>L8</strate>
+    <tier>P3</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="CREATIVE-WORLD">
+    <strate>L8</strate>
+    <tier>P3</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="CREATIVE-SPIRAL">
+    <strate>L8</strate>
+    <tier>P3</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+  <repo name="CREATIVE-FOUNDATION">
+    <strate>L8</strate>
+    <tier>P3</tier>
+    <phi_cps>4.559</phi_cps>
+    <vague_deployee>11</vague_deployee>
+    <!-- files omitted in index bundle -->
+  </repo>
+</bundle>

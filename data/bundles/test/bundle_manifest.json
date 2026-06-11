@@ -1,0 +1,33 @@
+{
+  "version": "2.0",
+  "total_repos": 190,
+  "tier_filter": "ALL",
+  "chunks": [
+    {
+      "index": 1,
+      "file": "bundle_001.xml",
+      "repos": 50,
+      "size_mb": 0.01
+    },
+    {
+      "index": 2,
+      "file": "bundle_002.xml",
+      "repos": 50,
+      "size_mb": 0.01
+    },
+    {
+      "index": 3,
+      "file": "bundle_003.xml",
+      "repos": 50,
+      "size_mb": 0.01
+    },
+    {
+      "index": 4,
+      "file": "bundle_004.xml",
+      "repos": 40,
+      "size_mb": 0.008
+    }
+  ],
+  "elapsed_s": 0.01,
+  "kpi_ok": true
+}
