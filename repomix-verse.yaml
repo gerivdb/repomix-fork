@@ -1,8 +1,8 @@
-# repomix UrbanVerse configuration
-# Customisations specifiques au fork gerivdb/repomix
+# repomix UrbanVerse configuration v3
+# PRD-007 Phase B — 190 repos, tier filter, chunking
 
-version: "5.0.0"
-intent_hash: 0xREPOMIX_INTENT_20260530
+version: "3.0"
+intent_hash: 0xREPOMIX_INTENT_20260611
 
 ecosystem:
   name: UrbanVerse
@@ -21,10 +21,27 @@ ecosystem:
   # Mode ecosystem : bundle multi-repo
   multi_repo:
     enabled: true
-    registry: gerivdb/VERSES/urban_ontology_verse/RELAYS/relay_wave_manifest.yaml
+    registry: data/known_repositories_190.yaml
     pack_format: xml
     include_dormant: false
-    max_repos_per_pack: 10
+    max_repos_per_pack: 50
+    chunk_size_mb: 80
+
+  # Tier configuration
+  default_tier: ALL
+  tiers:
+    P0:
+      layers: [L0, L1, L1a, L1b, L2, L2b]
+      description: "Repos critiques — constitution, SOT, cognition"
+    P1:
+      layers: [L3, L4]
+      description: "DevTools — CLI, bundler"
+    P2:
+      layers: [L5, L6, L7]
+      description: "Applications metier"
+    P3:
+      layers: [L8, L9]
+      description: "Domaines creatifs et archeologie"
 
   # Integration avec les outils ecosysteme
   integrations:
@@ -40,3 +57,7 @@ ecosystem:
     llm_training:
       enabled: true
       pack_type: recall_relay
+
+# Output
+output_dir: "D:\\DO\\WEB\\TOOLS\\L4-TOOLS\\repomix\\"
+metadata_injection: true

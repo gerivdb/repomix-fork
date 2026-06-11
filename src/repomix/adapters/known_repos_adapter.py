@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
 """
-Adapter v2: known_repositories.yaml -> networkx.Graph
+Adapter v2+v3: known_repositories.yaml -> networkx.Graph + RepoNode graphe
+
+v2 (legacy): load_known_repos_graph() — networkx, section-based YAML
+v3 (PRD-007): KnownReposAdapterV3 — dataclass-based, lazy loading, tier API
+
 Support 190 repos avec chargement incrémentiel et partitionnement par strate.
 """
 import yaml
 import networkx as nx
 from pathlib import Path
 from typing import Optional
+import time
+
+# ══════════════════════════════════════════════════════════════════════
+# v2 — Legacy (networkx-based, section YAML format)
+# ══════════════════════════════════════════════════════════════════════
 
 LAYER_ORDER = {
     "L0_INFRASTRUCTURE": 0, "L0": 0,
@@ -50,7 +59,7 @@ def load_known_repos_graph(
 ) -> nx.Graph:
     """
     Charge known_repositories.yaml et retourne un graphe non-oriente.
-    
+
     Args:
         yaml_path: Chemin vers known_repositories.yaml
         max_repos: Limite max de repos (None = tous)
@@ -176,25 +185,205 @@ def get_graph_stats(G: nx.Graph) -> dict:
     }
 
 
+# ══════════════════════════════════════════════════════════════════════
+# v3 — PRD-007 Phase A: 190 nœuds, lazy loading, tier API
+# ══════════════════════════════════════════════════════════════════════
+
+# Ordre canonique strates — étendu L0→L9 + sous-strates
+LAYER_ORDER_V3: list[str] = [
+    "L0", "L1", "L1a", "L1b",
+    "L2", "L2b",
+    "L3",
+    "L4",  # repomix-fork est ici
+    "L5", "L6", "L7", "L8", "L9",
+    "UNKNOWN",
+]
+
+# Tiers de priorité
+TIER_MAP: dict[str, list[str]] = {
+    "P0": ["L0", "L1", "L1a", "L1b", "L2", "L2b"],
+    "P1": ["L3", "L4"],
+    "P2": ["L5", "L6", "L7"],
+    "P3": ["L8", "L9", "UNKNOWN"],
+}
+
+# Statuts exclus du graphe actif
+EXCLUDED_STATUSES: set[str] = {"DORMANT", "DEPRECATED", "ARCHIVE", "archived"}
+
+
+class RepoNode:
+    """Nœud de graphe v3 — dataclass léger avec __slots__."""
+    __slots__ = ("name", "layer", "tier", "status", "description", "edges")
+
+    def __init__(self, name: str, layer: str, tier: str,
+                 status: str = "ACTIVE", description: str = ""):
+        self.name        = name
+        self.layer       = layer
+        self.tier        = tier
+        self.status      = status
+        self.description = description
+        self.edges: list[str] = []   # noms des dépendances
+
+    def is_active(self) -> bool:
+        return self.status not in EXCLUDED_STATUSES
+
+    def __repr__(self) -> str:
+        return f"<RepoNode {self.name} {self.layer} {self.tier}>"
+
+
+class KnownReposAdapterV3:
+    """
+    Charge known_repositories_190.yaml → graphe 190 nœuds.
+    Lazy-loading : le graphe n'est construit qu'au premier accès.
+    """
+
+    def __init__(self, yaml_path: Optional[Path] = None):
+        self._yaml_path = yaml_path or (
+            Path(__file__).parent.parent.parent.parent
+            / "data" / "known_repositories_190.yaml"
+        )
+        self._nodes: Optional[dict[str, RepoNode]] = None
+        self._edges: Optional[list[tuple[str, str]]] = None
+        self._load_time: float = 0.0
+
+    # ── Lazy loading ────────────────────────────────────────────────
+
+    def _ensure_loaded(self) -> None:
+        if self._nodes is not None:
+            return
+        t0 = time.perf_counter()
+        self._nodes, self._edges = self._parse_yaml()
+        self._load_time = time.perf_counter() - t0
+        assert self._load_time < 5.0, \
+            f"KPI FAILED: chargement {self._load_time:.2f}s > 5s"
+
+    def _parse_yaml(self) -> tuple[dict[str, RepoNode], list[tuple[str, str]]]:
+        raw = yaml.safe_load(self._yaml_path.read_text(encoding="utf-8"))
+        nodes: dict[str, RepoNode] = {}
+        edges: list[tuple[str, str]] = []
+
+        # Format v3: repositories: [{name, layer, status, ...}]
+        # Format v2 (legacy): P0_CONSTITUTIONAL: [{name, layer, ...}]
+        entries: list[dict] = []
+        if "repositories" in raw:
+            entries = raw["repositories"]
+        else:
+            # Legacy section-based format
+            for section, repos in raw.items():
+                if section in SKIP_SECTIONS or section == "metadata":
+                    continue
+                if isinstance(repos, list):
+                    entries.extend(repos)
+
+        for entry in entries:
+            if not isinstance(entry, dict):
+                continue
+            name = entry.get("name", "")
+            if not name:
+                continue
+            layer = entry.get("layer", "UNKNOWN")
+            status = entry.get("status", "ACTIVE")
+            tier = self._resolve_tier(layer)
+
+            node = RepoNode(
+                name=name,
+                layer=layer,
+                tier=tier,
+                status=status,
+                description=entry.get("description", ""),
+            )
+            # Dépendances → arêtes
+            for dep in entry.get("depends_on", []):
+                node.edges.append(dep)
+                edges.append((name, dep))
+
+            nodes[name] = node
+
+        return nodes, edges
+
+    @staticmethod
+    def _resolve_tier(layer: str) -> str:
+        for tier, layers in TIER_MAP.items():
+            if layer in layers:
+                return tier
+        return "P3"
+
+    # ── API publique ─────────────────────────────────────────────────
+
+    @property
+    def nodes(self) -> dict[str, RepoNode]:
+        self._ensure_loaded()
+        return self._nodes  # type: ignore[return-value]
+
+    @property
+    def edges(self) -> list[tuple[str, str]]:
+        self._ensure_loaded()
+        return self._edges  # type: ignore[return-value]
+
+    def active_nodes(self) -> list[RepoNode]:
+        return [n for n in self.nodes.values() if n.is_active()]
+
+    def by_tier(self, tier: str) -> list[RepoNode]:
+        return [n for n in self.active_nodes() if n.tier == tier]
+
+    def by_layer(self, layer: str) -> list[RepoNode]:
+        return [n for n in self.active_nodes() if n.layer == layer]
+
+    def get_stats(self) -> dict:
+        active = self.active_nodes()
+        by_tier = {t: len(self.by_tier(t)) for t in TIER_MAP}
+        return {
+            "nodes":          len(self.nodes),
+            "active_nodes":   len(active),
+            "edges":          len(self.edges),
+            "load_time_s":    round(self._load_time, 4),
+            "by_tier":        by_tier,
+            "emergence_score": self._compute_emergence(active),
+        }
+
+    def _compute_emergence(self, active: list[RepoNode]) -> float:
+        """Score d'émergence simplifié : ratio arêtes/nœuds × facteur tier."""
+        if not active:
+            return 0.0
+        n = len(active)
+        e = len(self.edges)
+        tier_weight = sum(
+            {"P0": 1.0, "P1": 0.8, "P2": 0.6, "P3": 0.4}.get(nd.tier, 0.4)
+            for nd in active
+        ) / n
+        raw = min(1.0, (e / max(n, 1)) / 10.0) * tier_weight
+        return round(raw * 100, 1)
+
+
 if __name__ == "__main__":
-    import sys, time
+    import sys
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).parent.parent))
     from verse_detector import VERSE_DETECTOR
 
     yaml_path = Path("D:/DO/WEB/TOOLS/L0-CANON/GOVERNANCE-HUB/known_repositories.yaml")
-    
+
     t0 = time.time()
     G = load_known_repos_graph(yaml_path)
     elapsed = time.time() - t0
-    
+
     stats = get_graph_stats(G)
     print("Graphe charge: {} nœuds, {} aretes en {:.3f}s".format(
         stats["nodes"], stats["edges"], elapsed))
     print("Layers:", stats["layers"])
     print("Composantes:", stats["components"])
     print("Densite:", stats["density"])
-    
+
     obs = VERSE_DETECTOR.observe("gerivdb_ecosystem", G)
     print("\nScore d'emergence: {:.1f}%".format(obs.score * 100))
     print("Statut: {}".format(obs.status.name))
+
+    # v3 adapter test
+    print("\n--- v3 Adapter ---")
+    adapter_v3 = KnownReposAdapterV3()
+    stats_v3 = adapter_v3.get_stats()
+    print("v3 nodes: {} | active: {} | edges: {} | load: {}s".format(
+        stats_v3["nodes"], stats_v3["active_nodes"],
+        stats_v3["edges"], stats_v3["load_time_s"]))
+    print("By tier:", stats_v3["by_tier"])
+    print("Emergence score v3: {}%".format(stats_v3["emergence_score"]))

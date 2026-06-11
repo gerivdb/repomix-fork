@@ -27,6 +27,61 @@ def corpus_main():
     main()
 
 
+def ecosystem_main():
+    """repomix-ecosystem — Bundle 190 repos avec tier filter et chunking."""
+    import argparse
+    from pathlib import Path
+    from scripts.bundle_corpus import generate_bundles
+    from src.repomix.adapters.known_repos_adapter import KnownReposAdapterV3
+
+    parser = argparse.ArgumentParser(
+        description="repomix-ecosystem v3 — Bundle 190 repos avec tier filter"
+    )
+    parser.add_argument(
+        "--tier",
+        choices=["P0", "P1", "P2", "P3", "ALL"],
+        default="ALL",
+        help="Filtrer par tier de priorite (P0=critique, ALL=tous)",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=Path("data/bundles/"),
+        help="Repertoire de sortie des bundles",
+    )
+    parser.add_argument(
+        "--chunk-size-mb",
+        type=float,
+        default=80.0,
+        help="Taille max par chunk en Mo (defaut: 80)",
+    )
+    parser.add_argument(
+        "--yaml",
+        type=Path,
+        default=Path("data/known_repositories_190.yaml"),
+        help="Chemin vers le YAML 190 repos",
+    )
+    args = parser.parse_args()
+
+    adapter = KnownReposAdapterV3(yaml_path=args.yaml)
+    repos = [
+        {"name": n.name, "layer": n.layer, "tier": n.tier, "status": n.status}
+        for n in adapter.active_nodes()
+    ]
+    print(f"[ecosystem] {len(repos)} repos charges depuis {args.yaml}")
+
+    manifest = generate_bundles(
+        repos,
+        output_dir=args.output_dir,
+        chunk_size_mb=args.chunk_size_mb,
+        max_per_chunk=50,
+        tier_filter=args.tier,
+    )
+    print(f"[ecosystem] {len(manifest['chunks']} chunks generes — {manifest['elapsed_s']}s")
+    if not manifest["kpi_ok"]:
+        print("WARN: KPI bundle > 5min")
+
+
 def recall_main():
     """repomix-recall — Pack recall versionne pour LLM-REPO."""
     from scripts.pack_recall import main
