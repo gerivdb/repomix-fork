@@ -1,0 +1,16 @@
+# .swarm/node.yaml — Carte d'identité holographique
+# Chaque repo gerivdb possède ce fichier : c'est son ADN dans l'organisme
+# IntentHash: 0xSWARM_NODE_GENOME_20260622
+node:
+  name: REPOMIX-FORK
+  full_name: gerivdb/REPOMIX-FORK
+  url: https://github.com/gerivdb/REPOMIX-FORK
+  layer: L4_TOOLS
+  strate: L4_TOOLS
+  role: "Repo analysis tool"
+  lens: cold
+  phi_cps: 1.0
+  thousand_brains_ref: false
+  do_not_create: true
+  upstream: []
+  downstream: []
