@@ -1,0 +1,61 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+.githooks/pre-push — Guards STRATUM_RELAY (R1, R2, R3).
+
+R1: Aucun .py a la racine
+R2: repomix-verse.yaml valide
+R3: Aucun bundle XML/DB/coverage stague
+"""
+import os
+import subprocess
+import sys
+import yaml
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).parent.parent
+os.chdir(REPO_ROOT)
+
+errors = []
+
+# ── Guard R1: 0 .py a la racine ────────────────────────────────────────────
+root_py = list(REPO_ROOT.glob("*.py"))
+if root_py:
+    errors.append(f"R1: {len(root_py)} fichier(s) .py a la racine: {[p.name for p in root_py]}")
+
+# ── Guard R2: repomix-verse.yaml valide ─────────────────────────────────────
+yaml_path = REPO_ROOT / "repomix-verse.yaml"
+if yaml_path.exists():
+    try:
+        with open(yaml_path, "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+        if not isinstance(data, dict):
+            errors.append("R2: repomix-verse.yaml ne contient pas un dict racine")
+    except Exception as e:
+        errors.append(f"R2: repomix-verse.yaml invalide — {e}")
+else:
+    errors.append("R2: repomix-verse.yaml introuvable")
+
+# ── Guard R3: Pas de bundles/artefacts stagues ──────────────────────────────
+staged = subprocess.run(
+    ["git", "diff", "--cached", "--name-only"],
+    capture_output=True, text=True
+).stdout.strip().splitlines() if subprocess.run(
+    ["git", "diff", "--cached", "--name-only"],
+    capture_output=True, text=True
+).returncode == 0 else []
+
+bad_patterns = [".xml", ".db", ".sqlite", ".sqlite3", ".coverage", ".pkl"]
+bad_files = [f for f in staged if any(f.endswith(p) or f".{p}" in f for p in bad_patterns)]
+if bad_files:
+    errors.append(f"R3: Artefacts detectes dans le staging: {bad_files}")
+
+# ── Resultat ────────────────────────────────────────────────────────────────
+if errors:
+    print("GUARDS STRATUM_RELAY — ECHEC:")
+    for e in errors:
+        print("  [FAIL] {}".format(e))
+    sys.exit(1)
+else:
+    print("GUARDS STRATUM_RELAY — OK (R1, R2, R3)")
+    sys.exit(0)
